@@ -1,5 +1,7 @@
-su -m $SUDO_USER <<'EOF'
+export APPNAME=$1
+export USERNAME=$2
+su -m $USERNAME <<'EOF'
   source maintenance/mac/conda/env.sh
-  cd pyvirtualbox
+  eval cd ${APPNAME}
   pip install .
 EOF

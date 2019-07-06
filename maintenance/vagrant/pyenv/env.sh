@@ -2,6 +2,7 @@
   export SERVICE_USER=vagrant
   export PYENV_ROOT="/home/vagrant/.pyenv"
   export PATH="${PYENV_ROOT}/bin:${PATH}"
+  export PATH="/home/${SERVICE_USER}/.local/bin:${PATH}"
   export USE_GIT_URI="true"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
