@@ -2,6 +2,13 @@ APPNAME=demo3
 PYTHONVERSION=3.7
 DPENAME=.deescalated_platform_environments
 
+if [  -n "$(uname -a | grep Ubuntu)" ]; then
+    echo "running in ubuntu"
+else
+    echo "not running in ubuntu"
+    exit
+fi
+
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" upgrade
 
