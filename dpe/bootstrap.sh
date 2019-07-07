@@ -1,4 +1,3 @@
-# start of section that inherits sudo
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" upgrade
 
@@ -33,7 +32,7 @@ mkdir -p $appname/repos
 mkdir -p $appname/bin
 cd $appname
 cd downloads
-wget -q https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 cd ..
 cd repos
 git clone https://github.com/saltstack/salt
@@ -43,11 +42,15 @@ cd ..
 cd downloads
 bash Miniconda3-latest-Linux-x86_64.sh -b -p ~/.deescalated_platform_environments/$appname/miniconda3
 export PATH=~/.deescalated_platform_environments/$appname/miniconda3/bin:$PATH
+conda --version
 conda update -y -n base -c defaults conda
+conda --version
+conda update -y conda
+conda --version
 conda create -y -n lxc-cloud-env python=3.7
 source activate lxc-cloud-env
-pip -qqq install --upgrade pip
-pip -qqq install --upgrade setuptools
+pip install --upgrade pip
+pip install --upgrade setuptools
 cd ..
 cd repos/salt
 git checkout v2018.3.3
@@ -60,10 +63,9 @@ cd repos/nvm
 git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 . nvm.sh
 cd ../..
-nvm install --no-progress 10.15.0 >/dev/null
-nvm use 10.15.0 >/dev/null
-npm -g install js-beautify >/dev/null
-# install lastpass
+nvm install 10.15.0
+nvm use 10.15.0
+npm -g install js-beautify
 cd repos/lastpass-cli
 make
 cd ../..
