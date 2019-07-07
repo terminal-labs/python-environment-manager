@@ -1,1 +1,0 @@
-echo "nothing to do on mac"
