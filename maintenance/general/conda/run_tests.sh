@@ -1,6 +1,9 @@
-su -m vagrant <<'EOF'
-  source maintenance/vagrant/conda/env.sh
-  pyvirtualbox system version
-  pyvirtualbox system selftest
-  pyvirtualbox system selfcoverage
+export APPNAME=$1
+export USERNAME=$2
+export PLATFORM=$3
+su -m $USERNAME <<'EOF'
+  source maintenance/general/conda/env.sh
+  ${APPNAME} system version
+  ${APPNAME} system selftest
+  ${APPNAME} system selfcoverage
 EOF
