@@ -50,6 +50,7 @@ su -m $USERNAME <<'EOF'
   mkdir -p ${APPNAME}/bin
   cd $APPNAME
   cd downloads
+  unset SUDO_UID SUDO_GID SUDO_USER
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   cd ..
   cd repos
