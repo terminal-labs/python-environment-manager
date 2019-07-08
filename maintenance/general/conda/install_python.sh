@@ -1,5 +1,5 @@
 export LC_APPNAME=$1
-export LC_USERNAME=$2
+export LC_USERNAME=vagrant
 export LC_PLATFORM=$3
 su ${LC_USERNAME} <<'EOF'
   USER=${LC_USERNAME}
