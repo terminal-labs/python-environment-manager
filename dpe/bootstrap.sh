@@ -40,7 +40,7 @@ export DPENAME
 export USERNAME
 export NODEVERSION
 export SALTVERSION
-su -m $USERNAME <<'EOF'
+su -m vagrant <<'EOF'
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
