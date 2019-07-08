@@ -1,0 +1,43 @@
+APPNAME = pyvirtualbox
+PYTHONVERSION = 3.6.3
+
+help:
+	@echo "usage: make [command]"
+
+# mac-pyenv:
+# 	@sudo bash maintenance/mac/pyenv/build.sh pyvirtualbox $(SUDO_USER)
+# 
+# mac-test:
+# 	@sudo bash maintenance/mac/pyenv/run_tests.sh pyvirtualbox $(SUDO_USER)
+# 
+# mac-conda:
+# 	@sudo bash maintenance/mac/conda/build.sh pyvirtualbox $(SUDO_USER)
+# 
+# mac-conda-test:
+# 	@sudo bash maintenance/mac/conda/run_tests.sh pyvirtualbox $(SUDO_USER)
+# 
+# test:
+# 	@sudo bash maintenance/vagrant/pyenv/run_tests.sh pyvirtualbox $(SUDO_USER)
+
+download_python_environment_manager:
+	@if test ! -d "maintenance";then \
+		sudo rm -rf maintenance; \
+		sudo su -m $(SUDO_USER) -c "mkdir -p .tmp"; \
+		sudo su -m $(SUDO_USER) -c "cd .tmp; wget https://github.com/terminal-labs/python-environment-manager/archive/master.zip"; \
+		sudo su -m $(SUDO_USER) -c "cd .tmp; unzip -qq master.zip"; \
+		sudo su -m $(SUDO_USER) -c "cp -r .tmp/python-environment-manager-master/maintenance/. maintenance"; \
+		sudo rm -rf .tmp/python-environment-manager-master; \
+		sudo rm .tmp/master.zip; \
+	fi
+
+vagrant-pyenv: download_python_environment_manager
+	@sudo bash maintenance/general/pyenv/build.sh $(APPNAME) $(SUDO_USER) vagrant
+
+vagrant-conda: download_python_environment_manager
+	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) vagrant
+
+mac-pyenv: download_python_environment_manager
+	@sudo bash maintenance/general/pyenv/build.sh $(APPNAME) $(SUDO_USER) mac
+	
+mac-conda: download_python_environment_manager
+	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) mac
