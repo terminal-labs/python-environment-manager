@@ -33,7 +33,7 @@ sudo su -m vagrant <<'EOF'
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
   cd /home/vagrant/.ssh
   ls
-  EOF
+EOF
 
 # root
 sudo cp -a /home/circleci/.ssh/. /root/.ssh/
