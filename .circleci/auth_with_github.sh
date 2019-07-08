@@ -22,8 +22,8 @@ sudo cp -a /home/circleci/.ssh/. /home/vagrant/.ssh/
 
 sudo touch /home/vagrant/.ssh/authorized_keys
 
-sudo chown -R vagrant /home/vagrant/.ssh
-sudo chgrp -R vagrant /home/vagrant/.ssh
+sudo chown -R vagrant /home/vagrant
+sudo chgrp -R vagrant /home/vagrant
 sudo chmod 700 /home/vagrant/.ssh
 sudo chmod 644 /home/vagrant/.ssh/authorized_keys
 sudo chmod 644 /home/vagrant/.ssh/known_hosts
