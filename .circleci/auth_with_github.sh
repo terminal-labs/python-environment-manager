@@ -46,3 +46,5 @@ sudo chmod 400 /root/.ssh/known_hosts
 sudo chmod 400 /root/.ssh/config
 sudo chmod 400 /root/.ssh/id_rsa
 sudo chmod 400 /root/.ssh/id_rsa.pub
+
+git clone https://github.com/saltstack/salt
