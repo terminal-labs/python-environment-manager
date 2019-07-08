@@ -4,7 +4,9 @@ export LC_PLATFORM=$3
 su -m ${LC_USERNAME} <<'EOF'
   USER=${LC_USERNAME}
   SUDO_USER=${LC_USERNAME}
-  USERNAME=${LC_USERNAME}  
+  USERNAME=${LC_USERNAME}
+  HOME=/home/${LC_USERNAME}
+  LOGNAME=/home/${LC_USERNAME}  
   unset SUDO_UID SUDO_GID SUDO_USER
   printenv    
   if [ $LC_PLATFORM == "vagrant" ]; then
