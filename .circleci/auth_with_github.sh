@@ -34,7 +34,7 @@ sudo chmod 400 /home/vagrant/.ssh/id_rsa
 sudo chmod 400 /home/vagrant/.ssh/id_rsa.pub
 
 # root
-sudo cp -a /home/"$USER"/.ssh/. /home/vagrant/.ssh/
+sudo cp -a /home/"$USER"/.ssh/. /root/.ssh/
 
 sudo touch /root/.ssh/authorized_keys
 
