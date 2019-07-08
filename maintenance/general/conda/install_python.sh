@@ -2,10 +2,11 @@ export LC_APPNAME=$1
 export LC_USERNAME=vagrant
 export LC_PLATFORM=$3
 su -m ${LC_USERNAME} <<'EOF'
-  printenv  
   USER=${LC_USERNAME}
   SUDO_USER=${LC_USERNAME}
+  USERNAME=${LC_USERNAME}  
   unset SUDO_UID SUDO_GID SUDO_USER
+  printenv    
   if [ $LC_PLATFORM == "vagrant" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
