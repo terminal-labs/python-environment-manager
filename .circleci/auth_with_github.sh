@@ -25,12 +25,24 @@ sudo chown -R vagrant /home/vagrant/.ssh
 sudo chgrp -R vagrant /home/vagrant/.ssh
 sudo touch /home/vagrant/.ssh/authorized_keys
 
-sudo su vagrant <<'EOF'
-  sudo chmod 755 /home/vagrant
-  sudo chmod 700 /home/vagrant/.ssh
-  sudo chmod 644 /home/vagrant/.ssh/authorized_keys
-  sudo chmod 644 /home/vagrant/.ssh/known_hosts
-  sudo chmod 644 /home/vagrant/.ssh/config
-  sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
-  sudo chmod 600 /home/vagrant/.ssh/id_rsa
-EOF
+sudo chmod 755 /home/vagrant
+sudo chmod 700 /home/vagrant/.ssh
+sudo chmod 644 /home/vagrant/.ssh/authorized_keys
+sudo chmod 644 /home/vagrant/.ssh/known_hosts
+sudo chmod 644 /home/vagrant/.ssh/config
+sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
+sudo chmod 600 /home/vagrant/.ssh/id_rsa
+
+# root
+sudo cp -a /home/circleci/.ssh/. /root/.ssh/
+
+sudo chown -R root /root/.ssh
+sudo chgrp -R root /root/.ssh
+sudo touch /root/.ssh/authorized_keys
+
+sudo chmod 400 /root/.ssh
+sudo chmod 400 /root/.ssh/authorized_keys
+sudo chmod 400 /root/.ssh/known_hosts
+sudo chmod 400 /root/.ssh/config
+sudo chmod 400 /root/.ssh/id_rsa
+sudo chmod 400 /root/.ssh/id_rsa.pub
