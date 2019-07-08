@@ -41,7 +41,6 @@ export USERNAME
 export NODEVERSION
 export SALTVERSION
 su -m $USERNAME <<'EOF'
-  export USE_GIT_URI="true"
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
