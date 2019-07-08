@@ -34,17 +34,3 @@ sudo su -m vagrant <<'EOF'
   sudo chmod 600 /home/vagrant/.ssh/id_rsa.pub
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
 EOF
-
-# root
-sudo cp -a /home/circleci/.ssh/. /root/.ssh/
-
-sudo touch /root/.ssh/authorized_keys
-
-sudo chown -R root /root/.ssh
-sudo chgrp -R root /root/.ssh
-sudo chmod 400 /root/.ssh
-sudo chmod 400 /root/.ssh/authorized_keys
-sudo chmod 400 /root/.ssh/known_hosts
-sudo chmod 400 /root/.ssh/config
-sudo chmod 400 /root/.ssh/id_rsa
-sudo chmod 400 /root/.ssh/id_rsa.pub
