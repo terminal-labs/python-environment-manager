@@ -24,11 +24,14 @@ jobs:
           name: Install python
           command: |
             cd /vagrant; sudo bash maintenance/general/pyenv/install_python.sh '' vagrant vagrant
+            cd /vagrant; sudo bash maintenance/general/conda/install_python.sh '' vagrant vagrant
       - run:
           name: Install app
           command: |
             cd /vagrant; sudo bash maintenance/general/pyenv/install_app.sh '' vagrant vagrant
+            cd /vagrant; sudo bash maintenance/general/conda/install_app.sh '' vagrant vagrant
       - run:
           name: Run tests
           command: |
             cd /vagrant; sudo bash maintenance/general/pyenv/run_tests.sh '' vagrant vagrant
+            cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh '' vagrant vagrant
