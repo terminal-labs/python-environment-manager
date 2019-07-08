@@ -14,8 +14,8 @@ sudo chmod 700 /home/circleci/.ssh
 sudo chmod 644 /home/circleci/.ssh/authorized_keys
 sudo chmod 644 /home/circleci/.ssh/known_hosts
 sudo chmod 644 /home/circleci/.ssh/config
-sudo chmod 600 /home/circleci/.ssh/id_rsa
 sudo chmod 644 /home/circleci/.ssh/id_rsa.pub
+sudo chmod 600 /home/circleci/.ssh/id_rsa
 
 # vagrant
 sudo cp -a /home/circleci/.ssh/. /home/vagrant/.ssh/
@@ -24,12 +24,12 @@ sudo touch /home/vagrant/.ssh/authorized_keys
 
 sudo chown -R vagrant /home/vagrant/.ssh
 sudo chgrp -R vagrant /home/vagrant/.ssh
-sudo chmod 400 /home/vagrant/.ssh
-sudo chmod 400 /home/vagrant/.ssh/authorized_keys
-sudo chmod 400 /home/vagrant/.ssh/known_hosts
-sudo chmod 400 /home/vagrant/.ssh/config
-sudo chmod 400 /home/vagrant/.ssh/id_rsa
-sudo chmod 400 /home/vagrant/.ssh/id_rsa.pub
+sudo chmod 700 /home/vagrant/.ssh
+sudo chmod 644 /home/vagrant/.ssh/authorized_keys
+sudo chmod 644 /home/vagrant/.ssh/known_hosts
+sudo chmod 644 /home/vagrant/.ssh/config
+sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
+sudo chmod 600 /home/vagrant/.ssh/id_rsa
 
 # root
 sudo cp -a /home/circleci/.ssh/. /root/.ssh/
