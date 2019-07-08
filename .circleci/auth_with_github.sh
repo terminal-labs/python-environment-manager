@@ -11,7 +11,7 @@ sudo touch /home/circleci/.ssh/authorized_keys
 sudo chown -R circleci /home/circleci/.ssh
 sudo chgrp -R circleci /home/circleci/.ssh
 sudo chmod 700 /home/circleci/.ssh
-sudo chmod 644 /home/circleci/.ssh/authorized_keys
+sudo chmod 600 /home/circleci/.ssh/authorized_keys
 sudo chmod 644 /home/circleci/.ssh/known_hosts
 sudo chmod 644 /home/circleci/.ssh/config
 sudo chmod 644 /home/circleci/.ssh/id_rsa.pub
@@ -26,7 +26,7 @@ sudo su -m vagrant <<'EOF'
   sudo chown -R vagrant /home/vagrant
   sudo chgrp -R vagrant /home/vagrant
   sudo chmod 700 /home/vagrant/.ssh
-  sudo chmod 644 /home/vagrant/.ssh/authorized_keys
+  sudo chmod 600 /home/vagrant/.ssh/authorized_keys
   sudo chmod 644 /home/vagrant/.ssh/known_hosts
   sudo chmod 644 /home/vagrant/.ssh/config
   sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
