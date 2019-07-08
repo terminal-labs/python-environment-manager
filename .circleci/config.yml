@@ -35,3 +35,7 @@ jobs:
           command: |
             cd /vagrant; sudo bash maintenance/general/pyenv/run_tests.sh '' vagrant vagrant
             cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh '' vagrant vagrant
+      - run:
+          name: Test dpe bootstrap
+          command: |
+            cd /vagrant/dpe; sudo bash bootstrap.sh
