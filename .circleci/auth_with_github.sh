@@ -33,5 +33,7 @@ sudo su -m vagrant <<'EOF'
   sudo chmod 600 /home/vagrant/.ssh/config
   sudo chmod 600 /home/vagrant/.ssh/id_rsa.pub
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
+  git config --global url."https://github.com/".insteadOf git@github.com:
+  git config --global url."https://".insteadOf git://  
   git clone https://github.com/saltstack/salt.git
 EOF
