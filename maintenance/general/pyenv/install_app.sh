@@ -6,6 +6,6 @@ su -m $USERNAME <<'EOF'
   if [ -d $APPNAME ] 
   then
     eval cd $APPNAME
-    pip install --user .
+    pip install .
   fi
 EOF
