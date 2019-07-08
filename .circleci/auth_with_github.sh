@@ -1,26 +1,24 @@
-USER=$(/usr/bin/id -run)
+mkdir -p /home/circleci/.ssh
+rm /home/circleci/.ssh/*
 
-mkdir -p /home/"$USER"/.ssh
-rm /home/"$USER"/.ssh/*
-
-ssh-keygen -t rsa -N "" -f /home/"$USER"/.ssh/id_rsa 
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/"$USER"/.ssh/config
-ssh-keyscan github.com >> /home/"$USER"/.ssh/known_hosts
+ssh-keygen -t rsa -N "" -f /home/circleci/.ssh/id_rsa 
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/circleci/.ssh/config
+ssh-keyscan github.com >> /home/circleci/.ssh/known_hosts
 
 # circleci
 sudo touch /home/circleci/.ssh/authorized_keys
 
-sudo chown -R "$USER" /home/"$USER"/.ssh
-sudo chgrp -R "$USER" /home/"$USER"/.ssh
-sudo chmod 700 /home/"$USER"/.ssh
-sudo chmod 644 /home/"$USER"/.ssh/authorized_keys
-sudo chmod 644 /home/"$USER"/.ssh/known_hosts
-sudo chmod 644 /home/"$USER"/.ssh/config
-sudo chmod 600 /home/"$USER"/.ssh/id_rsa
-sudo chmod 644 /home/"$USER"/.ssh/id_rsa.pub
+sudo chown -R circleci /home/circleci/.ssh
+sudo chgrp -R circleci /home/circleci/.ssh
+sudo chmod 700 /home/circleci/.ssh
+sudo chmod 644 /home/circleci/.ssh/authorized_keys
+sudo chmod 644 /home/circleci/.ssh/known_hosts
+sudo chmod 644 /home/circleci/.ssh/config
+sudo chmod 600 /home/circleci/.ssh/id_rsa
+sudo chmod 644 /home/circleci/.ssh/id_rsa.pub
 
 # vagrant
-sudo cp -a /home/"$USER"/.ssh/. /home/vagrant/.ssh/
+sudo cp -a /home/circleci/.ssh/. /home/vagrant/.ssh/
 
 sudo touch /home/vagrant/.ssh/authorized_keys
 
@@ -34,7 +32,7 @@ sudo chmod 400 /home/vagrant/.ssh/id_rsa
 sudo chmod 400 /home/vagrant/.ssh/id_rsa.pub
 
 # root
-sudo cp -a /home/"$USER"/.ssh/. /root/.ssh/
+sudo cp -a /home/circleci/.ssh/. /root/.ssh/
 
 sudo touch /root/.ssh/authorized_keys
 
