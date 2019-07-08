@@ -2,6 +2,7 @@ export LC_APPNAME=$1
 export LC_USERNAME=vagrant
 export LC_PLATFORM=$3
 su -m ${LC_USERNAME} <<'EOF'
+  printenv  
   USER=${LC_USERNAME}
   SUDO_USER=${LC_USERNAME}
   unset SUDO_UID SUDO_GID SUDO_USER
