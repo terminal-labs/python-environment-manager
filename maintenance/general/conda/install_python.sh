@@ -5,15 +5,15 @@ su ${LC_USERNAME} <<EOF
   USER=${LC_USERNAME}
   SUDO_USER=${LC_USERNAME}
   unset SUDO_UID SUDO_GID SUDO_USER
-  if [ $PLATFORM == "vagrant" ]; then
+  if [ $LC_PLATFORM == "vagrant" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
     export PATH="/home/vagrant/miniconda3/bin:$PATH"
-  elif [ $PLATFORM == "mac" ]
+  elif [ $LC_PLATFORM == "mac" ]
   then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
     bash Miniconda3-latest-MacOSX-x86_64.sh -b
-    export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
+    export PATH="/Users/${LC_USERNAME}/miniconda3/bin:$PATH"
   else
     echo "not implemented yet"
   fi
@@ -21,8 +21,8 @@ su ${LC_USERNAME} <<EOF
   conda --version
   conda update -y conda
   conda --version
-  conda create -y -n ${APPNAME} python=3.6
-  source activate ${APPNAME}
+  conda create -y -n ${LC_APPNAME} python=3.6
+  source activate ${LC_APPNAME}
 
   pip install --upgrade setuptools
   pip install --upgrade pip
