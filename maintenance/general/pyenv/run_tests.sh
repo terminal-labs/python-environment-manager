@@ -5,8 +5,8 @@ su -m $USERNAME <<'EOF'
   source maintenance/general/pyenv/env.sh
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
-    eval $APPNAME system version
-    eval $APPNAME system selftest
-    eval $APPNAME system selfcoverage
+    ${APPNAME} system version
+    ${APPNAME} system selftest
+    ${APPNAME} system selfcoverage
   fi
 EOF
