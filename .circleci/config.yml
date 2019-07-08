@@ -9,13 +9,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Auth with github
-          command: |
-            bash .circleci/auth_with_github.sh    
-      - run:
           name: Mock vagrant
           command: |
-            sudo bash .circleci/mock_vagrant.sh
+            sudo bash .circleci/mock_vagrant.sh      
+      - run:
+          name: Auth with github
+          command: |
+            bash .circleci/auth_with_github.sh
       #- run:
       #    name: Download python environment manager
       #    command: |
