@@ -4,7 +4,7 @@ export PLATFORM=$3
 su -m $USERNAME <<'EOF'
   if [ $PLATFORM == "vagrant" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
     export PATH="/home/vagrant/miniconda3/bin:$PATH"
   elif [ $PLATFORM == "mac" ]
   then
