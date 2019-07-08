@@ -33,10 +33,10 @@ sudo su vagrant <<'EOF'
   sudo chmod 600 /home/vagrant/.ssh/config
   sudo chmod 600 /home/vagrant/.ssh/id_rsa.pub
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
-  USER=vagrant
-  SUDO_USER=vagrant
-  unset SUDO_UID SUDO_GID SUDO_USER  
-  git config --global url."https://github.com/".insteadOf git@github.com:
-  git config --global url."https://".insteadOf git://  
-  git clone https://github.com/saltstack/salt.git
+  #USER=vagrant
+  #SUDO_USER=vagrant
+  #unset SUDO_UID SUDO_GID SUDO_USER  
+  #git config --global url."https://github.com/".insteadOf git@github.com:
+  #git config --global url."https://".insteadOf git://  
+  #git clone https://github.com/saltstack/salt.git
 EOF
