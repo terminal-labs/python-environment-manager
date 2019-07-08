@@ -38,4 +38,4 @@ jobs:
       - run:
           name: Test dpe bootstrap
           command: |
-            cd /vagrant/dpe; sudo bash bootstrap.sh
+            cd /vagrant/dpe; sudo bash bootstrap.sh user
