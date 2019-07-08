@@ -23,8 +23,8 @@ sudo cp -a /home/circleci/.ssh/. /home/vagrant/.ssh/
 sudo touch /home/vagrant/.ssh/authorized_keys
 
 sudo su -m vagrant <<'EOF'
-  echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/vagrant/.ssh/config
-  ssh-keyscan github.com >> /home/vagrant/.ssh/known_hosts
+  sudo echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/vagrant/.ssh/config
+  sudo ssh-keyscan github.com >> /home/vagrant/.ssh/known_hosts
 
   sudo chown -R vagrant /home/vagrant
   sudo chgrp -R vagrant /home/vagrant
