@@ -29,12 +29,10 @@ sudo su -m vagrant <<'EOF'
   sudo chmod 755 /home/vagrant
   sudo chmod 700 /home/vagrant/.ssh
   sudo chmod 600 /home/vagrant/.ssh/authorized_keys
-  sudo chmod 644 /home/vagrant/.ssh/known_hosts
-  sudo chmod 644 /home/vagrant/.ssh/config
+  sudo chmod 600 /home/vagrant/.ssh/known_hosts
+  sudo chmod 600 /home/vagrant/.ssh/config
   sudo chmod 600 /home/vagrant/.ssh/id_rsa.pub
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
-  cd /home/vagrant/.ssh
-  ls
 EOF
 
 # root
