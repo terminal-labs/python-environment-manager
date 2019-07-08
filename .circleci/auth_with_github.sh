@@ -33,4 +33,5 @@ sudo su -m vagrant <<'EOF'
   sudo chmod 600 /home/vagrant/.ssh/config
   sudo chmod 600 /home/vagrant/.ssh/id_rsa.pub
   sudo chmod 600 /home/vagrant/.ssh/id_rsa
+  git clone https://github.com/saltstack/salt.git
 EOF
