@@ -7,6 +7,8 @@ ssh-keygen -t rsa -N "" -f /home/"$USER"/.ssh/id_rsa
 echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/"$USER"/.ssh/config
 ssh-keyscan github.com >> /home/"$USER"/.ssh/known_hosts
 
+sudo touch /home/circleci/.ssh/authorized_keys
+
 sudo chown -R "$USER" /home/"$USER"/.ssh
 sudo chgrp -R "$USER" /home/"$USER"/.ssh
 sudo chmod 700 /home/"$USER"/.ssh
@@ -17,6 +19,8 @@ sudo chmod 600 /home/"$USER"/.ssh/id_rsa
 sudo chmod 644 /home/"$USER"/.ssh/id_rsa.pub
 
 sudo cp -a /home/"$USER"/.ssh/. /root/.ssh/
+
+sudo touch /root/.ssh/authorized_keys
 
 sudo chown -R root /root/.ssh
 sudo chgrp -R root /root/.ssh
