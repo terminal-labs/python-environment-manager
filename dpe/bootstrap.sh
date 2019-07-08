@@ -46,7 +46,7 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
-  LOGNAME=/home/${USERNAME}
+  LOGNAME=${USERNAME}
   printenv    
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
