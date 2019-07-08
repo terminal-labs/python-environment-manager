@@ -25,7 +25,7 @@ sudo chgrp -R vagrant /home/vagrant/.ssh
   
 sudo touch /home/vagrant/.ssh/authorized_keys
 
-sudo su -m vagrant <<'EOF'
+sudo su vagrant <<'EOF'
   sudo chmod 755 /home/vagrant
   sudo chmod 700 /home/vagrant/.ssh
   sudo chmod 600 /home/vagrant/.ssh/authorized_keys
