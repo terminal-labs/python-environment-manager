@@ -9,33 +9,37 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Mock vagrant
-          command: |
-            sudo bash .circleci/mock_vagrant.sh
+        name: Auth with github
+        command: |
+          bash .circleci/auth_with_github.sh    
+      - run:
+        name: Mock vagrant
+        command: |
+          sudo bash .circleci/mock_vagrant.sh
       #- run:
       #    name: Download python environment manager
       #    command: |
       #      sudo bash .circleci/download_python_environment_manager.sh
       - run:
-          name: Install deps
-          command: |
-            cd /vagrant; sudo bash maintenance/general/pyenv/install_apt_dependencies.sh '' vagrant vagrant
+        name: Install deps
+        command: |
+          cd /vagrant; sudo bash maintenance/general/pyenv/install_apt_dependencies.sh '' vagrant vagrant
       - run:
-          name: Install python
-          command: |
-            cd /vagrant; sudo bash maintenance/general/pyenv/install_python.sh '' vagrant vagrant
-            cd /vagrant; sudo bash maintenance/general/conda/install_python.sh '' vagrant vagrant
+        name: Install python
+        command: |
+          cd /vagrant; sudo bash maintenance/general/pyenv/install_python.sh '' vagrant vagrant
+          cd /vagrant; sudo bash maintenance/general/conda/install_python.sh '' vagrant vagrant
       - run:
-          name: Install app
-          command: |
-            cd /vagrant; sudo bash maintenance/general/pyenv/install_app.sh '' vagrant vagrant
-            cd /vagrant; sudo bash maintenance/general/conda/install_app.sh '' vagrant vagrant
+        name: Install app
+        command: |
+          cd /vagrant; sudo bash maintenance/general/pyenv/install_app.sh '' vagrant vagrant
+          cd /vagrant; sudo bash maintenance/general/conda/install_app.sh '' vagrant vagrant
       - run:
-          name: Run tests
-          command: |
-            cd /vagrant; sudo bash maintenance/general/pyenv/run_tests.sh '' vagrant vagrant
-            cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh '' vagrant vagrant
+        name: Run tests
+        command: |
+          cd /vagrant; sudo bash maintenance/general/pyenv/run_tests.sh '' vagrant vagrant
+          cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh '' vagrant vagrant
       - run:
-          name: Test dpe bootstrap
-          command: |
-            cd /vagrant/dpe; sudo bash bootstrap.sh vagrant
+        name: Test dpe bootstrap
+        command: |
+          cd /vagrant/dpe; sudo bash bootstrap.sh vagrant
