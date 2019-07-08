@@ -16,10 +16,10 @@ jobs:
           name: Auth with github
           command: |
             bash .circleci/auth_with_github.sh
-      #- run:
-      #    name: Download python environment manager
-      #    command: |
-      #      sudo bash .circleci/download_python_environment_manager.sh
+      - run:
+          name: Download python environment manager
+          command: |
+            sudo bash .circleci/download_python_environment_manager.sh
       #- run:
       #    name: Install deps
       #    command: |
