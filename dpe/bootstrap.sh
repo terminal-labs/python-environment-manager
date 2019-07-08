@@ -40,7 +40,14 @@ export DPENAME
 export USERNAME
 export NODEVERSION
 export SALTVERSION
-su -m vagrant <<'EOF'
+su -m ${USERNAME} <<'EOF'
+  unset SUDO_UID SUDO_GID SUDO_USER
+  USER=${USERNAME}
+  SUDO_USER=${USERNAME}
+  USERNAME=${USERNAME}
+  HOME=/home/${USERNAME}
+  LOGNAME=/home/${USERNAME}
+  printenv    
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
@@ -50,17 +57,9 @@ su -m vagrant <<'EOF'
   mkdir -p ${APPNAME}/bin
   cd $APPNAME
   cd downloads
-  unset SUDO_UID SUDO_GID SUDO_USER
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   cd ..
   cd repos
-  USER=vagrant
-  SUDO_USER=vagrant
-  USERNAME=vagrant
-  HOME=/home/vagrant
-  LOGNAME=/home/vagrant
-  unset SUDO_UID SUDO_GID SUDO_USER
-  printenv   
   git clone https://github.com/saltstack/salt.git  
   git clone https://github.com/nvm-sh/nvm.git  
   git clone https://github.com/lastpass/lastpass-cli.git
