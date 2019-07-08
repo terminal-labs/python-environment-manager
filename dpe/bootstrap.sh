@@ -54,6 +54,13 @@ su -m vagrant <<'EOF'
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   cd ..
   cd repos
+  USER=vagrant
+  SUDO_USER=vagrant
+  USERNAME=vagrant
+  HOME=/home/vagrant
+  LOGNAME=/home/vagrant
+  unset SUDO_UID SUDO_GID SUDO_USER
+  printenv   
   git clone https://github.com/saltstack/salt.git  
   git clone https://github.com/nvm-sh/nvm.git  
   git clone https://github.com/lastpass/lastpass-cli.git
