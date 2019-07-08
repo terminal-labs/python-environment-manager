@@ -54,10 +54,9 @@ su -m $USERNAME <<'EOF'
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   cd ..
   cd repos
-  ssh -vT git@github.com  
-  git clone git@github.com:saltstack/salt.git  
-  git clone git@github.com:nvm-sh/nvm.git  
-  git clone git@github.com:lastpass/lastpass-cli.git  
+  git clone https://github.com/saltstack/salt.git  
+  git clone https://github.com/nvm-sh/nvm.git  
+  git clone https://github.com/lastpass/lastpass-cli.git
   cd ..
   cd downloads
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
