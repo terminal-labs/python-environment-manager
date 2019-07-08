@@ -4,17 +4,6 @@ PYTHONVERSION = 3.6.3
 help:
 	@echo "usage: make [command]"
 
-# mac-pyenv:
-# 	@sudo bash maintenance/mac/pyenv/build.sh pyvirtualbox $(SUDO_USER)
-# 
-# mac-test:
-# 	@sudo bash maintenance/mac/pyenv/run_tests.sh pyvirtualbox $(SUDO_USER)
-# 
-# mac-conda:
-# 	@sudo bash maintenance/mac/conda/build.sh pyvirtualbox $(SUDO_USER)
-# 
-# mac-conda-test:
-# 	@sudo bash maintenance/mac/conda/run_tests.sh pyvirtualbox $(SUDO_USER)
 # 
 # test:
 # 	@sudo bash maintenance/vagrant/pyenv/run_tests.sh pyvirtualbox $(SUDO_USER)
