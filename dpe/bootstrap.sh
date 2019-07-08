@@ -91,3 +91,5 @@ su -m $USERNAME <<'EOF'
   make
   cd ../..
 EOF
+chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
+chmod -R 777 /home/${USERNAME}/${DPENAME}
