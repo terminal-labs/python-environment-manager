@@ -8,11 +8,13 @@ su -m $USERNAME <<'EOF'
   if [ $PLATFORM == "vagrant" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
+    sudo chmod 777 -R /home/vagrant/miniconda3
     export PATH="/home/vagrant/miniconda3/bin:$PATH"
   elif [ $PLATFORM == "mac" ]
   then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
     bash Miniconda3-latest-MacOSX-x86_64.sh -b
+    sudo chmod 777 -R /Users/${USERNAME}/miniconda3
     export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
   else
     echo "not implemented yet"
