@@ -1,9 +1,9 @@
-export APPNAME=$1
-export USERNAME=$2
-export PLATFORM=$3
-su ${USERNAME} <<EOF
-  USER=${USERNAME}
-  SUDO_USER=${USERNAME}
+export LC_APPNAME=$1
+export LC_USERNAME=$2
+export LC_PLATFORM=$3
+su ${LC_USERNAME} <<EOF
+  USER=${LC_USERNAME}
+  SUDO_USER=${LC_USERNAME}
   unset SUDO_UID SUDO_GID SUDO_USER
   if [ $PLATFORM == "vagrant" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
