@@ -22,17 +22,19 @@ sudo cp -a /home/circleci/.ssh/. /home/vagrant/.ssh/
 
 sudo touch /home/vagrant/.ssh/authorized_keys
 
-echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/vagrant/.ssh/config
-ssh-keyscan github.com >> /home/vagrant/.ssh/known_hosts
+sudo su -m vagrant <<'EOF'
+  echo -e "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > /home/vagrant/.ssh/config
+  ssh-keyscan github.com >> /home/vagrant/.ssh/known_hosts
 
-sudo chown -R vagrant /home/vagrant
-sudo chgrp -R vagrant /home/vagrant
-sudo chmod 700 /home/vagrant/.ssh
-sudo chmod 644 /home/vagrant/.ssh/authorized_keys
-sudo chmod 644 /home/vagrant/.ssh/known_hosts
-sudo chmod 644 /home/vagrant/.ssh/config
-sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
-sudo chmod 600 /home/vagrant/.ssh/id_rsa
+  sudo chown -R vagrant /home/vagrant
+  sudo chgrp -R vagrant /home/vagrant
+  sudo chmod 700 /home/vagrant/.ssh
+  sudo chmod 644 /home/vagrant/.ssh/authorized_keys
+  sudo chmod 644 /home/vagrant/.ssh/known_hosts
+  sudo chmod 644 /home/vagrant/.ssh/config
+  sudo chmod 644 /home/vagrant/.ssh/id_rsa.pub
+  sudo chmod 600 /home/vagrant/.ssh/id_rsa
+EOF
 
 # root
 sudo cp -a /home/circleci/.ssh/. /root/.ssh/
