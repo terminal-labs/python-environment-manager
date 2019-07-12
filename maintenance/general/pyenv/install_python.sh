@@ -7,6 +7,12 @@ su -m $USERNAME <<'EOF'
     mkdir -p /home/vagrant/pyenv/envs
     mkdir -p /home/vagrant/pyenv/envs/${APPNAME}
     export PYENV_ROOT="/home/vagrant/pyenv/envs/${APPNAME}/.pyenv"
+  elif [ $PLATFORM == "linux" ]
+  then
+    mkdir -p ~/pyenv
+    mkdir -p ~/pyenv/envs
+    mkdir -p ~/pyenv/envs/${APPNAME}
+    export PYENV_ROOT=/home/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
   elif [ $PLATFORM == "mac" ]
   then
     mkdir -p ~/pyenv
