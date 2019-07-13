@@ -5,7 +5,7 @@ su -m $USERNAME <<'EOF'
   source maintenance/general/pyenv/env.sh
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
-    eval cd $APPNAME
+    cd $APPNAME
     pip install -e .
   fi
 EOF
