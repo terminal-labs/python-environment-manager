@@ -5,7 +5,7 @@ su -m $USERNAME <<'EOF'
   source maintenance/general/conda/env.sh
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
-    cd ${APPNAME}
+    cd $APPNAME
     pip install -e .
   fi
 EOF
