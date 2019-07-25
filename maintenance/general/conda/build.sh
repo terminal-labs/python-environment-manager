@@ -10,6 +10,11 @@ su -m $USERNAME <<'EOF'
     eval "vagrant ssh --command 'cd /vagrant; sudo bash maintenance/general/conda/install_pip_dependencies.sh $APPNAME $USERNAME $PLATFORM'"
     eval "vagrant ssh --command 'cd /vagrant; sudo bash maintenance/general/conda/install_app.sh $APPNAME $USERNAME $PLATFORM'"
     eval "vagrant ssh --command 'cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh $APPNAME $USERNAME $PLATFORM'"
+  elif [ $PLATFORM == "linux" ]
+  then
+    sudo bash maintenance/general/conda/install_python.sh $APPNAME $USERNAME $PLATFORM
+    sudo bash maintenance/general/conda/install_app.sh $APPNAME $USERNAME $PLATFORM
+    sudo bash maintenance/general/conda/run_tests.sh $APPNAME $USERNAME $PLATFORM
   elif [ $PLATFORM == "mac" ]
   then
     sudo bash maintenance/general/conda/install_python.sh $APPNAME $USERNAME $PLATFORM

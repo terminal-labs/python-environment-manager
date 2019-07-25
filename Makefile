@@ -4,10 +4,6 @@ PYTHONVERSION = 3.6.3
 help:
 	@echo "usage: make [command]"
 
-# 
-# test:
-# 	@sudo bash maintenance/vagrant/pyenv/run_tests.sh pyvirtualbox $(SUDO_USER)
-
 download_python_environment_manager:
 	@if test ! -d "maintenance";then \
 		sudo rm -rf maintenance; \
@@ -27,9 +23,12 @@ vagrant-conda: download_python_environment_manager
 
 mac-pyenv: download_python_environment_manager
 	@sudo bash maintenance/general/pyenv/build.sh $(APPNAME) $(SUDO_USER) mac
-	
+
 mac-conda: download_python_environment_manager
 	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) mac
 
 linux-pyenv: download_python_environment_manager
 	@sudo bash maintenance/general/pyenv/build.sh $(APPNAME) $(SUDO_USER) linux
+
+linux-conda: download_python_environment_manager
+	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) linux
