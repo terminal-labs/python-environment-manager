@@ -1,4 +1,4 @@
-APPNAME = pyvirtualbox
+APPNAME = pythonenvironmentmanager
 PYTHONVERSION = 3.6.3
 
 help:
