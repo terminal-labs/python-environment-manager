@@ -15,9 +15,9 @@ if [ $PLATFORM == "linux" ]; then
 elif [ $PLATFORM == "mac" ]
 then
   echo '
-  export APPNAME=${APPNAME}
-  export USERNAME=${USERNAME}
-  export PLATFROM=${PLATFORM}
+  export APPNAME=$APPNAME
+  export USERNAME=$USERNAME
+  export PLATFROM=$PLATFORM
   export PYENV_ROOT=/Users/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
   export PATH="/Users$/{USERNAME}/.local/bin:${PATH}"
   export PATH="${PYENV_ROOT}/bin:${PATH}"
