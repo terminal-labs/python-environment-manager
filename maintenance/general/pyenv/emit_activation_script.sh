@@ -4,9 +4,9 @@ export PLATFORM=$3
 su -m $USERNAME <<'EOF'
 if [ $PLATFORM == "linux" ]; then
   echo '
-  export APPNAME=utilitiespackage
-  export USERNAME=user
-  export PLATFROM=linux
+  export APPNAME=${APPNAME}
+  export USERNAME=${USERNAME}
+  export PLATFROM=${PLATFORM}
   export PYENV_ROOT=/home/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
   export PATH="/home/${USERNAME}/.local/bin:${PATH}"
   export PATH="${PYENV_ROOT}/bin:${PATH}"
@@ -15,9 +15,9 @@ if [ $PLATFORM == "linux" ]; then
 elif [ $PLATFORM == "mac" ]
 then
   echo '
-  export APPNAME=utilitiespackage
-  export USERNAME=user
-  export PLATFROM=linux
+  export APPNAME=${APPNAME}
+  export USERNAME=${USERNAME}
+  export PLATFROM=${PLATFORM}
   export PYENV_ROOT=/Users/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
   export PATH="/Users$/{USERNAME}/.local/bin:${PATH}"
   export PATH="${PYENV_ROOT}/bin:${PATH}"
