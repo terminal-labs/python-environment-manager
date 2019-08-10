@@ -1,4 +1,4 @@
-export APPNAME=utilitiespackage
+export APPNAME=-appname-
 export USERNAME=mike
 export PLATFROM=mac
 export PYENV_ROOT=/Users/$USERNAME/pyenv/envs/$APPNAME/.pyenv
