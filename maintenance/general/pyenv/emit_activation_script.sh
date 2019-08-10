@@ -10,7 +10,13 @@ su -m $USERNAME << 'EOF'
     sed "s/-appname-/$APPNAME/g" activate.sh > activate.tmp
     rm activate.sh
     mv activate.tmp activate.sh
-  else
+    sed "s/-username-/$USERNAME/g" activate.sh > activate.tmp
+    rm activate.sh
+    mv activate.tmp activate.sh  
+    sed "s/-platform-/$PLATFORM/g" activate.sh > activate.tmp
+    rm activate.sh
+    mv activate.tmp activate.sh
+   else
     echo "not implemented yet"
   fi
 EOF
