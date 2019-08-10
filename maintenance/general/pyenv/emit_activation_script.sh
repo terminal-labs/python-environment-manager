@@ -7,6 +7,9 @@ su -m $USERNAME << 'EOF'
   elif [ $PLATFORM == "mac" ]
   then
     cp maintenance/general/pyenv/mac_activate.sh activate.sh
+    sed "s/-appname-/$APPNAME/g" activate.sh > activate.tmp
+    rm activate.sh
+    mv activate.tmp activate.sh
   else
     echo "not implemented yet"
   fi
