@@ -2,6 +2,8 @@ if [ $PLATFORM == "vagrant" ]; then
   export PATH="/home/vagrant/miniconda3/bin:$PATH"
   export PATH="/home/vagrant/.local/bin:$PATH"
 elif [ $PLATFORM == "linux" ]
+  export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
+  export PATH="/home/${USERNAME}/.local/bin:$PATH"
 then
   export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
 elif [ $PLATFORM == "mac" ]
