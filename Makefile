@@ -27,6 +27,7 @@ mac-pyenv: download_python_environment_manager
 
 mac-conda: download_python_environment_manager
 	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) mac
+	@sudo bash maintenance/general/conda/emit_activation_script.sh $(APPNAME) $(SUDO_USER) mac
 
 linux-pyenv: download_python_environment_manager
 	@sudo bash maintenance/general/pyenv/build.sh $(APPNAME) $(SUDO_USER) linux
@@ -34,3 +35,4 @@ linux-pyenv: download_python_environment_manager
 
 linux-conda: download_python_environment_manager
 	@sudo bash maintenance/general/conda/build.sh $(APPNAME) $(SUDO_USER) linux
+	@sudo bash maintenance/general/conda/emit_activation_script.sh $(APPNAME) $(SUDO_USER) linux
