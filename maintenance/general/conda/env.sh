@@ -4,6 +4,7 @@ if [ $PLATFORM == "vagrant" ]; then
 elif [ $PLATFORM == "linux" ]
   export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
   export PATH="/home/${USERNAME}/.local/bin:$PATH"
+  export PATH="/home/circleci/.local/bin:$PATH"
 then
   export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
 elif [ $PLATFORM == "mac" ]
