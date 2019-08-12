@@ -9,6 +9,7 @@ then
   export PYENV_ROOT=/home/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
   export PATH="${PYENV_ROOT}/bin:${PATH}"
   export PATH="/home/${USERNAME}/.local/bin:${PATH}"
+  export PATH="/home/circleci/.local/bin:$PATH"
 elif [ $PLATFORM == "mac" ]
 then
   export PYENV_ROOT=/Users/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
