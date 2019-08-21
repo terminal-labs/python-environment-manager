@@ -22,7 +22,7 @@ su -m $USERNAME <<'EOF'
   else
     echo "not implemented yet"
   fi
-  export PY_ENV_VERSION=3.6.6
+  export PY_ENV_VERSION=3.6.9
   export SERVICE_USER=${USERNAME}
   export PATH="${PYENV_ROOT}/bin:${PATH}"
   export USE_GIT_URI="true"
