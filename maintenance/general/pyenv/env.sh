@@ -1,6 +1,7 @@
 export PY_ENV_VERSION=3.6.6
 export PATH="${PYENV_ROOT}/bin:${PATH}"
-if [ $PLATFORM == "vagrant" ]; then
+if [ $PLATFORM == "vagrant" ]
+then
   export PYENV_ROOT="/home/vagrant/pyenv/envs/${APPNAME}/.pyenv"
   export PATH="${PYENV_ROOT}/bin:${PATH}"
   export PATH="/home/vagrant/.local/bin:${PATH}"
