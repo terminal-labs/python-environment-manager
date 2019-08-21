@@ -1,4 +1,4 @@
-export PY_ENV_VERSION=3.6.6
+export PY_ENV_VERSION=3.6.9
 export PATH="${PYENV_ROOT}/bin:${PATH}"
 if [ $PLATFORM == "vagrant" ]
 then
