@@ -31,7 +31,7 @@ su -m ${USERNAME} <<'EOF'
   conda --version
   conda update -y conda
   conda --version
-  conda create -y -n ${APPNAME} python=3.6
+  conda create -y -n ${APPNAME} python=3.6.9
   source activate ${APPNAME}
 
   pip install --upgrade setuptools
