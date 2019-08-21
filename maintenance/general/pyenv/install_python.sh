@@ -19,11 +19,11 @@ su -m $USERNAME <<'EOF'
     mkdir -p ~/pyenv/envs
     mkdir -p ~/pyenv/envs/${APPNAME}
     export PYENV_ROOT=/Users/${USERNAME}/pyenv/envs/${APPNAME}/.pyenv
+    export CFLAGS="-I$(brew --prefix openssl)/include"
+    export LDFLAGS="-L$(brew --prefix openssl)/lib"
   else
     echo "not implemented yet"
   fi
-  export CFLAGS="-I$(brew --prefix openssl)/include" \
-  export LDFLAGS="-L$(brew --prefix openssl)/lib" \
   export PY_ENV_VERSION=3.6.9
   export SERVICE_USER=${USERNAME}
   export PATH="${PYENV_ROOT}/bin:${PATH}"
