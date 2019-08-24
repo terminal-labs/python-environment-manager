@@ -70,7 +70,7 @@ su -m ${USERNAME} <<'EOF'
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   conda --version
   conda init bash
-  . ~/.bashrc
+  . /home/${USERNAME}/.bashrc
   conda update -y -n base -c defaults conda
   conda --version
   conda update -y conda
