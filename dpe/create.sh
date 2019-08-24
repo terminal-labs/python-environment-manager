@@ -47,7 +47,7 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}
-  printenv    
+  printenv
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
@@ -60,8 +60,8 @@ su -m ${USERNAME} <<'EOF'
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   cd ..
   cd repos
-  git clone https://github.com/saltstack/salt.git  
-  git clone https://github.com/nvm-sh/nvm.git  
+  git clone https://github.com/saltstack/salt.git
+  git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
   cd ..
   cd downloads
@@ -100,3 +100,17 @@ su -m ${USERNAME} <<'EOF'
 EOF
 chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
 chmod -R 777 /home/${USERNAME}/${DPENAME}
+su -m ${USERNAME} <<'EOF'
+  export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
+  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+  export USE_GIT_URI="true"
+
+  source /home/${USERNAME}/.bashrc
+  source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
+  source activate ${APPNAME}
+  conda --version
+  python --version
+  salt --version
+  nvm --version
+  node --version
+EOF
