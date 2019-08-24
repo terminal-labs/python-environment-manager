@@ -4,6 +4,13 @@ DPENAME=dpe
 USERNAME=$1
 NODEVERSION=10.15.0
 SALTVERSION=v2018.3.3
+export APPNAME
+export PYTHONVERSION
+export DPENAME
+export USERNAME
+export NODEVERSION
+export SALTVERSION
+
 
 if [  -n "$(uname -a | grep Ubuntu)" ]; then
     echo "running in ubuntu"
@@ -34,12 +41,7 @@ apt -y install \
   ca-certificates \
   xclip \
 
-export APPNAME
-export PYTHONVERSION
-export DPENAME
-export USERNAME
-export NODEVERSION
-export SALTVERSION
+
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
@@ -47,7 +49,7 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}
-  printenv
+  
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
@@ -55,6 +57,7 @@ su -m ${USERNAME} <<'EOF'
   mkdir -p ${APPNAME}/downloads
   mkdir -p ${APPNAME}/repos
   mkdir -p ${APPNAME}/bin
+  
   cd $APPNAME
   cd downloads
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -64,6 +67,7 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
   cd ..
+  
   cd downloads
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
   rm Miniconda3-latest-*
@@ -80,11 +84,12 @@ su -m ${USERNAME} <<'EOF'
   pip install --upgrade pip
   pip install --upgrade setuptools
   cd ..
+
   cd repos/salt
   git checkout ${SALTVERSION}
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
-  salt --version
+
   cd ../..
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   cd repos/nvm
@@ -98,19 +103,25 @@ su -m ${USERNAME} <<'EOF'
   make
   cd ../..
 EOF
+
 chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
 chmod -R 777 /home/${USERNAME}/${DPENAME}
+
 su -m ${USERNAME} <<'EOF'
-  export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
+  
+  export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   export USE_GIT_URI="true"
 
   source /home/${USERNAME}/.bashrc
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
+  
   conda --version
   python --version
   salt --version
   nvm --version
   node --version
+  lpass --version
 EOF
