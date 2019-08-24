@@ -69,6 +69,7 @@ su -m ${USERNAME} <<'EOF'
   rm Miniconda3-latest-*
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   conda --version
+  conda init bash
   conda update -y -n base -c defaults conda
   conda --version
   conda update -y conda
