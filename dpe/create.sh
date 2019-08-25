@@ -87,7 +87,7 @@ su -m ${USERNAME} <<'EOF'
   pip install --upgrade pip
   pip install --upgrade setuptools
   
-  pip install j2cli  
+  pip install utilities-package
   cd ..
 
   cd repos/salt
