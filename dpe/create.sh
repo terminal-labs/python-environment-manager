@@ -86,6 +86,8 @@ su -m ${USERNAME} <<'EOF'
   source activate $APPNAME
   pip install --upgrade pip
   pip install --upgrade setuptools
+  
+  pip install j2cli  
   cd ..
 
   cd repos/salt
