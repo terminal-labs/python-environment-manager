@@ -4,13 +4,14 @@ DPENAME=dpe
 USERNAME=$1
 NODEVERSION=10.15.0
 SALTVERSION=v2018.3.3
+USER=USERNAME
 export APPNAME
 export PYTHONVERSION
 export DPENAME
 export USERNAME
 export NODEVERSION
 export SALTVERSION
-
+export USER
 
 if [  -n "$(uname -a | grep Ubuntu)" ]; then
     echo "running in ubuntu"
