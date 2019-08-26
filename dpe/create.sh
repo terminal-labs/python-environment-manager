@@ -95,8 +95,12 @@ su -m ${USERNAME} <<'EOF'
   git checkout ${SALTVERSION}
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
-
   cd ../..
+  
+  cd repos/rambo
+  pip install -e .
+  cd ../..
+  
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   cd repos/nvm
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
