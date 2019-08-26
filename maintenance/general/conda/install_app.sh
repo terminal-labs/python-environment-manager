@@ -6,6 +6,6 @@ su -m $USERNAME <<'EOF'
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
     cd $APPNAME
-    pip install -e .
+    pip install -e . --user
   fi
 EOF
