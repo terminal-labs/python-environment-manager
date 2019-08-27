@@ -109,6 +109,7 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
   
   cd scripts
+  rm *
   wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py
   wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/messaging.py
   cd ..
