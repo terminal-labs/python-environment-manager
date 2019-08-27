@@ -177,6 +177,7 @@ su -m ${USERNAME} <<'EOF'
   source activate ${APPNAME}
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py dpeseemsgood
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py getversion
   
   conda --version
   python --version
@@ -191,5 +192,6 @@ su -m ${USERNAME} <<'EOF'
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
   
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py testsalt
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
