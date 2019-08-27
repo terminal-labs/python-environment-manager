@@ -176,7 +176,7 @@ su -m ${USERNAME} <<'EOF'
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
   
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py hello
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py dpeseemsgood
   
   conda --version
   python --version
