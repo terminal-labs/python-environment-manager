@@ -8,7 +8,7 @@ def cli():
 def hello():
     print("####################################################################")
     print("####################################################################")
-    print("dpe seems good. advanced python script are now available")
+    print("dpe seems good. advanced python scripts are now available")
     print("####################################################################")
     print("####################################################################")
 
