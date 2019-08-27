@@ -109,7 +109,8 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
   
   cd scripts
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py  
+  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py
+  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/messaging.py
   cd ..
   
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
@@ -174,6 +175,8 @@ su -m ${USERNAME} <<'EOF'
   source /home/${USERNAME}/.bashrc
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
+  
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py hello
   
   conda --version
   python --version
