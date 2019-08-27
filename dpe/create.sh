@@ -177,5 +177,7 @@ su -m ${USERNAME} <<'EOF'
   lpass --version
   terraform -version
   
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
+  
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
