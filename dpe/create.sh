@@ -192,6 +192,7 @@ su -m ${USERNAME} <<'EOF'
   inflation version
   utilitiespackage system version
   
+  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py keyloader
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py testsalt
