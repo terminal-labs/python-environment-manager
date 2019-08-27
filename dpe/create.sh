@@ -71,6 +71,7 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
   git clone https://github.com/terminal-labs/rambo.git --recursive
+  git clone https://github.com/terminal-labs/inflation.git --recursiv
   cd ..
   
   cd downloads
@@ -99,6 +100,10 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
   
   cd repos/rambo
+  pip install -e .
+  cd ../..
+  
+  cd repos/inflation
   pip install -e .
   cd ../..
   
