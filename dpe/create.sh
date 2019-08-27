@@ -59,6 +59,7 @@ su -m ${USERNAME} <<'EOF'
   mkdir -p ${APPNAME}
   mkdir -p ${APPNAME}/downloads
   mkdir -p ${APPNAME}/repos
+  mkdir -p ${APPNAME}/scripts 
   mkdir -p ${APPNAME}/bin
   
   cd $APPNAME
@@ -100,6 +101,10 @@ su -m ${USERNAME} <<'EOF'
   cd repos/rambo
   pip install -e .
   cd ../..
+  
+  cd scripts
+  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py  
+  cd ..
   
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   cd repos/nvm
