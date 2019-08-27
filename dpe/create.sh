@@ -177,11 +177,14 @@ su -m ${USERNAME} <<'EOF'
   
   conda --version
   python --version
-  salt --version
   nvm --version
   node --version
   lpass --version
+  salt --version
   terraform -version
+  
+  rambo --version
+  inflation version
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
   
