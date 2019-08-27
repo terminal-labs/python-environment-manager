@@ -190,6 +190,7 @@ su -m ${USERNAME} <<'EOF'
   
   rambo --version
   inflation version
+  utilitiespackage system version
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
   
