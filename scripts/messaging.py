@@ -5,7 +5,7 @@ def cli():
     pass
 
 @cli.command()
-def hello():
+def dpeseemsgood():
     print("####################################################################")
     print("####################################################################")
     print("dpe seems good. advanced python scripts are now available")
