@@ -22,9 +22,11 @@ tmp
 .tmp
 manifest
 activate.sh
+create.sh
 *keys.sh
 .Trash*
 *.zip
+inflation-master
 *nodes
 *nohup.out
 *workingdirs
