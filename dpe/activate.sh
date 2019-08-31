@@ -31,9 +31,13 @@ source activate ${APPNAME}
 
 conda --version
 python --version
-rambo --version
-salt --version
-terraform -version
 nvm --version
 node --version
 lpass --version
+salt --version
+terraform -version
+vagrant --version
+
+rambo --version
+inflation version
+utilitiespackage system version
