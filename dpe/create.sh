@@ -44,9 +44,6 @@ apt -y install \
   pkg-config \
   ca-certificates \
   xclip \
-
-apt -y install \
-  vagrant \
   
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
@@ -68,6 +65,7 @@ su -m ${USERNAME} <<'EOF'
   cd $APPNAME
   cd downloads
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
   cd ..
   cd repos
   git clone https://github.com/saltstack/salt.git
@@ -75,6 +73,11 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/lastpass/lastpass-cli.git
   git clone https://github.com/terminal-labs/rambo.git --recursive
   git clone https://github.com/terminal-labs/inflation.git --recursiv
+  cd ..
+  
+  cd downloads
+  sudo dpkg -i vagrant_2.2.5_x86_64.deb
+  vagrant plugin install vagrant-digitalocean
   cd ..
   
   cd downloads
