@@ -193,6 +193,7 @@ su -m ${USERNAME} <<'EOF'
   lpass --version
   salt --version
   terraform -version
+  vagrant --version
   
   rambo --version
   inflation version
