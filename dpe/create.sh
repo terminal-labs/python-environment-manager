@@ -34,6 +34,7 @@ apt -y install \
   bash-completion \
   build-essential \
   cmake \
+  make \
   libcurl4  \
   libcurl4-openssl-dev  \
   libssl-dev  \
@@ -44,7 +45,9 @@ apt -y install \
   ca-certificates \
   xclip \
 
-
+apt -y install \
+  vagrant \
+  
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
