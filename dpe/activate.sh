@@ -29,6 +29,7 @@ source /home/${USERNAME}/.bashrc
 source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
 source activate ${APPNAME}
 
+echo "dpe v2019.8.0"
 conda --version
 python --version
 nvm --version
