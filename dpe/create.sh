@@ -186,6 +186,7 @@ su -m ${USERNAME} <<'EOF'
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py dpeseemsgood
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py getversion
   
+  echo "dpe v2019.8.0"
   conda --version
   python --version
   nvm --version
