@@ -110,7 +110,6 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
   
   cd repos/inflation
-  git checkout clickwrapper
   pip install -e .
   cd ../..
   
