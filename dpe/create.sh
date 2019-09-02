@@ -97,6 +97,7 @@ su -m ${USERNAME} <<'EOF'
   pip install --upgrade setuptools
   
   pip install utilities-package
+  pip install PyYAML
   cd ..
 
   cd repos/salt
