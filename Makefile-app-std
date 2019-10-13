@@ -1,0 +1,5 @@
+help:
+        @echo "usage: make [command]"
+
+vagrant:
+        @vagrant up
