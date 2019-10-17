@@ -15,10 +15,7 @@ extra
 *egg-info
 *.pyc
 *.pex
-*.env.sh
 
-keys
-auth
 maintenance
 run
 tmp
@@ -29,7 +26,6 @@ create.sh
 *keys.sh
 .Trash*
 *.zip
-inflation-master
 *nodes
 *nohup.out
 *workingdirs
