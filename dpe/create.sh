@@ -97,7 +97,6 @@ su -m ${USERNAME} <<'EOF'
   pip install --upgrade pip
   pip install --upgrade setuptools
   
-  pip install utilities-package
   pip install PyYAML
   cd ..
 
@@ -108,12 +107,16 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
   
   cd repos/rambo
-  pip install -e .
+  pip install .
   cd ../..
   
-  cd repos/inflation
-  pip install -e .
-  cd ../..
+  cd repos/inflation/inflation
+  pip install .
+  cd ../../..
+  
+  cd repos/utilities-package/utilitiespackage
+  pip install .
+  cd ../../..
   
   cd scripts
   rm *
