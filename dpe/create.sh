@@ -70,7 +70,6 @@ su -m ${USERNAME} <<'EOF'
   wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   cd ..
   cd repos
-  ## git clone https://github.com/saltstack/salt.git
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
   git clone https://github.com/terminal-labs/utilities-package.git --recursive 
