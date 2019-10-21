@@ -67,6 +67,7 @@ su -m ${USERNAME} <<'EOF'
   cd downloads
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+  wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   cd ..
   cd repos
   git clone https://github.com/saltstack/salt.git
@@ -103,11 +104,12 @@ su -m ${USERNAME} <<'EOF'
   pip install PyYAML
   cd ..
 
-  cd repos/salt
-  git checkout ${SALTVERSION}
+  cd downloads
+  unzip 2018.3.3.zip
+  cd 2018.3.3/salt
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
-  cd ../..
+  cd ../../..
   
   cd repos/rambo
   pip install .
