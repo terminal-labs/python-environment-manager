@@ -71,7 +71,9 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/saltstack/salt.git
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
-  git clone https://github.com/terminal-labs/utilities-package.git --recursive  
+  git clone https://github.com/terminal-labs/utilities-package.git --recursive 
+  git clone git@github.com:terminal-labs/utilities-package_ml-metapackage.git --recursive
+  git clone git@github.com:terminal-labs/utilities-package_cli-metapackage.git --recursive
   git clone https://github.com/terminal-labs/rambo.git --recursive
   git clone https://github.com/terminal-labs/inflation.git --recursiv    
   cd ..
@@ -117,7 +119,15 @@ su -m ${USERNAME} <<'EOF'
   cd repos/utilities-package/utilitiespackage
   pip install .
   cd ../../..
+
+  cd repos/utilities-package_ml-metapackage/utilitiespackagemlmetapackage
+  pip install .
+  cd ../../..
   
+  cd repos/utilities-package_cli-metapackage/utilitiespackageclimetapackage
+  pip install .
+  cd ../../..
+
   cd scripts
   rm *
   wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py
