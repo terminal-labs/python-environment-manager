@@ -35,6 +35,7 @@ apt -y install \
   build-essential \
   cmake \
   make \
+  libpq-dev \
   libcurl4  \
   libcurl4-openssl-dev  \
   libssl-dev  \
