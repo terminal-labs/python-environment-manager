@@ -6,6 +6,7 @@ su -m $USERNAME <<'EOF'
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
     cd $APPNAME    
-    pip install cookiecutter  
+    pip install cookiecutter
+    cookiecutter /vagrant --no-input
   fi
 EOF
