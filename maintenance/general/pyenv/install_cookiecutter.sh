@@ -7,6 +7,6 @@ su -m $USERNAME <<'EOF'
   then
     cd $APPNAME
     pip install cookiecutter
-    cookiecutter /vagrant/cookiecutter_python --no-input
+    cookiecutter /vagrant --no-input
   fi
 EOF
