@@ -30,7 +30,6 @@ su -m ${USERNAME} <<'EOF'
   fi
   rm Miniconda3-latest*
   conda init bash
-  source maintenance/general/conda/env.sh
   source /home/${USERNAME}/.bashrc
   conda --version
   conda update -y conda
