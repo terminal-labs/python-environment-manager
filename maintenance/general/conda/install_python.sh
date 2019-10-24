@@ -7,13 +7,14 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   unset SUDO_UID SUDO_GID SUDO_USER
   if [ $PLATFORM == "vagrant" ]; then
-    HOME=/home/${USERNAME}
+    touch home/${USERNAME}/.bashrc
     LOGNAME=/home/${USERNAME}
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
     export PATH="/home/vagrant/miniconda3/bin:$PATH"
   elif [ $PLATFORM == "linux" ]
   then
+    touch home/${USERNAME}/.bashrc
     HOME=/home/${USERNAME}
     LOGNAME=/home/${USERNAME}
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
