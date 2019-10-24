@@ -22,7 +22,6 @@ su -m ${USERNAME} <<'EOF'
   else
     echo "not implemented yet"
   fi
-  conda init bash
   source maintenance/general/conda/env.sh
   source /home/${USERNAME}/.bashrc
   conda activate ${APPNAME}
