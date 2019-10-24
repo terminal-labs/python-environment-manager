@@ -19,5 +19,5 @@ then
 else
   echo "not implemented yet"
 fi
-conda activate init
+conda init bash
 conda activate ${APPNAME}
