@@ -6,7 +6,6 @@ su -m $USERNAME <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   unset SUDO_UID SUDO_GID SUDO_USER
-  HOME=/home/${USERNAME}
   source maintenance/general/conda/env.sh
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
