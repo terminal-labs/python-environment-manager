@@ -36,7 +36,7 @@ su -m ${USERNAME} <<'EOF'
   conda update -y conda
   conda --version
   conda create -y -n ${APPNAME} python=3.6.9
-  source activate ${APPNAME}
+  conda activate ${APPNAME}
 
   pip install --upgrade setuptools
   pip install --upgrade pip
