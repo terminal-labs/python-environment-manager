@@ -7,7 +7,8 @@ su -m $USERNAME <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/vagrant
   unset SUDO_UID SUDO_GID SUDO_USER   
-  source maintenance/general/conda/env.sh  if [ -d $APPNAME ] && [ ! -z $APPNAME ];
+  source maintenance/general/conda/env.sh
+  if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
     ${APPNAME} system version
     ${APPNAME} system selftest
