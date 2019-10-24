@@ -1,5 +1,5 @@
-touch /home/circleci/.cookiecutter_replay
-chmod 777 /home/circleci/.cookiecutter_replay
+mkdir -p /home/circleci/.cookiecutter_replay
+chmod -R 777 /home/circleci/.cookiecutter_replay
   
 export APPNAME=$1
 export USERNAME=$2
