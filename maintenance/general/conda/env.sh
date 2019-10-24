@@ -15,7 +15,7 @@ elif [ $PLATFORM == "mac" ]
 then
   source /Users/${USERNAME}/.bash_profile
   export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
-  source /home/${USERNAME}/.bashrc
+  source /Users/${USERNAME}/.bash_profile
   conda activate ${APPNAME}
 else
   echo "not implemented yet"
