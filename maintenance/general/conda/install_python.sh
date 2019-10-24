@@ -28,6 +28,7 @@ su -m ${USERNAME} <<'EOF'
     echo "not implemented yet"
   fi
   rm Miniconda3-latest*
+  conda init bash
   conda --version
   conda update -y conda
   conda --version
