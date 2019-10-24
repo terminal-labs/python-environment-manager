@@ -30,9 +30,6 @@ su -m ${USERNAME} <<'EOF'
   fi
   rm Miniconda3-latest*
   conda init bash
-  export APPNAME=${APPNAME}
-  export USERNAME=${USERNAME}
-  export PLATFORM=${PLATFORM}
   source maintenance/general/conda/env.sh
   conda --version
   conda update -y conda
