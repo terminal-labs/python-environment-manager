@@ -16,7 +16,6 @@ apt install -y -f
 apt install -y --quiet ca-certificates
 
 apt install -y build-essential
-apt install -y linux-headers-$(uname -r)
 
 apt install -y \
     libssl-dev \
