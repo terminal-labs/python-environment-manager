@@ -16,5 +16,5 @@ then
 else
   echo "not implemented yet"
 fi
-
+HOME=/home/vagrant
 conda activate ${APPNAME}
