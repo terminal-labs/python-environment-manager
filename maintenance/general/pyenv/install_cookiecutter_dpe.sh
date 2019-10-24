@@ -5,5 +5,5 @@ su -m $USERNAME <<'EOF'
   chown -R vagrant /vagrant
   chmod -R 777 /vagrant 
   cd /vagrant/cookiecutterapp
-  make createdpe vagrant
+  make createdpe
 EOF
