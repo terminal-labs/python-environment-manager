@@ -9,6 +9,7 @@ then
   export PATH="/home/circleci/.local/bin:$PATH"
 elif [ $PLATFORM == "mac" ]
 then
+  source /Users/${USERNAME}/.bash_profile  
   export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
 else
   echo "not implemented yet"
