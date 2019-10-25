@@ -3,7 +3,7 @@ help:
 
 download_python_environment_manager:
 	@if test ! -d ".tmp/python-environment-manager-master";then \
-	        sudo apt install -y wget unzip; \
+		sudo apt install -y wget unzip; \
 		sudo rm -rf maintenance; \
 		sudo su -m $(SUDO_USER) -c "mkdir -p .tmp"; \
 		sudo su -m $(SUDO_USER) -c "cd .tmp; wget https://github.com/terminal-labs/python-environment-manager/archive/master.zip"; \
@@ -12,5 +12,6 @@ download_python_environment_manager:
 		sudo chown $(SUDO_USER) create.sh; \
 	fi
 
-vagrant:
-        @vagrant up
+vagrant-bootstrap:
+	@vagrant up
+	@vagrant ssh --command 'cd /vagrant; sudo bash bootstrap.sh'
