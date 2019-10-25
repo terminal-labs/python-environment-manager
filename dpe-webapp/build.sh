@@ -3,7 +3,6 @@ export USERNAME=$2
 export PLATFORM=$3
 su -m $USERNAME <<'EOF'
   if [ $PLATFORM == "vagrant" ]; then
-    export USERNAME=vagrant
     eval "vagrant up"
     eval vagrant ssh --command 'cd /vagrant; sudo bash bootstrap.sh'
   elif [ $PLATFORM == "linux" ]
