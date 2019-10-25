@@ -4,6 +4,9 @@ export PLATFORM=$3
 su -m $USERNAME << 'EOF'
   if [ $PLATFORM == "linux" ]; then
     cp .tmp/python-environment-manager-master/dpe-webapp/linux_activate.sh activate.sh  
+  elif [ $PLATFORM == "vagrant" ]
+  then
+    cp .tmp/python-environment-manager-master/dpe-webapp/linux_activate.sh activate.sh
   elif [ $PLATFORM == "mac" ]
   then
     cp .tmp/python-environment-manager-master/dpe-webapp/mac_activate.sh activate.sh
