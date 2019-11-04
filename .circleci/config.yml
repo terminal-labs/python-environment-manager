@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/buildpack-deps:18.04
+      - image: verhulstm/circleci-ubuntu1804:0.0.54
+      #- image: circleci/buildpack-deps:18.04
 
     working_directory: ~/repo
 
