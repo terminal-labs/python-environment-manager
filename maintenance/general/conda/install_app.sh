@@ -26,6 +26,7 @@ su -m ${USERNAME} <<'EOF'
   echo '1'
   source /home/${USERNAME}/.bashrc
   echo '2'
+  conda init bash
   conda activate ${APPNAME}
   echo '3'
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
