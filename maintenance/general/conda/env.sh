@@ -19,3 +19,7 @@ then
 else
   echo "not implemented yet"
 fi
+source /home/${USERNAME}/.bashrc
+conda init bash
+source /home/${USERNAME}/.bashrc
+source activate ${APPNAME}
