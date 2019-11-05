@@ -14,24 +14,3 @@ apt-get install -y -f
 apt install -y -f
 
 apt install -y --quiet ca-certificates
-
-apt install -y build-essential
-
-apt install -y \
-    libssl-dev \
-    zlib1g-dev \
-    libbz2-dev \
-    libreadline-dev \
-    libsqlite3-dev \
-    libffi-dev \
-    zip \
-    unzip \
-
-apt install -y wget
-apt install -y nano
-apt install -y emacs
-
-apt install -y python3
-apt install -y python3-pip
-apt install -y python3-dev
-apt install -y python3-venv
