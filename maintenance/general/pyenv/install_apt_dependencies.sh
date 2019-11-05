@@ -5,10 +5,11 @@ DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DP
 
 apt-get update -y --quiet
 apt-get upgrade -y --quiet
-apt-get install -y -f
 
 apt update -y --quiet
 apt upgrade -y --quiet
+
+apt-get install -y -f
 apt install -y -f
 
 apt install -y --quiet ca-certificates
