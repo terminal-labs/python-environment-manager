@@ -43,4 +43,4 @@ jobs:
       - run:
           name: Test dpe bootstrap
           command: |
-            cd /vagrant/dpe; sudo bash create.sh vagrant
+            cd /vagrant/makefile_resources/scripts_dpe; sudo bash create.sh vagrant
