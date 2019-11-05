@@ -10,6 +10,7 @@ su -m ${USERNAME} <<'EOF'
     HOME=/home/${USERNAME}
     LOGNAME=/home/${USERNAME}
     export PATH="/home/vagrant/miniconda3/bin:$PATH"
+    source /home/${USERNAME}/.bashrc
   elif [ $PLATFORM == "linux" ]
   then
     HOME=/home/${USERNAME}
