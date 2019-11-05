@@ -13,6 +13,4 @@ apt install -y -f
 
 apt install -y --quiet ca-certificates
 
-apt install -y build-essential
-
 xargs apt install -y < dependencies/apt.txt
