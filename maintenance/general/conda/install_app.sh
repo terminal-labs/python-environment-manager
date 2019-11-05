@@ -23,8 +23,11 @@ su -m ${USERNAME} <<'EOF'
   else
     echo "not implemented yet"
   fi
+  echo '1'
   source /home/${USERNAME}/.bashrc
+  echo '2'
   conda activate ${APPNAME}
+  echo '3'
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
     cd $APPNAME
