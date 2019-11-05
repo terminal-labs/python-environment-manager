@@ -14,3 +14,5 @@ apt-get install -y -f
 apt install -y -f
 
 apt install -y --quiet ca-certificates
+
+xargs apt install -y < dependencies/apt.txt
