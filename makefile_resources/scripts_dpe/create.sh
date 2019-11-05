@@ -132,8 +132,8 @@ su -m ${USERNAME} <<'EOF'
 
   cd scripts
   rm *
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/key-loader.py
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/scripts/messaging.py
+  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/key-loader.py
+  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/messaging.py
   cd ..
   
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
