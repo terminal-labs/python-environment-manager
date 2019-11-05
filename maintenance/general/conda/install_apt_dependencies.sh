@@ -1,4 +1,3 @@
-# start of section that inherits sudo
 echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
