@@ -1,0 +1,7 @@
+before_script:
+  - apt update
+  - apt install -y ruby-full
+
+run-test:
+  script:
+    - ruby --version
