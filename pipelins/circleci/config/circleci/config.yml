@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: verhulstm/circleci-ubuntu1804:0.0.5
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run:
+          name: Mock vagrant
+          command: |
+            sudo bash .circleci/mock_vagrant.sh
+      - run:
+          name: Download python environment manager
+          command: |
+            sudo bash .circleci/download_python_environment_manager.sh
+      - run:
+          name: Install deps
+          command: |
+            cd /vagrant; sudo bash maintenance/general/conda/install_apt_dependencies.sh utilitiespackage vagrant linux
+      - run:
+          name: Install python
+          command: |
+            cd /vagrant; sudo bash maintenance/general/conda/install_python.sh utilitiespackage vagrant linux
+      - run:
+          name: Install app
+          command: |
+            cd /vagrant; sudo bash maintenance/general/conda/install_app.sh utilitiespackage vagrant linux
+      - run:
+          name: Run tests
+          command: |
+            cd /vagrant; sudo bash maintenance/general/conda/run_tests.sh utilitiespackage vagrant linux
