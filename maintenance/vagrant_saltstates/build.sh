@@ -1,5 +1,4 @@
 export USERNAME=$1
-echo $USERNAME
 su -m $USERNAME <<'EOF'
   vagrant up
   vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/maintenance/vagrant_saltstates/install_deps.sh'
