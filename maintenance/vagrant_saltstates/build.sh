@@ -1,6 +1,5 @@
-export APPNAME=$1
-export USERNAME=$2
-export PLATFORM=$3
+export USERNAME=$1
+echo $USERNAME
 su -m $USERNAME <<'EOF'
   vagrant up
   vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/maintenance/vagrant_saltstates/install_deps.sh'
@@ -8,4 +7,3 @@ su -m $USERNAME <<'EOF'
   vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/maintenance/vagrant_saltstates/run_salt.sh'
   vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/maintenance/vagrant_saltstates/test.sh'
 EOF
-
