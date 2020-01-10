@@ -30,7 +30,18 @@ su -m ${USERNAME} <<'EOF'
   fi
   rm Miniconda3-latest*
   conda init bash
-  source /home/${USERNAME}/.bashrc
+  if [ $PLATFORM == "vagrant" ];
+  then
+    source /home/${USERNAME}/.bashrc
+  elif [ $PLATFORM == "linux" ]
+  then
+    source /home/${USERNAME}/.bashrc
+  elif [ $PLATFORM == "mac" ]
+  then
+    source /Users/${USERNAME}/.bash_profile
+  else
+    echo "not implemented yet"
+  fi
   conda --version
   conda update -y conda
   conda --version
