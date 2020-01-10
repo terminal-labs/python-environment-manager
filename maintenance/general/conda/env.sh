@@ -18,7 +18,7 @@ then
   source /Users/${USERNAME}/.bash_profile
   export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
   HOME=/Users/${USERNAME}
-  source /Users/${USERNAME}/.bashrc
+  source /Users/${USERNAME}/.bash_profile
 else
   echo "not implemented yet"
 fi
