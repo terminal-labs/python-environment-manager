@@ -64,9 +64,7 @@ su -m ${USERNAME} <<'EOF'
   cd repos
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
-  git clone https://github.com/terminal-labs/utilities-package.git --recursive 
-  git clone https://github.com/terminal-labs/utilities-package_ml-metapackage.git --recursive
-  git clone https://github.com/terminal-labs/utilities-package_cli-metapackage.git --recursive
+  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git--recursive 
   git clone https://github.com/terminal-labs/rambo.git --recursive
   git clone https://github.com/terminal-labs/inflation.git --recursiv    
   cd ..
@@ -111,14 +109,6 @@ su -m ${USERNAME} <<'EOF'
   cd ../../..
   
   cd repos/utilities-package/utilitiespackage
-  pip install .
-  cd ../../..
-
-  cd repos/utilities-package_ml-metapackage/utilitiespackagemlmetapackage
-  pip install .
-  cd ../../..
-  
-  cd repos/utilities-package_cli-metapackage/utilitiespackageclimetapackage
   pip install .
   cd ../../..
 
