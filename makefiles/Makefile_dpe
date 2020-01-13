@@ -1,8 +1,8 @@
 help:
-        @echo "usage: make [command]"
+	@echo "usage: make [command]"
 
 download_python_environment_manager:
-        @if test ! -d ".tmp/python-environment-manager-master";then \
+	@if test ! -d ".tmp/python-environment-manager-master";then \
                 sudo apt install -y wget unzip; \
                 sudo rm -rf maintenance; \
                 sudo su -m $(SUDO_USER) -c "mkdir -p .tmp"; \
@@ -13,4 +13,4 @@ download_python_environment_manager:
         fi
 
 createdpe: download_python_environment_manager
-        @sudo bash create.sh $(SUDO_USER)
+	@sudo bash create.sh $(SUDO_USER)
