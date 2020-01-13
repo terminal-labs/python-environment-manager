@@ -75,8 +75,12 @@ su -m ${USERNAME} <<'EOF'
 
   cd $APPNAME
   cd downloads
-  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+  if [ ${MACHINE} == "Mac" ]; then
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+  else
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+  fi
   cd ..
   cd repos
 
@@ -92,8 +96,13 @@ su -m ${USERNAME} <<'EOF'
   fi
 
   cd downloads
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
-  rm Miniconda3-latest-*
+  if [ ${MACHINE} == "Mac" ]; then
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
+    rm Miniconda3-latest-*
+  else
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
+    rm Miniconda3-latest-*
+  fi
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   conda --version
   conda init bash
