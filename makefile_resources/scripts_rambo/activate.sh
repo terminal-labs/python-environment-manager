@@ -13,18 +13,38 @@ export NODEVERSION
 export SALTVERSION
 export USER
 
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+MACHINE=$machine
+export MACHINE
+
 unset SUDO_UID SUDO_GID SUDO_USER
 USER=${USERNAME}
 SUDO_USER=${USERNAME}
 USERNAME=${USERNAME}
-HOME=/home/${USERNAME}
-LOGNAME=${USERNAME}  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
-export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
-export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
+if [ ${MACHINE} == "Mac" ]; then
+  USERHOME=/Users/${USERNAME}
+else
+  USERHOME=/home/${USERNAME}
+fi
+export USERHOME
+LOGNAME=${USERNAME}  export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+export PATH=${USERHOME}/${DPENAME}/$APPNAME/bin:$PATH
+export PATH=${USERHOME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
 
 export USE_GIT_URI="true"
-
-source /home/${USERNAME}/.bashrc
+echo ${MACHINE}
+if [ ${MACHINE} == "Mac" ]; then
+ source ${USERHOME}/.bash_profile
+else
+ source ${USERHOME}/.bashrc
+fi
 source activate ${APPNAME}
 
 conda --version
