@@ -2,15 +2,11 @@ APPNAME=demo
 PYTHONVERSION=3.6.9
 DPENAME=dpe
 USERNAME=$1
-NODEVERSION=10.15.0
-SALTVERSION=v2018.3.3
 USER=USERNAME
 export APPNAME
 export PYTHONVERSION
 export DPENAME
 export USERNAME
-export NODEVERSION
-export SALTVERSION
 export USER
 
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
@@ -37,7 +33,7 @@ apt -y install \
   pkg-config \
   ca-certificates \
   xclip \
-  
+
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
@@ -45,30 +41,30 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}
-  
+
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
   mkdir -p ${APPNAME}
   mkdir -p ${APPNAME}/downloads
   mkdir -p ${APPNAME}/repos
-  mkdir -p ${APPNAME}/scripts 
+  mkdir -p ${APPNAME}/scripts
   mkdir -p ${APPNAME}/bin
-  
+
   cd $APPNAME
   cd downloads
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
   cd ..
   cd repos
-    
+
   cd ..
-  
+
   cd downloads
   sudo dpkg -i vagrant_2.2.5_x86_64.deb
   vagrant plugin install vagrant-digitalocean
   cd ..
-  
+
   cd downloads
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
   rm Miniconda3-latest-*
