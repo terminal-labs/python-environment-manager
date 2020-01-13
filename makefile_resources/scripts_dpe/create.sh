@@ -64,7 +64,7 @@ su -m ${USERNAME} <<'EOF'
   cd repos
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
-  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git--recursive 
+  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive 
   git clone https://github.com/terminal-labs/rambo.git --recursive
   git clone https://github.com/terminal-labs/inflation.git --recursiv    
   cd ..
