@@ -59,14 +59,9 @@ su -m ${USERNAME} <<'EOF'
   cd downloads
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
-  wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   cd ..
   cd repos
-  git clone https://github.com/nvm-sh/nvm.git
-  git clone https://github.com/lastpass/lastpass-cli.git
-  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive 
-  git clone https://github.com/terminal-labs/rambo.git --recursive
-  git clone https://github.com/terminal-labs/inflation.git --recursiv    
+    
   cd ..
   
   cd downloads
@@ -89,78 +84,10 @@ su -m ${USERNAME} <<'EOF'
   source activate $APPNAME
   pip install --upgrade pip
   pip install --upgrade setuptools
-  
-  pip install PyYAML
-  cd ..
-  cd downloads
-  unzip 2018.3.3.zip
-  cd 2018.3.3/salt
-  pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
-  pip install -e .
-  cd ../../..
-  
-  cd repos/rambo
-  pip install .
-  cd ../..
-  
-  cd repos/inflation/inflation
-  pip install .
-  cd ../../..
-  
-  cd repos/utilities-package/utilitiespackage
-  pip install .
-  cd ../../..
-  cd scripts
-  rm *
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/key-loader.py
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/messaging.py
-  cd ..
-  
-  export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
-  cd repos/nvm
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-  . nvm.sh
-  cd ../..
-  nvm install ${NODEVERSION}
-  nvm use ${NODEVERSION}
-  npm -g install js-beautify
-  cd repos/lastpass-cli
-  make
-  cd ../..
 EOF
-
-
-su -m ${USERNAME} <<'EOF'
-  unset SUDO_UID SUDO_GID SUDO_USER
-  USER=${USERNAME}
-  SUDO_USER=${USERNAME}
-  USERNAME=${USERNAME}
-  HOME=/home/${USERNAME}
-  LOGNAME=${USERNAME}  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
-  rm terraform*
-  wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip
-  unzip terraform_0.12.7_linux_amd64.zip
-  cp terraform /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
-  sudo chmod +x /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
-EOF
-
-
-su -m ${USERNAME} <<'EOF'
-  unset SUDO_UID SUDO_GID SUDO_USER
-  USER=${USERNAME}
-  SUDO_USER=${USERNAME}
-  USERNAME=${USERNAME}
-  HOME=/home/${USERNAME}
-  LOGNAME=${USERNAME}  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
-  rm deploy-ubuntu*
-  wget https://raw.githubusercontent.com/terminal-labs/saltstack-cookiecutter/master/deploy-ubuntu.sh
-  sudo bash deploy-ubuntu.sh
-EOF
-
 
 chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
 chmod -R 777 /home/${USERNAME}/${DPENAME}
-
 
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
@@ -170,34 +97,8 @@ su -m ${USERNAME} <<'EOF'
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
-  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
-  
-  export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
+
   export USE_GIT_URI="true"
   source /home/${USERNAME}/.bashrc
-  source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
-  
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py dpeseemsgood
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py getversion
-  
-  echo "dpe v2019.8.0"
-  conda --version
-  python --version
-  nvm --version
-  node --version
-  lpass --version
-  salt --version
-  terraform -version
-  vagrant --version
-  
-  rambo --version
-  inflation version
-  utilitiespackage system version
-  
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py keyloader
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
-  
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py testsalt
-  sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
