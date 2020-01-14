@@ -93,7 +93,6 @@ su -m ${USERNAME} <<'EOF'
   else
     cd downloads
     sudo dpkg -i vagrant_2.2.5_x86_64.deb
-    vagrant plugin install vagrant-digitalocean
     cd ..
   fi
 
