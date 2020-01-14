@@ -12,7 +12,7 @@ esac
 MACHINE=machine
 export MACHINE
 
-bash create.sh ${APPNAME} ${USERNAME}
+bash .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
   source .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/activate.sh ${APPNAME} ${USERNAME}
   rambo up
