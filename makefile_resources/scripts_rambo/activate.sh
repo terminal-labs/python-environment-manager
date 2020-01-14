@@ -13,15 +13,9 @@ export NODEVERSION
 export SALTVERSION
 export USER
 
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-    CYGWIN*)    machine=Cygwin;;
-    MINGW*)     machine=MinGw;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-MACHINE=$machine
+source .tmp/python-environment-manager-master/bash_scripts/lib.sh
+getmachine
+MACHINE=$_MACHINE
 export MACHINE
 
 unset SUDO_UID SUDO_GID SUDO_USER
