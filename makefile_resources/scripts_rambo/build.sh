@@ -1,15 +1,9 @@
 export APPNAME=$1
 export USERNAME=$2
 
-unameOut="$(uname -s)"
-case "${unameOut}" in
-    Linux*)     machine=Linux;;
-    Darwin*)    machine=Mac;;
-    CYGWIN*)    machine=Cygwin;;
-    MINGW*)     machine=MinGw;;
-    *)          machine="UNKNOWN:${unameOut}"
-esac
-MACHINE=machine
+source .tmp/python-environment-manager-master/bash_scripts/lib.sh
+getmachine
+MACHINE=$_MACHINE
 export MACHINE
 
 bash .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/create.sh ${APPNAME} ${USERNAME}
