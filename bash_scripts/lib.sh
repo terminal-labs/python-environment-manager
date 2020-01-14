@@ -7,7 +7,5 @@ getmachine () {
       MINGW*)     machine=MinGw;;
       *)          machine="UNKNOWN:${unameOut}"
   esac
-  MACHINE=$machine
-  export MACHINE
-  return MACHINE
+  _MACHINE=$machine
 }
