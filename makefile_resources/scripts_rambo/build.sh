@@ -1,3 +1,6 @@
+export APPNAME=$1
+export USERNAME=$2
+
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -9,9 +12,8 @@ esac
 MACHINE=machine
 export MACHINE
 
-USERNAME=$1
-bash create.sh ${USERNAME}
+bash create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
-  source activate.sh ${USERNAME}
+  source activate.sh ${APPNAME} ${USERNAME}
   rambo up
 EOF
