@@ -14,6 +14,6 @@ export MACHINE
 
 bash create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
-  source activate.sh ${APPNAME} ${USERNAME}
+  source .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/activate.sh ${APPNAME} ${USERNAME}
   rambo up
 EOF
