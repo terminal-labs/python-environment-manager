@@ -1,3 +1,4 @@
+APPNAME=appname
 help:
 	@echo "usage: make [command]"
 
@@ -14,4 +15,4 @@ download_python_environment_manager:
 	fi
 
 rambobox: download_python_environment_manager
-	@sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/build.sh $(SUDO_USER) vagrant
+	@sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_rambo/build.sh $(APPNAME) $(SUDO_USER) vagrant
