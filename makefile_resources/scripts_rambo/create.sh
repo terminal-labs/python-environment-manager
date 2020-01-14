@@ -74,6 +74,11 @@ su -m ${USERNAME} <<'EOF'
   mkdir -p ${APPNAME}/bin
 
   cd $APPNAME
+
+  cd repos
+   git clone https://github.com/terminal-labs/rambo.git --recursive
+  cd ..
+
   cd downloads
   if [ ${MACHINE} == "Mac" ]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -81,9 +86,6 @@ su -m ${USERNAME} <<'EOF'
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
     wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
   fi
-  cd ..
-  cd repos
-
   cd ..
 
   if [ ${MACHINE} == "Mac" ]; then
@@ -103,6 +105,8 @@ su -m ${USERNAME} <<'EOF'
     bash Miniconda3-latest-Linux-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
     rm Miniconda3-latest-*
   fi
+  cd ..
+
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   conda --version
   conda init bash
@@ -120,10 +124,12 @@ su -m ${USERNAME} <<'EOF'
   source activate $APPNAME
   pip install --upgrade pip
   pip install --upgrade setuptools
-EOF
 
-chown -R ${USERNAME} ${USERHOME}/${DPENAME}
-chmod -R 777 ${USERHOME}/${DPENAME}
+  cd repos/rambo
+    git checkout experimental
+    pip install .
+  cd ../..
+EOF
 
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
@@ -131,7 +137,7 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
 
-  LOGNAME=${USERNAME}  export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+  LOGNAME=${USERNAME} export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/bin:$PATH
 
   export USE_GIT_URI="true"
