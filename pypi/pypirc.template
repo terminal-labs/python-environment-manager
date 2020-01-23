@@ -1,9 +1,0 @@
-# should be placed at ~/.pypirc
-[distutils]
-index-servers =
- pypi
-
-[pypi]
-repository=https://pypi.python.org/pypi
-username=<username>
-password=<password>
