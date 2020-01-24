@@ -114,8 +114,6 @@ su -m ${USERNAME} <<'EOF'
 
   cd scripts
   rm *
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/key-loader.py
-  wget https://raw.githubusercontent.com/terminal-labs/python-environment-manager/master/python_scripts/messaging.py
   cd ..
   
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
@@ -181,9 +179,6 @@ su -m ${USERNAME} <<'EOF'
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
   
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py dpeseemsgood
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py getversion
-  
   echo "dpe v2019.8.0"
   conda --version
   python --version
@@ -197,9 +192,6 @@ su -m ${USERNAME} <<'EOF'
   rambo --version
   inflation version
   utilitiespackage system version
-  
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py keyloader
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/key-loader.py
   
   python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py testsalt
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
