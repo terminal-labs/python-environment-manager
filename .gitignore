@@ -16,7 +16,6 @@ extra
 *.pyc
 *.pex
 
-maintenance
 run
 tmp
 .tmp
