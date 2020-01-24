@@ -193,6 +193,5 @@ su -m ${USERNAME} <<'EOF'
   inflation version
   utilitiespackage system version
   
-  python /home/${USERNAME}/${DPENAME}/$APPNAME/scripts/messaging.py testsalt
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
