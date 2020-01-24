@@ -134,7 +134,8 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
-  LOGNAME=${USERNAME}  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
+  LOGNAME=${USERNAME}
+  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
   rm terraform*
   wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip
   unzip terraform_0.12.7_linux_amd64.zip
@@ -148,7 +149,8 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
-  LOGNAME=${USERNAME}  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
+  LOGNAME=${USERNAME}
+  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
   rm deploy-ubuntu*
   wget https://raw.githubusercontent.com/terminal-labs/saltstack-cookiecutter/master/deploy-ubuntu.sh
 EOF
@@ -163,7 +165,8 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
-  LOGNAME=${USERNAME}  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+  LOGNAME=${USERNAME}
+  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
   
