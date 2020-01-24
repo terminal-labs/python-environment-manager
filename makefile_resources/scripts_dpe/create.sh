@@ -16,7 +16,6 @@ export USER
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
 DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" upgrade
 
-
 apt -y install \
   git \
   wget \
@@ -141,9 +140,8 @@ su -m ${USERNAME} <<'EOF'
   wget https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip
   unzip terraform_0.12.7_linux_amd64.zip
   cp terraform /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
-  sudo chmod +x /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
 EOF
-
+chmod +x /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
 
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
@@ -154,13 +152,11 @@ su -m ${USERNAME} <<'EOF'
   LOGNAME=${USERNAME}  cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
   rm deploy-ubuntu*
   wget https://raw.githubusercontent.com/terminal-labs/saltstack-cookiecutter/master/deploy-ubuntu.sh
-  sudo bash deploy-ubuntu.sh
 EOF
-
+bash deploy-ubuntu.sh
 
 chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
 chmod -R 777 /home/${USERNAME}/${DPENAME}
-
 
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
