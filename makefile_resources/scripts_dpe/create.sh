@@ -189,7 +189,7 @@ su -m ${USERNAME} <<'EOF'
   
   rambo --version
   inflation version
-  utilitiespackage system version
+  echo "utilitiespackage" $(utilitiespackage system version)
   
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
