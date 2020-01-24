@@ -16,6 +16,7 @@ su -m ${USERNAME} <<'EOF'
     HOME=/home/${USERNAME}
     LOGNAME=/home/${USERNAME}
     export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
+    source /home/${USERNAME}/.bashrc
   elif [ $PLATFORM == "mac" ]
   then
     HOME=/Users/${USERNAME}
@@ -23,7 +24,6 @@ su -m ${USERNAME} <<'EOF'
   else
     echo "not implemented yet"
   fi
-  source /home/${USERNAME}/.bashrc
   source activate ${APPNAME}
   if [ -d $APPNAME ] && [ ! -z $APPNAME ];
   then
