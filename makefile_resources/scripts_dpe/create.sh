@@ -153,8 +153,8 @@ su -m ${USERNAME} <<'EOF'
   cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
   rm deploy-ubuntu*
   wget https://raw.githubusercontent.com/terminal-labs/saltstack-cookiecutter/master/deploy-ubuntu.sh
+  sudo bash deploy-ubuntu.sh
 EOF
-bash deploy-ubuntu.sh
 
 chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
 chmod -R 777 /home/${USERNAME}/${DPENAME}
