@@ -56,13 +56,13 @@ su -m ${USERNAME} <<'EOF'
   
   cd $APPNAME
   cd downloads
-  if [ ! -f "Miniconda3-latest-Linux-x86_64.sh" ]; then
+  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/Miniconda3-latest-Linux-x86_64.sh" ]; then
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   fi
-  if [ ! -f "vagrant_2.2.5_x86_64.deb" ]; then
+  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/vagrant_2.2.5_x86_64.deb" ]; then
     wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
   fi
-  if [ ! -f "2018.3.3.zip" ]; then
+  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/2018.3.3.zip" ]; then
     wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   fi
   cd ..
