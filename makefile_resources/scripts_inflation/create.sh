@@ -56,13 +56,13 @@ su -m ${USERNAME} <<'EOF'
   
   cd $APPNAME
   cd downloads
-  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/Miniconda3-latest-Linux-x86_64.sh" ]; then
+  if [ ! -e "Miniconda3-latest-Linux-x86_64.sh" ]; then
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
   fi
-  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/vagrant_2.2.5_x86_64.deb" ]; then
+  if [ ! -e "vagrant_2.2.5_x86_64.deb" ]; then
     wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
   fi
-  if [ ! -f "/home/${USERNAME}/${DPENAME}/$APPNAME/downloads/2018.3.3.zip" ]; then
+  if [ ! -e "2018.3.3.zip" ]; then
     wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   fi
   cd ..
@@ -80,8 +80,9 @@ su -m ${USERNAME} <<'EOF'
   cd ..
   
   cd downloads
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
-  rm Miniconda3-latest-*
+  if [ ! -e "/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3" ]; then
+    bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
+  fi
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   conda --version
   conda init bash
@@ -233,4 +234,3 @@ if test -d "saltstack";then \
      --log-level=info \
      --state-output=terse \
      --local state.highstate
-fi
