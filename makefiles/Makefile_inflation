@@ -1,4 +1,4 @@
-APPNAME = inflation
+APPNAME = pythonenvironmentmanager
 
 help:
 	@echo "usage: make [command]"
