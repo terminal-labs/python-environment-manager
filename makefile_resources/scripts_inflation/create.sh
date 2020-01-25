@@ -234,3 +234,4 @@ if test -d "saltstack";then \
      --log-level=info \
      --state-output=terse \
      --local state.highstate
+fi
