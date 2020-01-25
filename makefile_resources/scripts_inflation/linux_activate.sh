@@ -19,14 +19,14 @@ USERNAME=${USERNAME}
 HOME=/home/${USERNAME}
 LOGNAME=${USERNAME}
 
-export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
-export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
-export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
+export PATH=/home/${USERNAME}/${DPENAME}/${APPNAME}/miniconda3/bin:$PATH
+export PATH=/home/${USERNAME}/${DPENAME}/${APPNAME}/bin:$PATH
+export PATH=/home/${USERNAME}/${DPENAME}/${APPNAME}/repos/lastpass-cli/build:$PATH
 
-export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
+export NVM_DIR=/home/${USERNAME}/${DPENAME}/${APPNAME}/repos/nvm
 export USE_GIT_URI="true"
 source /home/${USERNAME}/.bashrc
-source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
+source /home/${USERNAME}/${DPENAME}/${APPNAME}/repos/nvm/nvm.sh
 source activate ${APPNAME}
 
 export DEESCALATED_SALT_CONFIG_DIR=/vagrant/saltstack/configs
