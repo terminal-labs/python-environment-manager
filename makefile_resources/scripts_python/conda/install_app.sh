@@ -25,9 +25,14 @@ su -m ${USERNAME} <<'EOF'
     echo "not implemented yet"
   fi
   source activate ${APPNAME}
-  if [ -d $APPNAME ] && [ ! -z $APPNAME ];
+  if [ -f "setup.py" ];
   then
-    cd $APPNAME
     pip install -e .
+  else
+    if [ -d $APPNAME ] && [ ! -z $APPNAME ];
+    then
+      cd $APPNAME
+      pip install -e .
+    fi
   fi
 EOF
