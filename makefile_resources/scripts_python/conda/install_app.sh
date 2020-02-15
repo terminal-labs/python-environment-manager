@@ -24,7 +24,7 @@ su -m ${USERNAME} <<'EOF'
   else
     echo "not implemented yet"
   fi
-  source activate ${APPNAME}
+  conda activate ${APPNAME}
   if [ -f "setup.py" ];
   then
     pip install -e .
