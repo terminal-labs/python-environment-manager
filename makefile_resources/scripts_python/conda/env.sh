@@ -19,4 +19,4 @@ then
 else
   echo "not implemented yet"
 fi
-source activate ${APPNAME}
+conda activate ${APPNAME}
