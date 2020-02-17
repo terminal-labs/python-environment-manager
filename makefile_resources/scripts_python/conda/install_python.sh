@@ -29,15 +29,20 @@ su -m ${USERNAME} <<'EOF'
     echo "not implemented yet"
   fi
   rm Miniconda3-latest*
-  conda init bash
 
   if [ $PLATFORM == "vagrant" ]; then
+    source /home/${USERNAME}/.bashrc
+    conda init bash
     source /home/${USERNAME}/.bashrc
   elif [ $PLATFORM == "linux" ]
   then
     source /home/${USERNAME}/.bashrc
+    conda init bash
+    source /home/${USERNAME}/.bashrc
   elif [ $PLATFORM == "mac" ]
   then
+    source /Users/${USERNAME}/.bash_profile
+    conda init bash
     source /Users/${USERNAME}/.bash_profile
   else
     echo "not implemented yet"
@@ -49,6 +54,6 @@ su -m ${USERNAME} <<'EOF'
   conda create -y -n ${APPNAME} python=3.6.9
   conda activate ${APPNAME}
 
-  pip install --upgrade setuptools
+  pip install "setuptools<=45"
   pip install --upgrade pip
 EOF
