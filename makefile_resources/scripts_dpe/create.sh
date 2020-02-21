@@ -7,7 +7,7 @@ SALTVERSION=v2018.3.3
 USER=USERNAME
 export APPNAME
 export PYTHONVERSION
-export DPENAME
+export DPENAMEstacktracker_1080
 export USERNAME
 export NODEVERSION
 export SALTVERSION
@@ -63,9 +63,9 @@ su -m ${USERNAME} <<'EOF'
   cd repos
   git clone https://github.com/nvm-sh/nvm.git
   git clone https://github.com/lastpass/lastpass-cli.git
-  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive 
-  git clone https://gitlab.com/terminallabs/mirrors/rambo.git--recursive
-  git clone https://gitlab.com/terminallabs/mirrors/inflation.git -recursiv    
+  git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive
+  git clone https://gitlab.com/terminallabs/mirrors/rambo.git --recursive
+  git clone https://gitlab.com/terminallabs/mirrors/inflation.git --recursive
   cd ..
   
   cd downloads
