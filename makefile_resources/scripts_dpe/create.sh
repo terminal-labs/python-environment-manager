@@ -95,6 +95,7 @@ su -m ${USERNAME} <<'EOF'
   cd downloads
   unzip 2018.3.3.zip
   cd 2018.3.3/salt
+  pip install msgpack==0.6.2
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
   cd ../../..
