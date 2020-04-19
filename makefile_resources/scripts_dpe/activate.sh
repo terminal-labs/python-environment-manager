@@ -25,6 +25,7 @@ export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
 export USE_GIT_URI="true"
 
 source /home/${USERNAME}/.bashrc
+source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
 source activate ${APPNAME}
 
 conda --version
