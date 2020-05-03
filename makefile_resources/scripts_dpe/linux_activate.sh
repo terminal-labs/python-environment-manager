@@ -28,6 +28,16 @@ source /home/${USERNAME}/.bashrc
 source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
 source activate ${APPNAME}
 
+echo "dpe v2020.1.1"
 conda --version
 python --version
+nvm --version
+node --version
+lpass --version
+salt --version
+terraform -version
 vagrant --version
+
+rambo --version
+inflation version
+echo "utilitiespackage" $(utilitiespackage system version)
