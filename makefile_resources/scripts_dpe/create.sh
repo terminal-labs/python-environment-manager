@@ -86,8 +86,8 @@ su -m ${USERNAME} <<'EOF'
   conda --version
   conda create -y -n $APPNAME python=${PYTHONVERSION}
   source activate $APPNAME
-  pip install --upgrade pip
-  pip install --upgrade setuptools<=45
+  pip install --upgrade "pip"
+  pip install --upgrade "setuptools<=45"
   
   pip install PyYAML
   cd ..
