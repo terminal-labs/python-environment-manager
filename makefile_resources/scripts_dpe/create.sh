@@ -56,8 +56,8 @@ su -m ${USERNAME} <<'EOF'
   
   cd $APPNAME
   cd downloads
-  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+  wget https://tl-build-resources.s3.us-east-2.amazonaws.com/Miniconda3-latest-Linux-x86_64.sh
+  wget https://tl-build-resources.s3.us-east-2.amazonaws.com/vagrant_2.2.5_x86_64.deb
   wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
   cd ..
   cd repos
@@ -138,7 +138,7 @@ su -m ${USERNAME} <<'EOF'
   LOGNAME=${USERNAME}
   cd /home/${USERNAME}/${DPENAME}/$APPNAME/downloads
   rm terraform*
-  wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip
+  wget https://tl-build-resources.s3.us-east-2.amazonaws.com/terraform_0.12.24_linux_amd64.zip
   unzip terraform_0.12.24_linux_amd64.zip
   cp terraform /home/${USERNAME}/${DPENAME}/$APPNAME/bin/terraform
 EOF
