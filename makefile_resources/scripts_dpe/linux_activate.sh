@@ -18,7 +18,8 @@ USER=${USERNAME}
 SUDO_USER=${USERNAME}
 USERNAME=${USERNAME}
 HOME=/home/${USERNAME}
-LOGNAME=${USERNAME}  export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+LOGNAME=${USERNAME}
+export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
 export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
 export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
 
