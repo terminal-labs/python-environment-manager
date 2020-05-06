@@ -36,7 +36,7 @@ apt -y install \
   pkg-config \
   ca-certificates \
   xclip \
-  
+
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
@@ -44,16 +44,16 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}
-  
+
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
   mkdir -p ${APPNAME}
   mkdir -p ${APPNAME}/downloads
   mkdir -p ${APPNAME}/repos
-  mkdir -p ${APPNAME}/scripts 
+  mkdir -p ${APPNAME}/scripts
   mkdir -p ${APPNAME}/bin
-  
+
   cd $APPNAME
   cd downloads
   wget https://tl-build-resources.s3.us-east-2.amazonaws.com/Miniconda3-latest-Linux-x86_64.sh
@@ -67,12 +67,12 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/terminal-labs/inflation.git --recursive
   git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive
   cd ..
-  
+
   cd downloads
   sudo dpkg -i vagrant_2.2.5_x86_64.deb
   vagrant plugin install vagrant-digitalocean
   cd ..
-  
+
   cd downloads
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
   rm Miniconda3-latest-*
@@ -88,7 +88,7 @@ su -m ${USERNAME} <<'EOF'
   source activate $APPNAME
   pip install --upgrade "pip"
   pip install --upgrade "setuptools<=45"
-  
+
   pip install PyYAML
   cd ..
 
@@ -99,15 +99,15 @@ su -m ${USERNAME} <<'EOF'
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
   cd ../../..
-  
+
   cd repos/rambo
   pip install .
   cd ../..
-  
+
   cd repos/inflation/inflation
   pip install .
   cd ../../..
-  
+
   cd repos/utilities-package/utilitiespackage
   pip install .
   cd ../../..
@@ -115,7 +115,7 @@ su -m ${USERNAME} <<'EOF'
   cd scripts
   rm *
   cd ..
-  
+
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   cd repos/nvm
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
@@ -128,6 +128,16 @@ su -m ${USERNAME} <<'EOF'
   make
   cd ../..
 EOF
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+./aws/install
+
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+apt-get install -y apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+apt-get update
+apt-get install -y google-cloud-sdk
 
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
@@ -170,28 +180,29 @@ su -m ${USERNAME} <<'EOF'
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
-  
+
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   export USE_GIT_URI="true"
 
   source /home/${USERNAME}/.bashrc
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
-  
-  echo "dpe v2020.1.1"
+
+  echo "dpe v2020.5.1"
   conda --version
   python --version
   nvm --version
   node --version
+  rambo --version
+  inflation version
+  echo "utilitiespackage" $(utilitiespackage system version)
+
   lpass --version
   salt --version
   terraform -version
   vagrant --version
-  
-  rambo --version
-  inflation version
-  echo "utilitiespackage" $(utilitiespackage system version)
-  
+  aws --version
+  gcloud version
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
 
