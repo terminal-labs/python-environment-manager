@@ -129,9 +129,11 @@ su -m ${USERNAME} <<'EOF'
   cd ../..
 EOF
 
+cd .tmp
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 ./aws/install
+cd -
 
 echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 apt-get install -y apt-transport-https ca-certificates gnupg
@@ -209,7 +211,7 @@ su -m ${USERNAME} <<'EOF'
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
 
-if test -d "saltstack";then \
+if test -d "extras/football/saltstack";then \
   chown -R ${USERNAME} /home/${USERNAME}/${DPENAME}
   chmod -R 777 /home/${USERNAME}/${DPENAME}
   chown -R ${USERNAME} /vagrant
@@ -231,9 +233,9 @@ if test -d "saltstack";then \
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
 
-  export DEESCALATED_SALT_CONFIG_DIR=/vagrant/saltstack/configs
-  export DEESCALATED_SALT_ROOT_DIR=/vagrant/saltstack/states
-  export DEESCALATED_SALT_LOG_FILE=/vagrant/saltstack/logs/logs
+  export DEESCALATED_SALT_CONFIG_DIR=/vagrant/extras/football/saltstack/configs
+  export DEESCALATED_SALT_ROOT_DIR=/vagrant/extras/football/saltstack/states
+  export DEESCALATED_SALT_LOG_FILE=/vagrant/extras/football/saltstack/logs/logs
 
   salt-call \
      --config-dir=$DEESCALATED_SALT_CONFIG_DIR \
