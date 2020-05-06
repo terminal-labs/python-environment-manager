@@ -139,6 +139,8 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 apt-get update
 apt-get install -y google-cloud-sdk
 
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
@@ -203,6 +205,7 @@ su -m ${USERNAME} <<'EOF'
   vagrant --version
   aws --version
   gcloud version
+  az version
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
 
