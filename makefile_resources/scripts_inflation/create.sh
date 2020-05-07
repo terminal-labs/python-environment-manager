@@ -197,10 +197,10 @@ su -m ${USERNAME} <<'EOF'
   echo "dpe v2020.5.1"
   conda --version
   python --version
-  nvm --version
-  node --version
+  echo "nvm" $(nvm --version)
+  echo "node" $(node --version)
   rambo --version
-  inflation system version
+  echo "inflation" $(inflation system version)
   echo "utilitiespackage" $(utilitiespackage system version)
 
   lpass --version
