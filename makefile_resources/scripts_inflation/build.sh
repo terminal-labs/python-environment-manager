@@ -8,7 +8,9 @@ su -m $USERNAME <<'EOF'
     eval "vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_inflation/create.sh $APPNAME $USERNAME $PLATFORM'"
   elif [ $PLATFORM == "linux" ]
   then
-    echo "not implemented yet"
+    export USERNAME="vagrant"
+    eval "vagrant up"
+    eval "vagrant ssh --command 'cd /vagrant; sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_inflation/create.sh $APPNAME $USERNAME $PLATFORM'"
   elif [ $PLATFORM == "mac" ]
   then
     export USERNAME="vagrant"
