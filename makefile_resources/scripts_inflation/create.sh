@@ -200,7 +200,7 @@ su -m ${USERNAME} <<'EOF'
   nvm --version
   node --version
   rambo --version
-  inflation version
+  inflation system version
   echo "utilitiespackage" $(utilitiespackage system version)
 
   lpass --version
