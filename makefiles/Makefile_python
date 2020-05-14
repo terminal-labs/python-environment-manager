@@ -12,6 +12,7 @@ download_python_environment_manager:
 	fi
 
 vagrant: download_python_environment_manager
+	@wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile
 	@sudo bash .tmp/python-environment-manager-master/makefile_resources/scripts_python/conda/build.sh $(APPNAME) $(SUDO_USER) vagrant
 
 mac: download_python_environment_manager
