@@ -3,10 +3,10 @@ export USERNAME=$2
 export PLATFORM=$3
 su -m $USERNAME << 'EOF'
   if [ $PLATFORM == "linux" ]; then
-    cp .tmp/python-environment-manager-master/makefile_resources/scripts_dpe/linux_activate.sh activate.sh
+    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/linux_activate.sh activate.sh
   elif [ $PLATFORM == "mac" ]
   then
-    cp .tmp/python-environment-manager-master/makefile_resources/scripts_dpe/mac_activate.sh activate.sh
+    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/mac_activate.sh activate.sh
    else
     echo "not implemented yet"
   fi
