@@ -5,7 +5,7 @@ su -m $USERNAME <<'EOF'
   source .tmp/bash-environment-manager-master/makefile_resources/scripts_python/env.sh
   if [ ! -f "setup.py" ];
   then
-    if [ -d $APPNAME ] && [ ! -z $APPNAME ];
+    if [ -f ".repo/tests" ];
     then
       ${APPNAME} system version
       ${APPNAME} system selftest
