@@ -15,8 +15,10 @@ su -m ${USERNAME} <<'EOF'
   elif [ $PLATFORM == "linux" ]
   then
     HOME=/home/${USERNAME}
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b
+    if [ ! -d "/home/${USERNAME}/miniconda3" ]; then
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+      bash Miniconda3-latest-Linux-x86_64.sh -b
+    fi
     export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
     source /home/${USERNAME}/miniconda3/etc/profile.d/conda.sh;
   elif [ $PLATFORM == "mac" ]
@@ -29,7 +31,13 @@ su -m ${USERNAME} <<'EOF'
   else
     echo "not implemented yet"
   fi
-  rm Miniconda3-latest*
+
+  if [ -f "Miniconda3-latest-Linux-x86_64.sh" ]; then
+    rm Miniconda3-latest*
+  fi
+  if [ -f "Miniconda3-latest-MacOSX-x86_64.sh" ]; then
+    rm Miniconda3-latest*
+  fi
 
   if [ $PLATFORM == "vagrant" ]; then
     source /home/${USERNAME}/.bashrc
