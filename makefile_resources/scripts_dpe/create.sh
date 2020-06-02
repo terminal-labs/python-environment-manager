@@ -36,7 +36,7 @@ apt -y install \
   pkg-config \
   ca-certificates \
   xclip \
-  
+
 su -m ${USERNAME} <<'EOF'
   unset SUDO_UID SUDO_GID SUDO_USER
   USER=${USERNAME}
@@ -44,16 +44,16 @@ su -m ${USERNAME} <<'EOF'
   USERNAME=${USERNAME}
   HOME=/home/${USERNAME}
   LOGNAME=${USERNAME}
-  
+
   cd /home/${USERNAME}
   mkdir -p ${DPENAME}
   cd ${DPENAME}
   mkdir -p ${APPNAME}
   mkdir -p ${APPNAME}/downloads
   mkdir -p ${APPNAME}/repos
-  mkdir -p ${APPNAME}/scripts 
+  mkdir -p ${APPNAME}/scripts
   mkdir -p ${APPNAME}/bin
-  
+
   cd $APPNAME
   cd downloads
   wget https://tl-build-resources.s3.us-east-2.amazonaws.com/Miniconda3-latest-Linux-x86_64.sh
@@ -67,12 +67,12 @@ su -m ${USERNAME} <<'EOF'
   git clone https://github.com/terminal-labs/inflation.git --recursive
   git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git --recursive
   cd ..
-  
+
   cd downloads
   sudo dpkg -i vagrant_2.2.5_x86_64.deb
   vagrant plugin install vagrant-digitalocean
   cd ..
-  
+
   cd downloads
   bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3
   rm Miniconda3-latest-*
@@ -88,7 +88,7 @@ su -m ${USERNAME} <<'EOF'
   source activate $APPNAME
   pip install --upgrade "pip"
   pip install --upgrade "setuptools<=45"
-  
+
   pip install PyYAML
   cd ..
 
@@ -99,23 +99,23 @@ su -m ${USERNAME} <<'EOF'
   pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
   pip install -e .
   cd ../../..
-  
+
   cd repos/rambo
   pip install .
   cd ../..
-  
-  cd repos/inflation/inflation
+
+  cd repos/inflation
   pip install .
   cd ../../..
-  
-  cd repos/utilities-package/utilitiespackage
+
+  cd repos/utilities-package
   pip install .
   cd ../../..
 
   cd scripts
   rm *
   cd ..
-  
+
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   cd repos/nvm
   git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
@@ -170,14 +170,14 @@ su -m ${USERNAME} <<'EOF'
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/bin:$PATH
   export PATH=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/lastpass-cli/build:$PATH
-  
+
   export NVM_DIR=/home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm
   export USE_GIT_URI="true"
 
   source /home/${USERNAME}/.bashrc
   source /home/${USERNAME}/${DPENAME}/$APPNAME/repos/nvm/nvm.sh
   source activate ${APPNAME}
-  
+
   echo "dpe v2020.1.1"
   conda --version
   python --version
@@ -187,11 +187,11 @@ su -m ${USERNAME} <<'EOF'
   salt --version
   terraform -version
   vagrant --version
-  
+
   rambo --version
   inflation version
   echo "utilitiespackage" $(utilitiespackage system version)
-  
+
   sudo env "PATH=$PATH" salt-call --local state.sls testing.helloworld
 EOF
 
