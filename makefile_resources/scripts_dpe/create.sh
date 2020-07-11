@@ -104,13 +104,13 @@ su -m ${USERNAME} <<'EOF'
   pip install .
   cd ../..
 
-  cd repos/inflation
-  pip install .
-  cd ../../..
+  # cd repos/inflation
+  # pip install .
+  # cd ../../..
 
   cd repos/utilities-package
   pip install .
-  cd ../../..
+  cd ../..
 
   cd scripts
   rm *
