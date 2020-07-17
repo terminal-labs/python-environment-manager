@@ -9,5 +9,5 @@ export MACHINE
 bash .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
   source .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/activate.sh ${APPNAME} ${USERNAME}
-  rambo up
+  rambo up -c 'bash /vagrant/provision.sh'
 EOF
