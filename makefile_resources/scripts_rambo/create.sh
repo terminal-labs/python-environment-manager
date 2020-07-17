@@ -9,7 +9,7 @@ export DPENAME
 export USERNAME
 export USER
 
-source .tmp/python-environment-manager-master/bash_scripts/lib.sh
+source .tmp/bash-environment-manager-master/bash_scripts/lib.sh
 getmachine
 MACHINE=$_MACHINE
 export MACHINE
