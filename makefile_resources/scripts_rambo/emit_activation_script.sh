@@ -7,9 +7,9 @@ MACHINE=$_MACHINE
 export MACHINE
 
 su -m $USERNAME << 'EOF'
-  if [ $PLATFORM == "linux" ]; then
+  if [ $MACHINE == "linux" ]; then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/linux_activate.sh activate.sh
-  elif [ $PLATFORM == "Mac" ]
+  elif [ $MACHINE == "Mac" ]
   then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/mac_activate.sh activate.sh
    else
