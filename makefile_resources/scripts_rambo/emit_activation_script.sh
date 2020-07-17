@@ -1,10 +1,15 @@
 export APPNAME=$1
 export USERNAME=$2
-export PLATFORM=$3
+
+source .tmp/bash-environment-manager-master/bash_scripts/lib.sh
+getmachine
+MACHINE=$_MACHINE
+export MACHINE
+
 su -m $USERNAME << 'EOF'
   if [ $PLATFORM == "linux" ]; then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/linux_activate.sh activate.sh
-  elif [ $PLATFORM == "mac" ]
+  elif [ $PLATFORM == "Mac" ]
   then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/mac_activate.sh activate.sh
    else
