@@ -130,7 +130,8 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
 
-  LOGNAME=${USERNAME} export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+  LOGNAME=${USERNAME} 
+  export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/bin:$PATH
 
   export USE_GIT_URI="true"
