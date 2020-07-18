@@ -118,6 +118,8 @@ su -m ${USERNAME} <<'EOF'
   pip install --upgrade pip
   pip install --upgrade setuptools
 
+  pip install pyyaml
+
   cd repos/rambo
     git checkout experimental
     pip install .
