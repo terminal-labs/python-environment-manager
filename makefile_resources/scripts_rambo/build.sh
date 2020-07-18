@@ -9,5 +9,12 @@ export MACHINE
 bash .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
   source .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/activate.sh ${APPNAME} ${USERNAME}
+
+  FILE=preprovision.sh
+  if test -f "$FILE"; then
+      sudo bash preprovision.sh
+  fi
+
   rambo up -c 'bash /vagrant/provision.sh'
+
 EOF
