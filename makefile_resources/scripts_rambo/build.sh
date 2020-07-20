@@ -17,7 +17,7 @@ su -m ${USERNAME} <<'EOF'
 
   FILE=auth/env.sh
   if test -f "$FILE"; then
-    . auth/env.sh
+      . auth/env.sh
   fi
 
   rambo up -c 'bash /vagrant/provision.sh'
