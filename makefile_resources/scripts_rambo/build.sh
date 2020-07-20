@@ -15,6 +15,11 @@ su -m ${USERNAME} <<'EOF'
       sudo bash preprovision.sh
   fi
 
+  FILE=auth/env.sh
+  if test -f "$FILE"; then
+    . auth/env.sh
+  fi
+
   rambo up -c 'bash /vagrant/provision.sh'
 
 EOF
