@@ -1,41 +1,28 @@
-export APPNAME=$1
-export USERNAME=$2
-export PLATFORM=$3
-USER=${USERNAME}
-SUDO_USER=${USERNAME}
-USERNAME=${USERNAME}
-unset SUDO_UID SUDO_GID SUDO_USER
-if [ $PLATFORM == "vagrant" ]; then
-  HOME=/home/${USERNAME}
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p /home/vagrant/miniconda3
+if [ $PLATFORM == "vagrant" ]
+then
+  HOME=/home/vagrant
+  source /home/${USERNAME}/.bashrc
   export PATH="/home/vagrant/miniconda3/bin:$PATH"
+  export PATH="/home/vagrant/.local/bin:$PATH"
   source /home/vagrant/miniconda3/etc/profile.d/conda.sh;
 elif [ $PLATFORM == "linux" ]
 then
   HOME=/home/${USERNAME}
-  if [ ! -d "/home/${USERNAME}/miniconda3" ]; then
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    bash Miniconda3-latest-Linux-x86_64.sh -b
-  fi
+  source /home/${USERNAME}/.bashrc
   export PATH="/home/${USERNAME}/miniconda3/bin:$PATH"
+  export PATH="/home/${USERNAME}/.local/bin:$PATH"
+  export PATH="/home/circleci/.local/bin:$PATH"
   source /home/${USERNAME}/miniconda3/etc/profile.d/conda.sh;
 elif [ $PLATFORM == "mac" ]
 then
   HOME=/Users/${USERNAME}
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-  bash Miniconda3-latest-MacOSX-x86_64.sh -b
+  source /Users/${USERNAME}/.bash_profile
   export PATH="/Users/${USERNAME}/miniconda3/bin:$PATH"
   source /Users/${USERNAME}/miniconda3/etc/profile.d/conda.sh;
 else
   echo "not implemented yet"
 fi
-if [ -f "Miniconda3-latest-Linux-x86_64.sh" ]; then
-  rm Miniconda3-latest*
-fi
-if [ -f "Miniconda3-latest-MacOSX-x86_64.sh" ]; then
-  rm Miniconda3-latest*
-fi
+
 if [ $PLATFORM == "vagrant" ]; then
   source /home/${USERNAME}/.bashrc
   conda init bash
