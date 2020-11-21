@@ -40,5 +40,3 @@ then
 else
   echo "not implemented yet"
 fi
-
-conda activate ${APPNAME}
