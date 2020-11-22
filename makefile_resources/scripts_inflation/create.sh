@@ -121,7 +121,6 @@ su -m ${USERNAME} <<'EOF'
   pip install pyyaml
 
   cd repos/inflation
-    git checkout experimental
     pip install .
   cd ../..
 EOF
@@ -138,9 +137,9 @@ su -m ${USERNAME} <<'EOF'
 
   export USE_GIT_URI="true"
   if [ ${MACHINE} == "Mac" ]; then
-   source ${USERHOME}/.bash_profile
+    source ${USERHOME}/.bash_profile
   else
-   source ${USERHOME}/.bashrc
+    source ${USERHOME}/.bashrc
   fi
-  source activate ${APPNAME}
+    source activate ${APPNAME}
 EOF

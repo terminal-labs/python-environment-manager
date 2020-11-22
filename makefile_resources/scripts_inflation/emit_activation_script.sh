@@ -7,12 +7,12 @@ MACHINE=$_MACHINE
 export MACHINE
 
 su -m $USERNAME << 'EOF'
-  if [ $MACHINE == "linux" ]; then
+  if [ $MACHINE == "Linux" ]; then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/linux_activate.sh activate.sh
   elif [ $MACHINE == "Mac" ]
   then
     cp .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/mac_activate.sh activate.sh
-   else
+  else
     echo "not implemented yet"
   fi
   sed "s/-appname-/$APPNAME/g" activate.sh > activate.tmp
