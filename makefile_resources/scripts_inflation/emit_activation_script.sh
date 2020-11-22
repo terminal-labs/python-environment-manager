@@ -8,10 +8,10 @@ export MACHINE
 
 su -m $USERNAME << 'EOF'
   if [ $MACHINE == "linux" ]; then
-    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/linux_activate.sh activate.sh
+    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/linux_activate.sh activate.sh
   elif [ $MACHINE == "Mac" ]
   then
-    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_rambo/mac_activate.sh activate.sh
+    cp .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/mac_activate.sh activate.sh
    else
     echo "not implemented yet"
   fi

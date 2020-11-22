@@ -70,7 +70,7 @@ su -m ${USERNAME} <<'EOF'
   cd $APPNAME
 
   cd repos
-   git clone https://github.com/terminal-labs/rambo.git --recursive
+   git clone https://github.com/terminal-labs/inflation.git --recursive
   cd ..
 
   cd downloads
@@ -120,7 +120,7 @@ su -m ${USERNAME} <<'EOF'
 
   pip install pyyaml
 
-  cd repos/rambo
+  cd repos/inflation
     git checkout experimental
     pip install .
   cd ../..
@@ -132,7 +132,7 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
 
-  LOGNAME=${USERNAME} 
+  LOGNAME=${USERNAME}
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
   export PATH=${USERHOME}/${DPENAME}/$APPNAME/bin:$PATH
 
