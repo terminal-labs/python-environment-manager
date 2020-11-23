@@ -14,9 +14,9 @@ onhost: download_python_environment_manager
 
 onguest: download_python_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/common/onguest/create.sh $(APPNAME) $(SUDO_USER) linux
-	
+
 vagrant-onguest: download_python_environment_manager
 	@if test ! -f "Vagrantfile";then \
 	  wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 	fi
-	@sudo bash .tmp/bash-environment-manager-master/common/onhost/build.sh $(APPNAME) $(SUDO_USER) vagrant
+	@sudo bash .tmp/bash-environment-manager-master/common/vagrant-onguest/build.sh $(APPNAME) $(SUDO_USER) vagrant
