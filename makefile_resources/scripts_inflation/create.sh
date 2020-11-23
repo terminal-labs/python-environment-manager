@@ -70,12 +70,16 @@ su -m ${USERNAME} <<'EOF'
   cd $APPNAME
 
   cd repos
-   git clone https://github.com/terminal-labs/inflation.git --recursive
+    if [ ! -d inflation ]; then
+      git clone https://github.com/terminal-labs/inflation.git --recursive
+    fi
   cd ..
 
   cd downloads
   if [ ${MACHINE} == "Mac" ]; then
-    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    if [ ! -f Miniconda3-latest-MacOSX-x86_64.sh ]; then
+      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    fi
   else
     wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
     wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
@@ -91,38 +95,43 @@ su -m ${USERNAME} <<'EOF'
   fi
 
   cd downloads
-  if [ ${MACHINE} == "Mac" ]; then
-    bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
-    rm Miniconda3-latest-*
-  else
-    bash Miniconda3-latest-Linux-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
-    rm Miniconda3-latest-*
+  if [ ! -d ${USERHOME}/${DPENAME}/$APPNAME/miniconda3 ]; then
+    if [ ${MACHINE} == "Mac" ]; then
+      bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
+    else
+      bash Miniconda3-latest-Linux-x86_64.sh -b -p ${USERHOME}/${DPENAME}/$APPNAME/miniconda3
+    fi
   fi
   cd ..
 
-  export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
-  conda --version
-  conda init bash
+  if [ ! -f state/conda ]; then
+    export PATH=${USERHOME}/${DPENAME}/$APPNAME/miniconda3/bin:$PATH
+    conda --version
+    conda init bash
 
-  if [ ${MACHINE} == "Mac" ]; then
-   source ${USERHOME}/.bash_profile
-  else
-   source ${USERHOME}/.bashrc
+    if [ ${MACHINE} == "Mac" ]; then
+     source ${USERHOME}/.bash_profile
+    else
+     source ${USERHOME}/.bashrc
+    fi
+    conda update -y -n base -c defaults conda
+    conda --version
+    conda update -y conda
+    conda --version
+    conda create -y -n $APPNAME python=${PYTHONVERSION}
+    source activate $APPNAME
+    pip install --upgrade pip
+    pip install --upgrade setuptools
+
+    pip install pyyaml
+
+    cd repos/inflation
+      pip install .
+    cd ../..
+
+    mkdir -p state
+    echo "good" >> state/conda
   fi
-  conda update -y -n base -c defaults conda
-  conda --version
-  conda update -y conda
-  conda --version
-  conda create -y -n $APPNAME python=${PYTHONVERSION}
-  source activate $APPNAME
-  pip install --upgrade pip
-  pip install --upgrade setuptools
-
-  pip install pyyaml
-
-  cd repos/inflation
-    pip install .
-  cd ../..
 EOF
 
 su -m ${USERNAME} <<'EOF'
