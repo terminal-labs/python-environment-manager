@@ -9,10 +9,14 @@ download_python_environment_manager:
 	  sudo su -m $(SUDO_USER) -c "cd .tmp; unzip master.zip"; \
 	fi
 
-linux: download_python_environment_manager
+onhost: download_python_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/create.sh $(APPNAME) $(SUDO_USER) linux
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/emit_activation_script.sh $(APPNAME) $(SUDO_USER) linux
 
+onguest: download_python_environment_manager
+	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/create.sh $(APPNAME) $(SUDO_USER) linux
+	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_dpe/emit_activation_script.sh $(APPNAME) $(SUDO_USER) linux
+	
 vagrant: download_python_environment_manager
 	@if test ! -f "Vagrantfile";then \
 	  wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
