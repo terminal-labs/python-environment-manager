@@ -1,10 +1,10 @@
-dpe-guiapp -------------- ondesktop
-dpe-webapp -------------- onhost/onguest/vagrant
-dpe --------------------- onhost/onguest/vagrant
-inflation --------------- onhost
-python-guiapp ----------- ondesktop
-python-webapp ----------- conda/vagrant
-python ------------------ conda/vagrant
-rambo ------------------- onhost/onguest
-reposet-manifest -------- conda/vagrant
-vagrant-saltstates ------ vagrant
+dpe-guiapp project -------------- ondesktop
+dpe-webapp project -------------- onhost/onguest/vagrant
+dpe project --------------------- onhost/onguest/vagrant
+inflation project --------------- onhost
+python-guiapp project ----------- ondesktop
+python-webapp project ----------- conda/vagrant
+python project ------------------ conda/vagrant
+rambo project ------------------- onhost/onguest
+reposet-manifest project -------- conda/vagrant
+vagrant-saltstates project ------ vagrant
