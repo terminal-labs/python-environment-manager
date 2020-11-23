@@ -1,4 +1,4 @@
-APPNAME = test-dpe
+APPNAME = test-dpe-guiapp
 help:
 	@echo "usage: make [command]"
 

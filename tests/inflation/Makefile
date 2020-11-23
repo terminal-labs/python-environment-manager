@@ -1,4 +1,4 @@
-APPNAME = test-dpe
+APPNAME = test-inflation
 help:
 	@echo "usage: make [command]"
 

@@ -1,4 +1,4 @@
-APPNAME = test-dpe
+APPNAME = test-dpe-webapp
 help:
 	@echo "usage: make [command]"
 
