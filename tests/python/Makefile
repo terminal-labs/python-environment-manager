@@ -18,5 +18,5 @@ vagrant: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_python/build.sh $(APPNAME) $(SUDO_USER) vagrant
 
 conda: download_bash_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_python/build.sh $(APPNAME) $(SUDO_USER) mac
+	@sudo bash .tmp/bash-environment-manager-master/common/python/build.sh $(APPNAME) $(SUDO_USER) mac
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_python/emit_activation_script.sh $(APPNAME) $(SUDO_USER) mac
