@@ -6,5 +6,5 @@ python-guiapp ----------- ondesktop
 python-webapp ----------- onguest/vagrant
 python ------------------ onguest/vagrant
 rambo ------------------- onhost/onguest
-reposet-manifest -------- onhost/onguest/vagrant
+reposet-manifest -------- onguest/vagrant
 vagrant-saltstates ------ onhost
