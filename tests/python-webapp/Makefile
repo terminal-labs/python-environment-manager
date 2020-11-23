@@ -15,8 +15,8 @@ vagrant: download_bash_environment_manager
 	@if test ! -f "Vagrantfile";then \
 		wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 	fi
-	@sudo bash .tmp/bash-environment-manager-master/common/python/build.sh $(APPNAME) $(SUDO_USER) vagrant
+	@sudo bash .tmp/bash-environment-manager-master/common/conda/build.sh $(APPNAME) $(SUDO_USER) vagrant
 
 conda: download_bash_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/common/python/build.sh $(APPNAME) $(SUDO_USER) mac
+	@sudo bash .tmp/bash-environment-manager-master/common/conda/build.sh $(APPNAME) $(SUDO_USER) mac
 	@sudo bash .tmp/bash-environment-manager-master/makefile_resources/scripts_python/emit_activation_script.sh $(APPNAME) $(SUDO_USER) mac
