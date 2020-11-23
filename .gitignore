@@ -1,40 +1,14 @@
-.coverage
-logs
-keys.sh
-id_rsa
-id_rsa.pub
-
-package-lock.json
-__pycache__
-env
-node_modules
-extra
-.vagrant
 \#*\#
 *~
 *egg-info
 *.pyc
-*.pex
+__pycache__
 
-run
-tmp
-.tmp
-manifest
-activate.sh
-create.sh
-*keys.sh
+.vagrant
 .Trash*
-*.zip
-*nodes
-*nohup.out
-*workingdirs
-*secrets
-*dist
+.tmp
 
-*.terraform
-*terraform.tfstate
-*terraform.tfstate.backup
-*terraform_*.zip
+activate.sh
 
 ubuntu-bionic-18.04-cloudimg-console.log
 ubuntu-xenial-16.04-cloudimg-console.log
