@@ -1,10 +1,10 @@
-dpe-guiapp
-dpe-webapp
-dpe
-inflation
-python-guiapp
-python-webapp
-python
-rambo
-reposet-manifest
-vagrant-saltstates
+dpe-guiapp -------------- ondesktop
+dpe-webapp -------------- onhost/onguest/vagrant
+dpe --------------------- onhost/onguest/vagrant
+inflation --------------- onhost
+python-guiapp ----------- ondesktop
+python-webapp ----------- onhost/onguest/vagrant
+python ------------------ onhost/onguest/vagrant
+rambo ------------------- onhost/onguest
+reposet-manifest -------- onhost/onguest/vagrant
+vagrant-saltstates ------ onhost
