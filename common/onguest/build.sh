@@ -1,12 +1,12 @@
 export APPNAME=$1
 export USERNAME=$2
 
-source .tmp/bash-environment-manager-master/bash_scripts/lib.sh
+source .tmp/bash-environment-manager-master/lib/lib.sh
 getmachine
 MACHINE=$_MACHINE
 export MACHINE
 
-bash .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/create.sh ${APPNAME} ${USERNAME}
+bash .tmp/bash-environment-manager-master/common/onguest/create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
   source .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/activate.sh ${APPNAME} ${USERNAME}
 
