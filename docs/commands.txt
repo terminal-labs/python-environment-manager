@@ -7,4 +7,4 @@ python-webapp ----------- onguest/vagrant
 python ------------------ onguest/vagrant
 rambo ------------------- onhost/onguest
 reposet-manifest -------- onguest/vagrant
-vagrant-saltstates ------ onhost
+vagrant-saltstates ------ vagrant
