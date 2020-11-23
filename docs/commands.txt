@@ -1,0 +1,10 @@
+dpe-guiapp
+dpe-webapp
+dpe
+inflation
+python-guiapp
+python-webapp
+python
+rambo
+reposet-manifest
+vagrant-saltstates
