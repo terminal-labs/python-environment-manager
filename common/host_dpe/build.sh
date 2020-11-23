@@ -6,9 +6,9 @@ getmachine
 MACHINE=$_MACHINE
 export MACHINE
 
-bash .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/create.sh ${APPNAME} ${USERNAME}
+bash .tmp/bash-environment-manager-master/common/host_dpe/create.sh ${APPNAME} ${USERNAME}
 su -m ${USERNAME} <<'EOF'
-  source .tmp/bash-environment-manager-master/makefile_resources/scripts_inflation/activate.sh ${APPNAME} ${USERNAME}
+  source .tmp/bash-environment-manager-master/common/host_dpe/activate.sh ${APPNAME} ${USERNAME}
 
   FILE=auth/env.sh
   if test -f "$FILE"; then
