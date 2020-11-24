@@ -17,13 +17,14 @@ cd ${USERHOME}
 
 mkdir -p ${DPENAME}
 cd ${DPENAME}
-mkdir -p ${APPNAME}
-mkdir -p ${APPNAME}/downloads
-mkdir -p ${APPNAME}/repos
-mkdir -p ${APPNAME}/scripts
-mkdir -p ${APPNAME}/bin
 
+mkdir -p ${APPNAME}
 cd $APPNAME
+
+mkdir -p downloads
+mkdir -p repos
+mkdir -p scripts
+mkdir -p bin
 
 cd repos
  git clone https://github.com/terminal-labs/inflation.git
