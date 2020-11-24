@@ -5,6 +5,7 @@ export PLATFORM=$3
 PYTHONVERSION=3.6.9
 DPENAME=dpe
 USER=USERNAME
+
 export APPNAME
 export USERNAME
 export PLATFORM
@@ -25,7 +26,7 @@ fi
 export USERHOME
 
 if [ ${MACHINE} != "Mac" ]; then
-  bash .tmp/bash-environment-manager-master/lib/appdeps.sh
+  bash .tmp/bash-environment-manager-master/lib/aptdeps.sh
 fi
 
 su -m ${USERNAME} <<'EOF'
