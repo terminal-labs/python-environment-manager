@@ -19,4 +19,4 @@ vagrant-onguest: download_python_environment_manager
 	@if test ! -f "Vagrantfile";then \
 	  wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 	fi
-	@sudo bash .tmp/bash-environment-manager-master/scripts/dpe/assemble.sh $APPNAME $SUDO_USER vagrant
+	@sudo bash .tmp/bash-environment-manager-master/scripts/dpe/assemble.sh $(APPNAME) $(SUDO_USER) vagrant vagrant-onguest
