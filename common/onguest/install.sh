@@ -1,12 +1,15 @@
-APPNAME=$1
+export APPNAME=$1
+export USERNAME=$2
+export PLATFORM=$3
+
 PYTHONVERSION=3.6.9
 DPENAME=dpe
-USERNAME=$2
 USER=USERNAME
 export APPNAME
+export USERNAME
+export PLATFORM
 export PYTHONVERSION
 export DPENAME
-export USERNAME
 export USER
 
 source .tmp/bash-environment-manager-master/lib/lib.sh
@@ -22,30 +25,7 @@ fi
 export USERHOME
 
 if [ ${MACHINE} != "Mac" ]; then
-  DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" update
-  DEBIAN_FRONTEND=noninteractive apt -y -o DPkg::options::="--force-confdef" -o DPkg::options::="--force-confold" upgrade
-
-  apt -y install \
-    git \
-    wget \
-    zip \
-    unzip \
-    rsync \
-    bash-completion \
-    build-essential \
-    cmake \
-    make \
-    libpq-dev \
-    libcurl4  \
-    libcurl4-openssl-dev  \
-    libssl-dev  \
-    libxml2 \
-    libxml2-dev  \
-    libssl1.1 \
-    pkg-config \
-    ca-certificates \
-    xclip \
-
+  bash .tmp/bash-environment-manager-master/lib/appdeps.sh
 fi
 
 su -m ${USERNAME} <<'EOF'
@@ -54,8 +34,6 @@ su -m ${USERNAME} <<'EOF'
   SUDO_USER=${USERNAME}
   USERNAME=${USERNAME}
   LOGNAME=${USERNAME}
-
-
 
   cd ${USERHOME}
 
