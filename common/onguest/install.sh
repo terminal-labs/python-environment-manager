@@ -10,21 +10,21 @@ getmachine
 MACHINE=$_MACHINE
 export MACHINE
 
-if [ ${MACHINE} == "Mac" ]; then
-  USERHOME=/Users/${USERNAME}
+if [ $MACHINE == "Mac" ]; then
+  USERHOME=/Users/$USERNAME
 else
-  USERHOME=/home/${USERNAME}
+  USERHOME=/home/$USERNAME
 fi
 export USERHOME
 
-if [ ${MACHINE} != "Mac" ]; then
+if [ $MACHINE != "Mac" ]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
-su -m ${USERNAME} <<'EOF'
+su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
 EOF
 
-su -m ${USERNAME} <<'EOF'
+su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
 EOF
