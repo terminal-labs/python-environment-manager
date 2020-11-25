@@ -3,6 +3,10 @@ export USERNAME=$2
 export PLATFORM=$3
 export CMD=$4
 
-if [ $PLATFORM == "vagrant" ]; then
+if [ $CMD == "onhost" ]; then
+  bash .tmp/bash-environment-manager-master/common/onhost/deploy.sh $APPNAME $USERNAME vagrant $CMD
+fi
+
+if [ $CMD == "vagrant-onguest" ]; then
   bash .tmp/bash-environment-manager-master/common/vagrant-onguest/deploy.sh $APPNAME $USERNAME vagrant $CMD
 fi

@@ -10,7 +10,7 @@ download_python_environment_manager:
 	fi
 
 onhost: download_python_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/common/onhost/create.sh $(APPNAME) $(SUDO_USER) linux
+  @sudo bash .tmp/bash-environment-manager-master/scripts/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onhost
 
 onguest: download_python_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/common/onguest/create.sh $(APPNAME) $(SUDO_USER) linux
