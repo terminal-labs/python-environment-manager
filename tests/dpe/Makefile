@@ -13,7 +13,7 @@ onhost: download_python_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/scripts/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onhost
 
 onguest: download_python_environment_manager
-	@sudo bash .tmp/bash-environment-manager-master/common/onguest/create.sh $(APPNAME) $(SUDO_USER) linux
+	@sudo bash .tmp/bash-environment-manager-master/scripts/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onguest
 
 vagrant-onguest: download_python_environment_manager
 	@if test ! -f "Vagrantfile";then \
