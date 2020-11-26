@@ -5,6 +5,8 @@ export PYTHONVERSION=$4
 export DPENAME=$5
 export USER=$6
 export USERHOME=$7
+export MACHINE=$8
+export CMD=$9
 
 unset SUDO_UID SUDO_GID SUDO_USER
 

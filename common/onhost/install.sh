@@ -1,9 +1,10 @@
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
+export CMD=$4
 export PYTHONVERSION=3.6.9
-export DPENAME=dpe
-export USER=USERNAME
+export DPENAME="dpe"
+export USER=$USERNAME
 
 source .tmp/bash-environment-manager-master/lib/bash/lib.sh
 getmachine
@@ -22,9 +23,9 @@ if [ $MACHINE != "Mac" ]; then
 fi
 
 su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
 su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF

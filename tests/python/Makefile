@@ -1,4 +1,4 @@
-APPNAME = jumper-python
+APPNAME = test-python
 PYTHONVERSION = 3.6.9
 
 help:
