@@ -7,4 +7,4 @@ python-webapp project ----------- conda/vagrant-conda
 python project ------------------ conda/vagrant-conda
 rambo project ------------------- onhost/onguest
 reposet-manifest project -------- conda/vagrant-conda
-vagrant-saltstates project ------ vagrant
+vagrant-saltstates project ------ vagrant-saltstates
