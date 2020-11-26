@@ -13,7 +13,7 @@ download_bash_environment_manager:
 onhost: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onhost
 
-onguest: download_python_environment_manager
+onguest: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onguest
 
 vagrant-onguest: download_bash_environment_manager
