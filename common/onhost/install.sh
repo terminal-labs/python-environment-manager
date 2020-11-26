@@ -22,9 +22,9 @@ if [ $MACHINE != "Mac" ]; then
 fi
 
 su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
 EOF
 
 su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME
 EOF
