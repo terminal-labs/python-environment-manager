@@ -1,3 +1,2 @@
-utilities-package-lite utilities-package-lite.yaml
-utilities-package utilities-package.yaml
-utilities-package-full utilities-package-full.yaml
+shelf shelf.yaml
+reposet-audit-tool reposet-audit-tool.yaml
