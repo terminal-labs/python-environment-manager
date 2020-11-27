@@ -24,4 +24,5 @@ fi
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/conda/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+  bash .tmp/bash-environment-manager-master/lib/runners/conda/install_app.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
