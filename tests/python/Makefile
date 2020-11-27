@@ -1,5 +1,5 @@
-APPNAME = test-python
-PYTHONVERSION = 3.6.9
+APPNAME=test-python
+PYTHONVERSION=3.6.9
 
 help:
   @echo "usage: make [command]"
