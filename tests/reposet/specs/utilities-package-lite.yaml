@@ -1,0 +1,40 @@
+spec:
+  repometadata:
+    defaultbranch: "master"
+    host: "gitlab"
+    urlbase: "git@gitlab.com:terminallabs/utilitiespackage"
+    nameconvention: "utilities-package_*"
+    pattern: "nestedpython"
+    maxsize: "256mb"
+  requiredfiles_detailed:
+     - name: "LICENSE"
+       hash: "3f01ddb5d15a68e28057b1b77de31f4e56f48b841e0b1abe2d75107eb71412ff"
+     - name: "Vagrantfile"
+       hash: "2917d729901a6dfd64cdd884fa8c45429d6fc2abb138d5c75b9aeb0647716ca5"
+     - name: "README.md"
+       hash: "fe28cb3fbe8aeff28d9dfee9f819eb415e892f167969e464356ac8f82f4406c5"
+     - name: "dependencies/apt.txt"
+       hash: "82292d6da10c4992041c97dca50012534591aa8d4827ffb82ebcd174684e57e4"
+  requiredfiles_list:
+     - "LICENSE"
+     - "Vagrantfile"
+     - "dependencies/apt.txt"
+  similarfiles_detailed:
+     - name: "Makefile"
+     - differinglines: [0,3,5]
+  similarfiles_list:
+     - "Makefile"
+  requireddirs_detailed:
+    - name: "dependencies"
+  requireddirs_list:
+     - "dependencies"
+  forbiddenfiles_detailed:
+    - name: "file.zip"
+    - name: "rsa.pem"
+  forbiddenfiles_list:
+     - "file.zip"
+     - "rsa.pem"
+  requiredbranches_detailed:
+    - name: "master"
+  requiredbranches_list:
+     - "master"

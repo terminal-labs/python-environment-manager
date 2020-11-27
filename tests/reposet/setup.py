@@ -34,6 +34,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "setuptools",
+        "repo-audit-tool@git+https://github.com/terminal-labs/repo-audit-tool.git",
     ],
     entry_points="""
         [console_scripts]
