@@ -1,3 +1,6 @@
+export APPNAME=$1
+export USERNAME=$2
+
 source .tmp/bash-environment-manager-master/lib/bash/lib.sh
 getmachine
 MACHINE=$_MACHINE
