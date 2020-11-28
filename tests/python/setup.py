@@ -34,6 +34,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "setuptools",
+	"click",
     ],
     entry_points="""
         [console_scripts]

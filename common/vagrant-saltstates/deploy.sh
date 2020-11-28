@@ -5,5 +5,5 @@ export CMD=$4
 
 su -m $USERNAME <<'EOF'
   eval "vagrant up"
-  eval "vagrant ssh --command 'cd /vagrant; sudo bash .tmp/bash-environment-manager-master/common/onguest/install.sh"" ${APPNAME}"" vagrant"" ${PLATFORM}'"
+  eval "vagrant ssh --command 'cd /vagrant; sudo bash .tmp/bash-environment-manager-master/common/saltstates/install.sh"" ${APPNAME}"" vagrant"" ${PLATFORM}"" ${CMD}'"
 EOF
