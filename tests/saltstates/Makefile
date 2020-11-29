@@ -14,7 +14,7 @@ download_bash_environment_manager:
 saltstates: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/saltstates/assemble.sh $(APPNAME) $(SUDO_USER) computed saltstates
 
-vagrant-saltstates: download_bash_environment_manager
+vagrant.saltstates: download_bash_environment_manager
 	@if test ! -f "Vagrantfile";then \
 		wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 	fi

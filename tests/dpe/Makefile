@@ -16,7 +16,7 @@ onhost: download_bash_environment_manager
 onguest: download_bash_environment_manager
 	@sudo bash .tmp/bash-environment-manager-master/types/dpe/assemble.sh $(APPNAME) $(SUDO_USER) computed onguest
 
-vagrant-onguest: download_bash_environment_manager
+vagrant.onguest: download_bash_environment_manager
 	@if test ! -f "Vagrantfile";then \
 	  wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 	fi
