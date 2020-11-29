@@ -6,5 +6,6 @@ dpe project --------------------- onhost/onguest/vagrant.onguest
 python-guiapp project ----------- ondesktop
 python-webapp project ----------- conda/vagrant.conda
 python project ------------------ conda/vagrant.conda
+fuzzball project ---------------- onhost
 inflation project --------------- onhost
 rambo project ------------------- onhost/onguest
