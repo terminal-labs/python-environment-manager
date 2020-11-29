@@ -16,10 +16,8 @@ USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
 cd $USERHOME
-
 mkdir -p $DPENAME
 cd $DPENAME
-
 mkdir -p $APPNAME
 cd $APPNAME
 
@@ -28,29 +26,16 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
-cd repos
- git clone https://github.com/terminal-labs/inflation.git
-cd ..
-
 cd downloads
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 else
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-  wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 fi
 cd ..
 
-if [ $MACHINE == "Mac" ]; then
-  :
-else
-  cd downloads
-  sudo dpkg -i vagrant_2.2.5_x86_64.deb
-  cd ..
-fi
-
 cd downloads
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $USERHOME/$DPENAME/$APPNAME/miniconda3
   rm Miniconda3-latest-*
 else
@@ -63,7 +48,7 @@ export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 conda --version
 conda init bash
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
  source $USERHOME/.bash_profile
 else
  source $USERHOME/.bashrc
@@ -82,6 +67,14 @@ pip install --upgrade setuptools
 
 pip install pyyaml
 
-cd repos/inflation
-  pip install .
-cd ../..
+# cd repos/inflation
+#   pip install .
+# cd ../..
+
+# cd repos
+# git clone https://github.com/nvm-sh/nvm.git
+# git clone https://github.com/lastpass/lastpass-cli.git
+# git clone https://github.com/terminal-labs/rambo.git
+# git clone https://github.com/terminal-labs/inflation.git
+# git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git
+# cd ..

@@ -8,8 +8,6 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
-unset SUDO_UID SUDO_GID SUDO_USER
-
 USER=$USERNAME
 SUDO_USER=$USERNAME
 USERNAME=$USERNAME
@@ -26,15 +24,17 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
-
-export USE_GIT_URI="true"
-
-if [ $MACHINE == "Mac" ]; then
-  source $USERHOME/.bash_profile
+cd downloads
+if [[ $MACHINE == "Mac" ]]; then
+  :
 else
-  source $USERHOME/.bashrc
+  wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 fi
+cd ..
 
-source activate $APPNAME
+if [[ $MACHINE == "Mac" ]]; then
+  :
+else
+  cd downloads
+  sudo dpkg -i vagrant_2.2.5_x86_64.deb
+fi
