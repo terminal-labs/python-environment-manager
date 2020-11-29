@@ -1,4 +1,5 @@
-APPNAME = test-dpe
+APPNAME=test-reposet
+PYTHONVERSION=3.6.9
 
 help:
 	@echo "usage: make [command]"

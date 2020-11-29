@@ -1,4 +1,4 @@
-APPNAME=saltstates-wordpress
+APPNAME=test-saltstates
 PYTHONVERSION=3.6.9
 
 help:
