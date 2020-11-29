@@ -1,5 +1,7 @@
 import os
+import sys
 import tempfile
+from setuptools import setup, find_packages
 
 APPDIR = os.path.abspath(os.path.dirname(__file__))
 SETUPFILEDIR = os.path.abspath(os.path.join(APPDIR, ".."))
@@ -8,9 +10,6 @@ MEMTEMPDIR = "/dev/shm"
 
 if os.path.isdir(MEMTEMPDIR):
     tempfile.tempdir = MEMTEMPDIR
-
-import sys
-from setuptools import setup, find_packages
 
 VERSION = "2020.1.1"
 PRINT_VERBOSITY = "high"
@@ -34,10 +33,11 @@ setup(
     include_package_data=True,
     install_requires=[
         "setuptools",
-	"click",
+        "pytest",
+        "click",
     ],
     entry_points="""
         [console_scripts]
-        jumper=jumper.__main__:main
+        jumper=app.__main__:main
      """,
 )
