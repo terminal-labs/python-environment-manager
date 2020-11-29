@@ -1,5 +1,5 @@
+saltstates project -------------- saltstates/vagrant.saltstates/vagrant.lxc.saltstates
 reposet project ----------------- conda/vagrant.conda
-saltstates project -------------- saltstates/vagrant.saltstates
 dpe-guiapp project -------------- ondesktop
 dpe-webapp project -------------- onhost/onguest/vagrant.onguest
 dpe project --------------------- onhost/onguest/vagrant.onguest
