@@ -33,7 +33,7 @@ sudo make vagrant.conda
 vagrant destroy -f
 cd ..
 
-cd saltstates
-sudo make vagrant.saltstates
+cd saltstate
+sudo make vagrant.saltstate
 vagrant destroy -f
 cd ..

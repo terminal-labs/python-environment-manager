@@ -22,5 +22,5 @@ if [ $MACHINE != "Mac" ]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
-bash .tmp/bash-environment-manager-master/lib/runners/saltstates/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
-bash .tmp/bash-environment-manager-master/lib/runners/saltstates/salt_run.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+bash .tmp/bash-environment-manager-master/lib/runners/saltstate/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+bash .tmp/bash-environment-manager-master/lib/runners/saltstate/salt_run.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD

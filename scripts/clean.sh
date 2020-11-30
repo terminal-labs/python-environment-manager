@@ -48,7 +48,7 @@ rm -rf .tmp
 rm -rf .vagrant
 cd ..
 
-cd saltstates
+cd saltstate
 rm -f activate.sh
 rm -f ubuntu-bionic-18.04-cloudimg-console.log
 rm -f Vagrantfile
