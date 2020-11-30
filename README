@@ -18,9 +18,8 @@ https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
 https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile
 https://bootstrap.saltstack.com
 
-testsuite-py34
-simple-server
-simple-python
-multi-vagrant
-pure-vagrant
-
+multi-vagrant  -- onhost(onguest)
+simple-server  -- conda/vagrant.conda
+pure-vagrant   -- onhost(onguest)/onguest
+testsuite-py34 -- onhost(onguest)/onguest
+simple-python  -- conda/vagrant.conda/vagrant.lxc.conda
