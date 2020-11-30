@@ -2,19 +2,19 @@ current
 
 saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
 reposet project ----------------- reposet(conda+jumper)/vagrant.reposet(conda+jumper)
-dpe-guiapp project -------------- ondesktop(onhost(onguest))
+dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
 dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
 dpe project --------------------- onhost(onguest)/onguest/vagrant.onguest
-python-guiapp project ----------- ondesktop(onhost(onguest))
+python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
 python-webapp project ----------- conda/vagrant.conda
 python project ------------------ conda/vagrant.conda/vagrant.lxc.conda
-fuzzball project ---------------- onhost(onguest)
-inflation project --------------- onhost(onguest)
+fuzzball project ---------------- onhost(onguest) !nocicd
+inflation project --------------- onhost(onguest) !nocicd
 rambo project ------------------- onhost(onguest)/onguest
 
 pending
 
-multi-vagrant  -- onhost(onguest)
+multi-vagrant  -- onhost(onguest) !nocicd
 simple-server  -- conda/vagrant.conda
 pure-vagrant   -- onhost(onguest)/onguest
 testsuite-py34 -- onhost(onguest)/onguest
