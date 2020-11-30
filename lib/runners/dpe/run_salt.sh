@@ -33,19 +33,9 @@ fi
 export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
 
-export USE_GIT_URI="true"
 source activate $APPNAME
 
-python --version
-
-export DEESCALATED_SALT_CONFIG_DIR=/vagrant/saltstack/configs
-export DEESCALATED_SALT_ROOT_DIR=/vagrant/saltstack/states
-export DEESCALATED_SALT_LOG_FILE=/vagrant/saltstack/logs/logs
-
 salt-call \
-   --config-dir=$DEESCALATED_SALT_CONFIG_DIR \
-   --log-file=$DEESCALATED_SALT_LOG_FILE \
-   --file-root=$DEESCALATED_SALT_ROOT_DIR \
    --log-level=info \
    --state-output=terse \
    --local state.highstate

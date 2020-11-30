@@ -1,4 +1,4 @@
-mkdir -o /vagrant
+mkdir -p /vagrant
 mkdir -p /vagrant/.tmp
 
 cd /vagrant/.tmp

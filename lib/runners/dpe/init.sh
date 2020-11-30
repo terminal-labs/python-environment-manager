@@ -8,11 +8,6 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
-unset SUDO_UID SUDO_GID SUDO_USER
-
-USER=$USERNAME
-SUDO_USER=$USERNAME
-USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
 cd $USERHOME
@@ -26,6 +21,15 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
+if [[ $MACHINE == "Mac" ]]; then
+ source $USERHOME/.bash_profile
+else
+ source $USERHOME/.bashrc
+fi
+
+export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
+
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -37,22 +41,14 @@ cd ..
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then
   bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $USERHOME/$DPENAME/$APPNAME/miniconda3
-  rm Miniconda3-latest-*
 else
   bash Miniconda3-latest-Linux-x86_64.sh -b -p $USERHOME/$DPENAME/$APPNAME/miniconda3
-  rm Miniconda3-latest-*
 fi
+rm Miniconda3-latest-*
 cd ..
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 conda --version
 conda init bash
-
-if [[ $MACHINE == "Mac" ]]; then
- source $USERHOME/.bash_profile
-else
- source $USERHOME/.bashrc
-fi
 
 conda update -y -n base -c defaults conda
 conda --version

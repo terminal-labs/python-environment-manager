@@ -30,18 +30,9 @@ fi
 export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
 
-cd downloads
-wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
-cd ..
-
-cd downloads
-unzip 2018.3.3.zip
-cd ..
-
 source activate $APPNAME
 
-cd downloads
-cd 2018.3.3/salt
-pip install msgpack==0.6.2
-pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
-pip install .
+cd /vagrant
+mkdir -p /etc/salt
+cp -r saltstack/etc/* /etc/salt
+cp -r saltstack/srv/* /srv

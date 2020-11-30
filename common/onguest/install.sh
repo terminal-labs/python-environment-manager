@@ -35,5 +35,9 @@ su -mp $USERNAME <<'EOF'
 EOF
 
 su -mp $USERNAME <<'EOF'
+  sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/insert_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -mp $USERNAME <<'EOF'
   sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
