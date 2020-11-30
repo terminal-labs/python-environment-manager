@@ -17,3 +17,10 @@ https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
 https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile
 https://bootstrap.saltstack.com
+
+testsuite-py34
+simple-server
+simple-python
+multi-vagrant
+pure-vagrant
+
