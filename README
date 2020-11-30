@@ -1,4 +1,4 @@
-saltstate project -------------- saltstate[linux-only]/vagrant.saltstate
+saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
 reposet project ----------------- reposet(conda+jumper)/vagrant.reposet(conda+jumper)
 dpe-guiapp project -------------- ondesktop(onhost(onguest))
 dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
