@@ -1,3 +1,5 @@
+current
+
 saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
 reposet project ----------------- reposet(conda+jumper)/vagrant.reposet(conda+jumper)
 dpe-guiapp project -------------- ondesktop(onhost(onguest))
@@ -10,6 +12,21 @@ fuzzball project ---------------- onhost(onguest)
 inflation project --------------- onhost(onguest)
 rambo project ------------------- onhost(onguest)/onguest
 
+pending
+
+multi-vagrant  -- onhost(onguest)
+simple-server  -- conda/vagrant.conda
+pure-vagrant   -- onhost(onguest)/onguest
+testsuite-py34 -- onhost(onguest)/onguest
+simple-python  -- conda/vagrant.conda/vagrant.lxc.conda
+
+extras
+
+lektor-site  ------------------- conda/vagrant.conda
+saltstack-saltcloud-provider --- onhost(onguest)/onguest/vagrant.onguest
+
+##########
+resources
 
 https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -17,9 +34,3 @@ https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
 https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile
 https://bootstrap.saltstack.com
-
-multi-vagrant  -- onhost(onguest)
-simple-server  -- conda/vagrant.conda
-pure-vagrant   -- onhost(onguest)/onguest
-testsuite-py34 -- onhost(onguest)/onguest
-simple-python  -- conda/vagrant.conda/vagrant.lxc.conda
