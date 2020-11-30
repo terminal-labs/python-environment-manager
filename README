@@ -1,14 +1,14 @@
 saltstates project -------------- saltstates[linux-only]/vagrant.saltstates
 reposet project ----------------- reposet(conda+jumper)/vagrant.reposet(conda+jumper)
-dpe-guiapp project -------------- ondesktop
-dpe-webapp project -------------- onhost/onguest/vagrant.onguest
-dpe project --------------------- onhost/onguest/vagrant.onguest
-python-guiapp project ----------- ondesktop
+dpe-guiapp project -------------- ondesktop(onhost)
+dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
+dpe project --------------------- onhost(onguest)/onguest/vagrant.onguest
+python-guiapp project ----------- ondesktop(onhost)
 python-webapp project ----------- conda/vagrant.conda
 python project ------------------ conda/vagrant.conda/vagrant.lxc.conda
-fuzzball project ---------------- onhost
-inflation project --------------- onhost
-rambo project ------------------- onhost/onguest
+fuzzball project ---------------- onhost(onguest)
+inflation project --------------- onhost(onguest)
+rambo project ------------------- onhost(onguest)/onguest
 
 
 https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
