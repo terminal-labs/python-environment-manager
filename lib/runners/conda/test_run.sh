@@ -15,7 +15,7 @@ SUDO_USER=$USERNAME
 USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
   source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
 else
@@ -25,7 +25,7 @@ fi
 
 conda activate ${APPNAME}
 
-if [ -f ".repo/tests" ];
+if [[ -f ".repo/tests" ]];
 then
   if jumper >/dev/null 2>&1; then
     jumper system version

@@ -15,7 +15,7 @@ SUDO_USER=$USERNAME
 USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
   source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
 else
@@ -25,11 +25,11 @@ fi
 
 conda activate ${APPNAME}
 
-if [ -f "setup.py" ];
+if [[ -f "setup.py" ]];
 then
   pip install -e .
 else
-  if [ -d $APPNAME ] && [ ! -z $APPNAME ];
+  if [[ -d $APPNAME ]] && [[ ! -z $APPNAME ]];
   then
     cd $APPNAME
     pip install -e .

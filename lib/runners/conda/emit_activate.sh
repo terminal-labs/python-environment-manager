@@ -8,7 +8,7 @@ getmachine
 MACHINE=$_MACHINE
 export MACHINE
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   cp .tmp/bash-environment-manager-master/lib/runners/conda/activate_mac.sh activate.sh
 else
   cp .tmp/bash-environment-manager-master/lib/runners/conda/activate_linux.sh activate.sh
