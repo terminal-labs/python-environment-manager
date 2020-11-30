@@ -11,21 +11,33 @@ getmachine
 MACHINE=$_MACHINE
 export MACHINE
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   USERHOME=/Users/$USERNAME
 else
   USERHOME=/home/$USERNAME
 fi
 export USERHOME
 
-if [ $MACHINE != "Mac" ]; then
+if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
-su -m $USERNAME <<'EOF'
+su -mp $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
-su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/activate.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+su -mp $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -mp $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -mp $USERNAME <<'EOF'
+  sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/insert_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -mp $USERNAME <<'EOF'
+  sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
