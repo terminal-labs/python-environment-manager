@@ -38,6 +38,6 @@ setup(
     ],
     entry_points="""
         [console_scripts]
-        jumper=app.__main__:main
+        jumper=app:main
      """,
 )
