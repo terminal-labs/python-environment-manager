@@ -7,8 +7,7 @@ dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
 
 saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
 
-reposet project ----------------- reposet(conda)/vagrant.reposet(conda)
-
+reposet project ----------------- conda/vagrant.conda
 python-webapp project ----------- conda/vagrant.conda
 
 rambo project ------------------- onhost(onguest)/onguest
