@@ -24,7 +24,7 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   source $USERHOME/.bash_profile
 else
   source $USERHOME/.bashrc

@@ -31,7 +31,7 @@ export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
 
 export USE_GIT_URI="true"
 
-if [ $MACHINE == "Mac" ]; then
+if [[ $MACHINE == "Mac" ]]; then
   source $USERHOME/.bash_profile
 else
   source $USERHOME/.bashrc
