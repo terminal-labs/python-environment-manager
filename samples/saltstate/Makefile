@@ -19,4 +19,4 @@ vagrant.saltstate: download_bash_environment_manager
 		wget https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile; \
 		chown $(SUDO_USER) Vagrantfile; \
 	fi
-	@sudo bash .tmp/bash-environment-manager-master/types/saltstates/assemble.sh $(APPNAME) $(SUDO_USER) computed vagrant-saltstates
+	@sudo bash .tmp/bash-environment-manager-master/types/saltstate/assemble.sh $(APPNAME) $(SUDO_USER) computed vagrant-saltstates
