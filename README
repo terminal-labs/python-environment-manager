@@ -1,7 +1,7 @@
 current
 
 saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
-reposet project ----------------- reposet(conda+jumper)/vagrant.reposet(conda+jumper)
+reposet project ----------------- reposet(conda)/vagrant.reposet(conda)
 dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
 dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
 dpe project --------------------- onhost(onguest)/onguest/vagrant.onguest
