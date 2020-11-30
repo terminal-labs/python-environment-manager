@@ -37,6 +37,6 @@ setup(
     ],
     entry_points="""
         [console_scripts]
-        jumper=jumper.__main__:main
+        jumper=jumper.app:main
      """,
 )
