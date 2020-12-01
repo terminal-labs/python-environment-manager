@@ -8,21 +8,13 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
-USER=$USERNAME
-SUDO_USER=$USERNAME
-USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-cd $USERHOME
-mkdir -p $DPENAME
-cd $DPENAME
-mkdir -p $APPNAME
-cd $APPNAME
+source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
+source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 
-mkdir -p downloads
-mkdir -p repos
-mkdir -p scripts
-mkdir -p bin
+export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
 
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then

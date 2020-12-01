@@ -10,27 +10,11 @@ export CMD=$9
 
 LOGNAME=$USERNAME
 
-cd $USERHOME
-mkdir -p $DPENAME
-cd $DPENAME
-mkdir -p $APPNAME
-cd $APPNAME
-
-mkdir -p downloads
-mkdir -p repos
-mkdir -p scripts
-mkdir -p bin
-
-if [[ $MACHINE == "Mac" ]]; then
- source $USERHOME/.bash_profile
-else
- source $USERHOME/.bashrc
-fi
+source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
+source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 
 export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
-
-source activate $APPNAME
 
 cd /vagrant
 mkdir -p /etc/salt
