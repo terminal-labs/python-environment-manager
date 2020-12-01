@@ -5,4 +5,4 @@ if [[ $MACHINE == "Mac" ]]; then
 else
  source $USERHOME/.bashrc
 fi
-export $USERHOME
+export USERHOME=$USERHOME
