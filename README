@@ -1,14 +1,14 @@
 current
 
-python project ------------------ conda/vagrant.conda/vagrant.lxc.conda
+python project ------------------ vagrant.lxc.conda/vagrant.conda/conda
 
-dpe project --------------------- onhost(onguest)/onguest/vagrant.onguest
-dpe-webapp project -------------- onhost(onguest)/onguest/vagrant.onguest
+dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest
+dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
 
-saltstate project --------------- saltstate[linux-only]/vagrant.saltstate
+saltstate project --------------- vagrant.saltstate/saltstate[linux-only]
 
-reposet project ----------------- conda/vagrant.conda
-python-webapp project ----------- conda/vagrant.conda
+reposet project ----------------- vagrant.conda/conda
+python-webapp project ----------- vagrant.conda/conda
 
 rambo project ------------------- onhost(onguest)/onguest
 
@@ -19,17 +19,17 @@ inflation project --------------- onhost(onguest) !nocicd
 
 pending
 
-interface      -- conda/vagrant.conda
+interface      -- vagrant.conda/conda
 multi-vagrant  -- onhost(onguest) !nocicd
-simple-server  -- conda/vagrant.conda
+simple-server  -- vagrant.conda/conda
 pure-vagrant   -- onhost(onguest)/onguest
 testsuite-py34 -- onhost(onguest)/onguest
-simple-python  -- conda/vagrant.conda/vagrant.lxc.conda
+simple-python  -- vagrant.lxc.conda/vagrant.conda/conda
 
 extras
 
-lektor-site  ------------------- conda/vagrant.conda
-saltstack-saltcloud-provider --- onhost(onguest)/onguest/vagrant.onguest
+lektor-site  ------------------- vagrant.conda/conda
+saltstack-saltcloud-provider --- vagrant.onguest/onhost(onguest)/onguest
 
 ##########
 resources
