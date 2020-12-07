@@ -19,6 +19,7 @@ inflation project --------------- onhost(onguest) !nocicd
 
 pending
 
+interface      -- conda/vagrant.conda
 multi-vagrant  -- onhost(onguest) !nocicd
 simple-server  -- conda/vagrant.conda
 pure-vagrant   -- onhost(onguest)/onguest
