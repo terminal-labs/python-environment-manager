@@ -1,6 +1,7 @@
 notes
 
-no types support docker/lxc in cicd 
+no types support docker/lxc in cicd
+should be run on ubuntu
 
 current
 
