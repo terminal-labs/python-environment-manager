@@ -9,3 +9,10 @@ getmachine () {
   esac
   _MACHINE=$machine
 }
+
+install_project_repo_pip () {
+  cd .tmp/repos
+  cd ${1}
+  pip install -e .
+  cd ../../..
+}
