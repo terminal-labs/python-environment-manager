@@ -26,14 +26,14 @@ saltstate project + lxc --------- vagrant.saltstate/saltstate linux/!nomac
 
 pending
 
-interface      -- vagrant.conda/conda
-multi-vagrant  -- onhost(onguest) !nocicd
-simple-server  -- vagrant.conda/conda
-pure-vagrant   -- onhost(onguest)/onguest !nocicd
-testsuite-py34 -- onhost(onguest)/onguest
-simple-python  -- vagrant.lxc.conda/vagrant.conda/conda
+interface      ------------------ vagrant.conda/conda
+simple-python  ------------------ vagrant.lxc.conda/vagrant.conda/conda
+simple-server  ------------------ vagrant.conda/conda
+testsuite-py34 ------------------ onhost(onguest)/onguest
+pure-vagrant   ------------------ onhost(onguest)/onguest !nocicd
+multi-vagrant  ------------------ onhost(onguest) !nocicd
 
 extras
 
-lektor-site  ------------------- vagrant.conda/conda
-saltstack-saltcloud-provider --- vagrant.onguest/onhost(onguest)/onguest
+lektor-site  -------------------- vagrant.conda/conda
+saltstack-saltcloud-provider ---- vagrant.onguest/onhost(onguest)/onguest
