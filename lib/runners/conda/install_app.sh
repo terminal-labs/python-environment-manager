@@ -12,15 +12,17 @@ unset SUDO_UID SUDO_GID SUDO_USER
 
 USER=$USERNAME
 SUDO_USER=$USERNAME
-USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-if [[ $MACHINE == "Mac" ]]; then
+source .tmp/bash-environment-manager-master/lib/bash/lib.sh
+
+if [[ $MACHINE == "Mac" ]];
+then
   export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
-  source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
+  source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh
 else
   export PATH="/home/$USERNAME/miniconda3/bin:$PATH"
-  source /home/$USERNAME/miniconda3/etc/profile.d/conda.sh;
+  source /home/$USERNAME/miniconda3/etc/profile.d/conda.sh
 fi
 
 conda activate ${APPNAME}
