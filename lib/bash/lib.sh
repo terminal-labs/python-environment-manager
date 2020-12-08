@@ -10,7 +10,15 @@ getmachine () {
   _MACHINE=$machine
 }
 
+clone_repo () {
+  mkdir -p .tmp/repos
+  cd .tmp/repos
+  git clone ${1}
+  cd ../..
+}
+
 install_project_repo_pip () {
+  mkdir -p .tmp/repos
   cd .tmp/repos
   cd ${1}
   pip install -e .

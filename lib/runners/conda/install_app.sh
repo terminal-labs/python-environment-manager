@@ -27,6 +27,16 @@ fi
 
 conda activate ${APPNAME}
 
+if [[ -f "dependencies/repos-pip.txt" ]];
+then
+  cat dependencies/repos-pip.txt | while read line
+  do
+    install_project_repo_pip $line
+  done
+else
+  :
+fi
+
 if [[ -f "setup.py" ]];
 then
   pip install -e .
