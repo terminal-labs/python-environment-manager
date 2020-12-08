@@ -30,6 +30,7 @@ interface      ------------------ vagrant.conda/conda
 simple-python  ------------------ vagrant.lxc.conda/vagrant.conda/conda
 simple-server  ------------------ vagrant.conda/conda
 testsuite-py34 ------------------ onhost(onguest)/onguest
+testsuite-py36 ------------------ onhost(onguest)/onguest
 pure-vagrant   ------------------ onhost(onguest)/onguest !nocicd
 multi-vagrant  ------------------ onhost(onguest) !nocicd
 
