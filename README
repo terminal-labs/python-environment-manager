@@ -12,22 +12,22 @@ dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
 dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest !nomac
 dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest !nomac
 
-saltstate project --------------- vagrant.saltstate/saltstate
-saltstate project + lxc --------- vagrant.saltstate/saltstate !nomac
-
 reposet project ----------------- vagrant.conda/conda
 python-webapp project ----------- vagrant.conda/conda
 
 rambo project ------------------- onhost(onguest)/onguest
 rambo project + lxc ------------- onhost(onguest)/onguest !nomac
 
-python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
-dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
-
 fuzzball project ---------------- onhost(onguest) !nocicd
 inflation project --------------- onhost(onguest) !nocicd
 fuzzball project + lxc ---------- onhost(onguest) !nocicd !nomac
 inflation project + lxc --------- onhost(onguest) !nocicd !nomac
+
+python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
+dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
+
+saltstate project --------------- vagrant.saltstate/saltstate !nomac
+saltstate project + lxc --------- vagrant.saltstate/saltstate !nomac
 
 pending
 
