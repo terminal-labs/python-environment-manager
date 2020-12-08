@@ -5,15 +5,22 @@ should be run on ubuntu
 
 current
 
-python project ------------------ vagrant.lxc.conda/vagrant.conda/conda
+python project ------------------ vagrant.conda/conda
+python project + lxc ------------ vagrant.lxc.conda/vagrant.conda/conda
 
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
+dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest
+dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest
 
 saltstate project --------------- vagrant.saltstate/saltstate
+saltstate project + lxc --------- vagrant.saltstate/saltstate
 
 reposet project ----------------- vagrant.conda/conda
 python-webapp project ----------- vagrant.conda/conda
+
+rambo project ------------------- onhost(onguest)/onguest
+rambo project + lxc ------------- onhost(onguest)/onguest
 
 python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
 dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
@@ -21,7 +28,6 @@ dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
 fuzzball project ---------------- onhost(onguest) !nocicd
 inflation project --------------- onhost(onguest) !nocicd
 
-rambo project ------------------- onhost(onguest)/onguest
 
 pending
 
