@@ -1,6 +1,6 @@
 notes
 
-no types support docker/lxc in hosted-cicd
+no types support docker/lxc in hosted-ci-cd
 should be run on ubuntu
 
 current
