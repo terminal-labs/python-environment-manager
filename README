@@ -10,12 +10,13 @@ saltstate project --------------- vagrant.saltstate/saltstate[linux-only]
 reposet project ----------------- vagrant.conda/conda
 python-webapp project ----------- vagrant.conda/conda
 
-rambo project ------------------- onhost(onguest)/onguest
-
 python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
 dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
+
 fuzzball project ---------------- onhost(onguest) !nocicd
 inflation project --------------- onhost(onguest) !nocicd
+
+rambo project ------------------- onhost(onguest)/onguest
 
 pending
 
