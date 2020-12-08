@@ -5,8 +5,7 @@ should be run on ubuntu
 
 current
 
-python project ------------------ vagrant.conda/conda
-python project + lxc ------------ vagrant.lxc.conda/vagrant.conda/conda
+python project ------------------ vagrant.lxc.conda/vagrant.conda/conda
 
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
