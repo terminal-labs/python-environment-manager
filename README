@@ -1,33 +1,28 @@
-notes
-
-no types support docker/lxc in hosted-ci-cd
-should be run on ubuntu
-
 current
 
-python project ------------------ vagrant.lxc.conda/vagrant.conda/conda
+python project ------------------ vagrant.lxc.conda/vagrant.conda/conda linux/mac
 
-dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest
-dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
-dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest !nomac
-dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest !nomac
+dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac
+dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac
+dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac
+dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac
 
-reposet project ----------------- vagrant.conda/conda
-python-webapp project ----------- vagrant.conda/conda
+reposet project ----------------- vagrant.conda/conda linux/mac
+python-webapp project ----------- vagrant.conda/conda linux/mac
 
-rambo project ------------------- onhost(onguest)/onguest
-rambo project + lxc ------------- onhost(onguest)/onguest !nomac
+rambo project ------------------- onhost(onguest)/onguest linux/mac
+rambo project + lxc ------------- onhost(onguest)/onguest linux/!nomac
 
-fuzzball project ---------------- onhost(onguest) !nocicd
-inflation project --------------- onhost(onguest) !nocicd
-fuzzball project + lxc ---------- onhost(onguest) !nocicd !nomac
-inflation project + lxc --------- onhost(onguest) !nocicd !nomac
+fuzzball project ---------------- onhost(onguest) !nocicd linux/mac
+inflation project --------------- onhost(onguest) !nocicd linux/mac
+fuzzball project + lxc ---------- onhost(onguest) !nocicd linux/!nomac
+inflation project + lxc --------- onhost(onguest) !nocicd linux/!nomac
 
-python-guiapp project ----------- ondesktop(onhost(onguest)) !nocicd
-dpe-guiapp project -------------- ondesktop(onhost(onguest)) !nocicd
+python-guiapp project ----------- ondesktop(onhost(onguest)) linux/!nocicd
+dpe-guiapp project -------------- ondesktop(onhost(onguest)) linux/!nocicd
 
-saltstate project --------------- vagrant.saltstate/saltstate !nomac
-saltstate project + lxc --------- vagrant.saltstate/saltstate !nomac
+saltstate project --------------- vagrant.saltstate/saltstate linux/!nomac
+saltstate project + lxc --------- vagrant.saltstate/saltstate linux/!nomac
 
 pending
 
