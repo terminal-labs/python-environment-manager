@@ -41,7 +41,6 @@ saltstack-saltcloud-provider --- vagrant.onguest/onhost(onguest)/onguest
 resources
 
 https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
 https://raw.githubusercontent.com/terminal-labs/shelf/master/vagrant/Vagrantfile
