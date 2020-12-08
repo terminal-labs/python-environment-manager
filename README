@@ -28,7 +28,7 @@ pending
 interface      -- vagrant.conda/conda
 multi-vagrant  -- onhost(onguest) !nocicd
 simple-server  -- vagrant.conda/conda
-pure-vagrant   -- onhost(onguest)/onguest
+pure-vagrant   -- onhost(onguest)/onguest !nocicd
 testsuite-py34 -- onhost(onguest)/onguest
 simple-python  -- vagrant.lxc.conda/vagrant.conda/conda
 
