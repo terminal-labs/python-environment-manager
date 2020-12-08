@@ -9,7 +9,7 @@ python project ------------------ vagrant.lxc.conda/vagrant.conda/conda
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest
 
-saltstate project --------------- vagrant.saltstate/saltstate[linux-only]
+saltstate project --------------- vagrant.saltstate/saltstate
 
 reposet project ----------------- vagrant.conda/conda
 python-webapp project ----------- vagrant.conda/conda
