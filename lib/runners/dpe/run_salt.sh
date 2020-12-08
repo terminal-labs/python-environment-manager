@@ -19,6 +19,6 @@ export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
 source activate $APPNAME
 
 salt-call \
-   --log-level=info \
+   --log-level=debug \
    --state-output=terse \
    --local state.highstate
