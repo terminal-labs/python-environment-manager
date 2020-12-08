@@ -18,8 +18,8 @@ inflation project --------------- onhost(onguest) !nocicd linux/mac
 fuzzball project + lxc ---------- onhost(onguest) !nocicd linux/!nomac
 inflation project + lxc --------- onhost(onguest) !nocicd linux/!nomac
 
-python-guiapp project ----------- ondesktop(onhost(onguest)) linux/!nocicd
-dpe-guiapp project -------------- ondesktop(onhost(onguest)) linux/!nocicd
+python-guiapp project ----------- ondesktop(onhost(onguest)) linux/mac !nocicd
+dpe-guiapp project -------------- ondesktop(onhost(onguest)) linux/mac !nocicd
 
 saltstate project --------------- vagrant.saltstate/saltstate linux/!nomac
 saltstate project + lxc --------- vagrant.saltstate/saltstate linux/!nomac
