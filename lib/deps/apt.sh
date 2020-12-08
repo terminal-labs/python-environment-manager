@@ -21,3 +21,10 @@ apt -y install \
   pkg-config \
   ca-certificates \
   xclip \
+
+if [[ -d "dependencies" ]] 
+then
+  xargs apt install -y < dependencies/apt.txt
+else
+  :
+fi
