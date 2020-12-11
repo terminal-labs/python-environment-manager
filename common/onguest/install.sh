@@ -18,6 +18,9 @@ else
 fi
 export USERHOME
 
+mkdir -p /application
+chmod -R 777 /application
+
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi

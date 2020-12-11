@@ -21,4 +21,4 @@ mkdir -p unzipped
 mkdir -p repos
 mkdir -p bin
 
-cd ../../../../../..
+cd ../../../..

@@ -1,2 +1,3 @@
+#PLATFORM="/home/vagrant"
 #PLATFORM=/vagrant/.tmp
-PLATFORM="/home/vagrant"
+PLATFORM="/application"

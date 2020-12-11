@@ -49,15 +49,3 @@ pip install --upgrade pip
 pip install --upgrade setuptools
 
 pip install pyyaml
-
-# cd repos/inflation
-#   pip install .
-# cd ../..
-
-# cd repos
-# git clone https://github.com/nvm-sh/nvm.git
-# git clone https://github.com/lastpass/lastpass-cli.git
-# git clone https://github.com/terminal-labs/rambo.git
-# git clone https://github.com/terminal-labs/inflation.git
-# git clone https://gitlab.com/terminallabs/utilitiespackage/utilities-package.git
-# cd ..
