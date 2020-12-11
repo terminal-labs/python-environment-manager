@@ -10,10 +10,9 @@ export CMD=$9
 
 unset SUDO_UID SUDO_GID SUDO_USER
 
-USER=$USERNAME
-SUDO_USER=$USERNAME
-USERNAME=$USERNAME
 LOGNAME=$USERNAME
+
+source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 
 cd $USERHOME
 mkdir -p $DPENAME
@@ -26,8 +25,8 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
-export PATH=.tmp/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=.tpm/$DPENAME/$APPNAME/bin:$PATH
+export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/bin:$PATH
 
 export USE_GIT_URI="true"
 

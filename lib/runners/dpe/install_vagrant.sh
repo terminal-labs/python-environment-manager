@@ -13,8 +13,8 @@ LOGNAME=$USERNAME
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=.tmp/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=.tmp/$DPENAME/$APPNAME/bin:$PATH
+export PATH=.tmp/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=.tmp/platform/$DPENAME/$APPNAME/bin:$PATH
 
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then
