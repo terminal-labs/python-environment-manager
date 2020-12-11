@@ -13,8 +13,8 @@ LOGNAME=$USERNAME
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
+export PATH=.tmp/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=.tmp/$DPENAME/$APPNAME/bin:$PATH
 
 cd downloads
 wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip

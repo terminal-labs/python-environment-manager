@@ -26,8 +26,8 @@ mkdir -p repos
 mkdir -p scripts
 mkdir -p bin
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
+export PATH=.tmp/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=.tpm/$DPENAME/$APPNAME/bin:$PATH
 
 export USE_GIT_URI="true"
 

@@ -13,8 +13,8 @@ LOGNAME=$USERNAME
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
+export PATH=.tmp/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
+export PATH=.tmp/platform/$DPENAME/$APPNAME/bin:$PATH
 
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then
@@ -26,9 +26,9 @@ cd ..
 
 cd downloads
 if [[ $MACHINE == "Mac" ]]; then
-  bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $USERHOME/$DPENAME/$APPNAME/miniconda3
+  bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ../miniconda3
 else
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p $USERHOME/$DPENAME/$APPNAME/miniconda3
+  bash Miniconda3-latest-Linux-x86_64.sh -b -p ../miniconda3
 fi
 rm Miniconda3-latest-*
 cd ..
