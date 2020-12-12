@@ -1,11 +1,6 @@
 source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 
-mkdir -p .tmp
-cd .tmp
-mkdir -p scratch
-mkdir -p scripts
-mkdir -p clones
-cd -
+bash source .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
 
 cd $PLATFORM
 
