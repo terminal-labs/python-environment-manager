@@ -1,7 +1,5 @@
 source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 
-bash source .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
-
 cd $PLATFORM
 
 mkdir -p platform
