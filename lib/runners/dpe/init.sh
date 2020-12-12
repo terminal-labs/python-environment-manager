@@ -14,10 +14,9 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/bin:$PATH
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
-cd $PLATFORM/platform/$DPENAME/$APPNAME/downloads
+cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 else
@@ -25,11 +24,11 @@ else
 fi
 cd -
 
-cd $PLATFORM/platform/$DPENAME/$APPNAME/downloads
+cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
-  bash Miniconda3-latest-MacOSX-x86_64.sh -b -p ../miniconda3
+  bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 else
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p ../miniconda3
+  bash Miniconda3-latest-Linux-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 fi
 rm Miniconda3-latest-*
 cd -

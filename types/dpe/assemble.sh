@@ -3,7 +3,9 @@ export USERNAME=$2
 export PLATFORM=$3
 export CMD=$4
 
-bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
+EOF
 
 if [[ $CMD == "onhost" ]]; then
   bash .tmp/bash-environment-manager-master/common/onhost/deploy.sh $APPNAME $USERNAME computed $CMD

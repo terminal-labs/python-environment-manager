@@ -20,13 +20,7 @@ cd $DPENAME
 mkdir -p $APPNAME
 cd $APPNAME
 
-mkdir -p downloads
-mkdir -p repos
-mkdir -p scripts
-mkdir -p bin
-
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/bin:$PATH
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
 export USE_GIT_URI="true"
 

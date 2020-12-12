@@ -14,8 +14,7 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$PLATFORM/platform/$DPENAME/$APPNAME/bin:$PATH
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
 source activate $APPNAME
 
