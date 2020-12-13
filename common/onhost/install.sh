@@ -22,13 +22,13 @@ if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
-su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
-EOF
-
-su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
-EOF
+# su -m $USERNAME <<'EOF'
+#   bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+# EOF
+#
+# su -m $USERNAME <<'EOF'
+#   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+# EOF
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD

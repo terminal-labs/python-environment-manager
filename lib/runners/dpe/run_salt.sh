@@ -14,11 +14,9 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
-source activate $APPNAME
-
-salt-call \
-   --log-level=info \
-   --state-output=terse \
-   --local state.highstate
+sudo su -m root <<'EOF'
+  export PATH=/application/platform/miniconda3/bin:$PATH
+  export PATH=/home/vagrant/.local/bin:$PATH
+  source activate sdm
+  salt-call --log-level=info --state-output=terse --local state.highstate
+EOF
