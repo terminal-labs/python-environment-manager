@@ -9,5 +9,6 @@ mkdir -p clones
 mkdir -p repos
 mkdir -p auth
 mkdir -p data
+mkdir -p vars
 mkdir -p bin
 cd -
