@@ -20,8 +20,9 @@ else
 fi
 export USERHOME
 
-mkdir -p /application
-chmod -R 777 /application
+mkdir -p /opt/halcyon
+chmod -R 777 /opt/halcyon
+ln -s /vagrant /opt/halcyon/code
 
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
