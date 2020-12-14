@@ -1,3 +1,5 @@
+## default run mdoe = sudo
+
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -29,9 +31,13 @@ su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
-# su -m $USERNAME <<'EOF'
-#   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
-# EOF
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_terraform.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
@@ -43,4 +49,8 @@ EOF
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/show_versions.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF

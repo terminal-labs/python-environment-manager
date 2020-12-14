@@ -19,17 +19,18 @@ source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
 cd .tmp/downloads
-wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
+if [[ $MACHINE == "Mac" ]]; then
+  :
+else
+  rm terraform*
+  wget https://tl-build-resources.s3.us-east-2.amazonaws.com/terraform_0.12.24_linux_amd64.zip
+fi
 cd -
 
-cd .tmp/downloads
-unzip 2018.3.3.zip
-cd -
-
-source activate $APPNAME
-
-cd .tmp/downloads
-cd 2018.3.3/salt
-pip install msgpack==0.6.2
-pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
-pip install -e .
+if [[ $MACHINE == "Mac" ]]; then
+  :
+else
+  cd .tmp/downloads
+  unzip terraform_0.12.24_linux_amd64.zip
+  cp terraform ../bin/terraform
+fi

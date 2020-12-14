@@ -1,3 +1,5 @@
+## default run mdoe = user
+
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -15,8 +17,10 @@ source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
 sudo su -m root <<'EOF'
+if [[ -d "saltstack" ]]; then
   export PATH=/application/platform/miniconda3/bin:$PATH
   export PATH=/home/vagrant/.local/bin:$PATH
   source activate sdm
   salt-call --log-level=info --state-output=terse --local state.highstate
+fi
 EOF

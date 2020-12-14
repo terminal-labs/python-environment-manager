@@ -1,3 +1,5 @@
+## default run mdoe = user
+
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -20,6 +22,7 @@ cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
   :
 else
+  rm vagrant*
   wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
 fi
 cd -
