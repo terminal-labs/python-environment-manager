@@ -22,7 +22,7 @@ apt -y install \
   ca-certificates \
   xclip \
 
-if [[ d "dependencies" ]];
+if [[ -d "dependencies" ]];
 then
   xargs apt install -y < dependencies/apt.txt
 else
