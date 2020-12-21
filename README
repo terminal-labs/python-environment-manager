@@ -2,10 +2,10 @@ current
 
 python project ------------------ vagrant.lxc.conda/vagrant.conda/conda linux/mac 6
 
-interface      ------------------ vagrant.conda/conda
+interface      ------------------ vagrant.conda/conda linux/mac 4
 
-simple-python  ------------------ vagrant.conda/conda
-simple-server  ------------------ vagrant.conda/conda
+simple-python  ------------------ vagrant.conda/conda linux/mac 4
+simple-server  ------------------ vagrant.conda/conda linux/mac 4
 
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
