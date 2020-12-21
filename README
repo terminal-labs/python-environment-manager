@@ -2,6 +2,10 @@ current
 
 python project ------------------ vagrant.lxc.conda/vagrant.conda/conda linux/mac 6
 
+interface ----------------------- vagrant.conda/conda linux/mac 4
+simple-api ---------------------- vagrant.conda/conda linux/mac 4
+simple-cli ---------------------- vagrant.conda/conda linux/mac 4
+
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac 3
@@ -26,15 +30,12 @@ saltstate project + lxc --------- vagrant.saltstate/saltstate linux/!nomac 2
 
 pending
 
-interface      ------------------ vagrant.conda/conda
-simple-python  ------------------ vagrant.lxc.conda/vagrant.conda/conda
-simple-server  ------------------ vagrant.conda/conda
 testsuite-py34 ------------------ onhost(onguest)/onguest
 testsuite-py36 ------------------ onhost(onguest)/onguest
-pure-vagrant   ------------------ onhost(onguest)/onguest !nocicd
-multi-vagrant  ------------------ onhost(onguest) !nocicd
+pure-vagrant -------------------- onhost(onguest)/onguest !nocicd
+multi-vagrant ------------------- onhost(onguest) !nocicd
 
 extras
 
-lektor-site  -------------------- vagrant.conda/conda
+lektor-site --------------------- vagrant.conda/conda
 saltstack-saltcloud-provider ---- vagrant.onguest/onhost(onguest)/onguest
