@@ -10,6 +10,8 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
+LOGNAME=$USERNAME
+
 source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh

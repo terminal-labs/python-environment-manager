@@ -10,6 +10,8 @@ export CMD=$9
 
 unset SUDO_UID SUDO_GID SUDO_USER
 
+LOGNAME=$USERNAME
+
 source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 
 cd $USERHOME

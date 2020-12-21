@@ -1,5 +1,3 @@
-## default run mdoe = user
-
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -9,6 +7,8 @@ export USER=$6
 export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
+
+LOGNAME=$USERNAME
 
 source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
@@ -35,6 +35,8 @@ cd -
 
 conda --version
 conda init bash
+
+source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
 
 conda update -y -n base -c defaults conda
 conda --version
