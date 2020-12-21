@@ -4,8 +4,8 @@ python project ------------------ vagrant.lxc.conda/vagrant.conda/conda linux/ma
 
 interface      ------------------ vagrant.conda/conda linux/mac 4
 
-simple-python  ------------------ vagrant.conda/conda linux/mac 4
-simple-server  ------------------ vagrant.conda/conda linux/mac 4
+simple-cli  ------------------ vagrant.conda/conda linux/mac 4
+simple-api  ------------------ vagrant.conda/conda linux/mac 4
 
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
