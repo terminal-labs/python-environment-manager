@@ -1,3 +1,5 @@
+## default run mode = sudo
+
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -18,6 +20,9 @@ else
 fi
 export USERHOME
 
+mkdir -p /opt/halcyon
+chmod -R 777 /opt/halcyon
+
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
@@ -35,9 +40,9 @@ su -m $USERNAME <<'EOF'
 EOF
 
 su -m $USERNAME <<'EOF'
-  sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/insert_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/insert_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
 su -m $USERNAME <<'EOF'
-  sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
