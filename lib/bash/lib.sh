@@ -31,3 +31,18 @@ install_project_repo_pip () {
   pip install -e .
   cd ../../..
 }
+
+emit_env_file () {
+cat > .tmp/_env.sh <<EOF
+export APPNAME=-appname-
+export USERNAME=-username-
+export PLATFORM=-platform-
+export CMD=-cmd-
+EOF
+}
+
+edit_env_file () {
+  sed "s/$1/$2/g" .tmp/_env.sh > .tmp/_env.tmp
+  rm .tmp/_env.sh
+  mv .tmp/_env.tmp .tmp/_env.sh
+}

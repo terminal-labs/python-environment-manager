@@ -14,8 +14,6 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
 cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
   if [[ ! -f "Miniconda3-latest-MacOSX-x86_64.sh" ]];
@@ -38,6 +36,8 @@ else
 fi
 cd -
 
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+
 conda --version
 conda init bash
 
@@ -49,7 +49,7 @@ conda update -y conda
 conda --version
 conda create -y -n $APPNAME python=$PYTHONVERSION
 
-source activate $APPNAME
+conda activate $APPNAME
 
 pip install --upgrade pip
 pip install --upgrade setuptools

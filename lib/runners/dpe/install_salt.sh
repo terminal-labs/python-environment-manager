@@ -16,8 +16,6 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
 if [[ ! -f ".tmp/downloads/2018.3.3.zip" ]];
 then
   cd .tmp/downloads
@@ -32,7 +30,10 @@ then
   cd -
 fi
 
-source activate $APPNAME
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
+
+conda activate ${APPNAME}
 
 cd .tmp/downloads
 cd 2018.3.3/salt
