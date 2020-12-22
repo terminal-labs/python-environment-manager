@@ -1,3 +1,5 @@
+## default run mdoe = user
+
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -10,24 +12,30 @@ export CMD=$9
 
 LOGNAME=$USERNAME
 
+source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$USERHOME/$DPENAME/$APPNAME/miniconda3/bin:$PATH
-export PATH=$USERHOME/$DPENAME/$APPNAME/bin:$PATH
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
-cd downloads
-wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
-cd ..
+if [[ ! -f ".tmp/downloads/2018.3.3.zip" ]];
+then
+  cd .tmp/downloads
+  wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
+  cd -
+fi
 
-cd downloads
-unzip 2018.3.3.zip
-cd ..
+if [[ ! -d ".tmp/downloads/2018.3.3" ]];
+then
+  cd .tmp/downloads
+  unzip 2018.3.3.zip
+  cd -
+fi
 
 source activate $APPNAME
 
-cd downloads
+cd .tmp/downloads
 cd 2018.3.3/salt
 pip install msgpack==0.6.2
 pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
-pip install .
+pip install -e .

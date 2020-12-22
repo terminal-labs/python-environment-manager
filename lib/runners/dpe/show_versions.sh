@@ -31,5 +31,5 @@ terraform -version
 vagrant --version
 
 rambo --version
-inflation version
+echo "inflation" $(inflation system version)
 echo "utilitiespackage" $(utilitiespackage system version)
