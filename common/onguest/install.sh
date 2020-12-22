@@ -1,5 +1,3 @@
-## default run mdoe = sudo
-
 export APPNAME=$1
 export USERNAME=$2
 export PLATFORM=$3
@@ -20,15 +18,16 @@ else
 fi
 export USERHOME
 
-mkdir -p /application
-chmod -R 777 /application
-
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+EOF
+
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_app.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
 su -m $USERNAME <<'EOF'

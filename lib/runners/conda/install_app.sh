@@ -8,24 +8,22 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
+unset SUDO_UID SUDO_GID SUDO_USER
+
+USER=$USERNAME
+SUDO_USER=$USERNAME
+USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
-
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
+if [[ $MACHINE == "Mac" ]]; then
+  export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
+  source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
+else
+  export PATH="/home/$USERNAME/miniconda3/bin:$PATH"
+  source /home/$USERNAME/miniconda3/etc/profile.d/conda.sh;
+fi
 
 conda activate ${APPNAME}
-
-if [[ -f "dependencies/repos-pip.txt" ]];
-then
-  cat dependencies/repos-pip.txt | while read line
-  do
-    install_project_repo_pip $line
-  done
-else
-  :
-fi
 
 if [[ -f "setup.py" ]];
 then

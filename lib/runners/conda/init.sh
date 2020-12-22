@@ -8,41 +8,36 @@ export USERHOME=$7
 export MACHINE=$8
 export CMD=$9
 
+unset SUDO_UID SUDO_GID SUDO_USER
+
+USER=$USERNAME
+SUDO_USER=$USERNAME
+USERNAME=$USERNAME
 LOGNAME=$USERNAME
 
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
-
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
-cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+  if [[ ! -d "/Users/$USERNAME/miniconda3" ]]; then
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    bash Miniconda3-latest-MacOSX-x86_64.sh -b
+    rm Miniconda3-latest*
+  fi
+  export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
+  source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
 else
-  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  if [[ ! -d "/home/$USERNAME/miniconda3" ]]; then
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b
+    rm Miniconda3-latest*
+  fi
+  export PATH="/home/$USERNAME/miniconda3/bin:$PATH"
+  source /home/$USERNAME/miniconda3/etc/profile.d/conda.sh;
 fi
-cd -
 
-cd .tmp/downloads
-if [[ $MACHINE == "Mac" ]]; then
-  bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $PLATFORM/platform/miniconda3
-else
-  bash Miniconda3-latest-Linux-x86_64.sh -b -p $PLATFORM/platform/miniconda3
-fi
-rm Miniconda3-latest-*
-cd -
-
-conda --version
-conda init bash
-
-conda update -y -n base -c defaults conda
 conda --version
 conda update -y conda
 conda --version
-conda create -y -n $APPNAME python=$PYTHONVERSION
+conda create -y -n $APPNAME python=3.6.9
+conda activate $APPNAME
 
-source activate $APPNAME
-
+pip install "setuptools<=45"
 pip install --upgrade pip
-pip install --upgrade setuptools
-
-pip install pyyaml

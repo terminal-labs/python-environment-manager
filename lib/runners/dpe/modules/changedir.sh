@@ -1,4 +1,10 @@
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
+cd $USERHOME
+mkdir -p $DPENAME
+cd $DPENAME
+mkdir -p $APPNAME
+cd $APPNAME
 
-mkdir -p $PLATFORM
-mkdir -p $PLATFORM/platform
+mkdir -p downloads
+mkdir -p repos
+mkdir -p scripts
+mkdir -p bin

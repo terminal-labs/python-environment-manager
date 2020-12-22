@@ -22,39 +22,22 @@ if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
 fi
 
-if [[ -f "dependencies/clone.txt" ]];
-then
-su -m $USERNAME <<'EOF'
-  source .tmp/bash-environment-manager-master/lib/bash/lib.sh
-  cat dependencies/clone.txt | while read line
-  do
-    clone_repo $line
-  done
-EOF
-else
-  :
-fi
-
-su -m $USERNAME <<'EOF'
+su -mp $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/init.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
-su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_app.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
+su -mp $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
-# su -m $USERNAME <<'EOF'
-#   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_vagrant.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
-# EOF
-#
-su -m $USERNAME <<'EOF'
+su -mp $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/runners/dpe/install_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
-#
-su -m $USERNAME <<'EOF'
+
+su -mp $USERNAME <<'EOF'
   sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/insert_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
 
-su -m $USERNAME <<'EOF'
+su -mp $USERNAME <<'EOF'
   sudo bash .tmp/bash-environment-manager-master/lib/runners/dpe/run_salt.sh $APPNAME $USERNAME $PLATFORM $PYTHONVERSION $DPENAME $USER $USERHOME $MACHINE $CMD
 EOF
