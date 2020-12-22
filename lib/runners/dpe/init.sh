@@ -18,9 +18,15 @@ export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 
 cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+  if [[ ! -f "Miniconda3-latest-MacOSX-x86_64.sh" ]];
+  then
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+  fi
 else
-  wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  if [[ ! -f "Miniconda3-latest-Linux-x86_64.sh" ]];
+  then
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+  fi
 fi
 cd -
 
@@ -30,7 +36,6 @@ if [[ $MACHINE == "Mac" ]]; then
 else
   bash Miniconda3-latest-Linux-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 fi
-rm Miniconda3-latest-*
 cd -
 
 conda --version
