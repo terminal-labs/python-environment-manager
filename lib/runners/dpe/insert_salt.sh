@@ -16,7 +16,7 @@ source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 export PATH=.tmp/platform/$DPENAME/$APPNAME/miniconda3/bin:$PATH
 export PATH=.tmp/platform/$DPENAME/$APPNAME/bin:$PATH
 
-#cd /vagrant
-#sudo mkdir -p /etc/salt
-#sudo cp -r saltstack/etc/* /etc/salt
-#sudo cp -r saltstack/srv/* /srv
+cd /vagrant
+sudo mkdir -p /etc/salt
+sudo cp -r saltstack/etc/* /etc/salt
+sudo cp -r saltstack/srv/* /srv

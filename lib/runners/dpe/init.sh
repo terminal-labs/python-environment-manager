@@ -14,6 +14,8 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+
 cd .tmp/downloads
 if [[ $MACHINE == "Mac" ]]; then
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
@@ -31,14 +33,7 @@ fi
 rm Miniconda3-latest-*
 cd -
 
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
-sudo su -m root <<'EOF'
-  source .tmp/bash-environment-manager-master/lib/bash/vars.sh
-  export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-  conda init bash
-EOF
-
+conda --version
 conda init bash
 
 source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
@@ -49,10 +44,9 @@ conda update -y conda
 conda --version
 conda create -y -n $APPNAME python=$PYTHONVERSION
 
-conda activate $APPNAME
+source activate $APPNAME
 
 pip install --upgrade pip
-pip install --upgrade distro
 pip install --upgrade setuptools
 
 pip install pyyaml

@@ -20,7 +20,14 @@ clone_repo () {
 install_project_repo_pip () {
   mkdir -p .tmp/repos
   cd .tmp/repos
-  cd ${1}
+
+  path=${1}
+  fullname="${path##*/}"
+  dirname="${path%/*}"
+  basename="${fullname%.*}"
+  extension="${fullname##*.}"
+
+  cd ${basename}
   pip install -e .
   cd ../../..
 }
