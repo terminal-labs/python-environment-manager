@@ -16,8 +16,6 @@ source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/getusername.sh
 source .tmp/bash-environment-manager-master/lib/runners/dpe/modules/changedir.sh
 
-export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
-
 cd .tmp/downloads
 wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
 cd -
@@ -26,7 +24,10 @@ cd .tmp/downloads
 unzip 2018.3.3.zip
 cd -
 
-source activate $APPNAME
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+source /opt/halcyon/platform/miniconda3/etc/profile.d/conda.sh
+
+conda activate test-dpe
 
 cd .tmp/downloads
 cd 2018.3.3/salt

@@ -1,4 +1,4 @@
-## default run mdoe = sudo
+## default run mode = sudo
 
 export APPNAME=$1
 export USERNAME=$2
@@ -20,8 +20,8 @@ else
 fi
 export USERHOME
 
-mkdir -p /application
-chmod -R 777 /application
+mkdir -p /opt/halcyon
+chmod -R 777 /opt/halcyon
 
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
