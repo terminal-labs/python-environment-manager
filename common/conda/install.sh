@@ -19,5 +19,5 @@ su -m $USER <<'EOF'
 EOF
 
 su -m $USER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/test_run.sh
+  bash .tmp/bash-environment-manager-master/lib/runners/conda/run_tests.sh
 EOF
