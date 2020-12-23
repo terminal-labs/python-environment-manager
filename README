@@ -1,8 +1,8 @@
 current:
 
-python project ------------------ vagrant.lxc.conda/vagrant.conda/conda linux/mac 6
 python-webapp project ----------- vagrant.lxc.conda/vagrant.conda/conda linux/mac 6
 
+python project ------------------ vagrant.conda/conda linux/mac 4
 reposet project ----------------- vagrant.conda/conda linux/mac 4
 interface project --------------- vagrant.conda/conda linux/mac 4
 simple-api project -------------- vagrant.conda/conda linux/mac 4
