@@ -1,3 +1,17 @@
+emit_env_file () {
+cat > .tmp/_env.sh <<EOF
+export APPNAME=-appname-
+export USERNAME=-username-
+export PLATFORM=-platform-
+export CMD=-cmd-
+export PYTHONVERSION=-pythonversion-
+export DPENAME=-dpename-
+export USER=-user-
+export USERHOME=-userhome-
+export MACHINE=-machine-
+EOF
+}
+
 getmachine () {
   unameOut="$(uname -s)"
   case "${unameOut}" in
@@ -7,7 +21,15 @@ getmachine () {
       MINGW*)     machine=MinGw;;
       *)          machine="UNKNOWN:${unameOut}"
   esac
-  _MACHINE=$machine
+  MACHINE=$machine
+}
+
+getuserhome () {
+  if [[ $MACHINE == "Mac" ]]; then
+    USERHOME=/Users/$USERNAME
+  else
+    USERHOME=/home/$USERNAME
+  fi
 }
 
 clone_repo () {
@@ -32,17 +54,8 @@ install_project_repo_pip () {
   cd ../../..
 }
 
-emit_env_file () {
-cat > .tmp/_env.sh <<EOF
-export APPNAME=-appname-
-export USERNAME=-username-
-export PLATFORM=-platform-
-export CMD=-cmd-
-EOF
-}
-
 edit_env_file () {
-  sed "s/$1/$2/g" .tmp/_env.sh > .tmp/_env.tmp
+  sed "s#$1#\"$2\"#g" .tmp/_env.sh > .tmp/_env.tmp
   rm .tmp/_env.sh
   mv .tmp/_env.tmp .tmp/_env.sh
 }

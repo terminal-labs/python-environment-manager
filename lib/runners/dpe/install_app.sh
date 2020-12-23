@@ -1,12 +1,4 @@
-export APPNAME=$1
-export USERNAME=$2
-export PLATFORM=$3
-export PYTHONVERSION=$4
-export DPENAME=$5
-export USER=$6
-export USERHOME=$7
-export MACHINE=$8
-export CMD=$9
+source .tmp/_env.sh
 
 LOGNAME=$USERNAME
 

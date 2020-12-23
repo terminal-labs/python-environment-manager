@@ -11,4 +11,3 @@ mkdir -p auth
 mkdir -p data
 mkdir -p vars
 mkdir -p bin
-cd -
