@@ -18,6 +18,6 @@ conda create -y -n $APPNAME python=$PYTHONVERSION
 conda activate $APPNAME
 
 pip install --upgrade pip
-pip install --upgrade setuptools
+pip install setuptools==45
 
 pip install pyyaml

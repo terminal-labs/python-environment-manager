@@ -3,14 +3,14 @@ source .tmp/_env.sh
 if [[ ! -f ".tmp/downloads/2018.3.3.zip" ]];
 then
   cd .tmp/downloads
-  wget https://terminal-labs-saltstack-releases.s3-us-west-2.amazonaws.com/2018.3.3.zip
+  wget https://tl-build-resources.s3-accelerate.amazonaws.com/2018.3.3.zip
   cd -
 fi
 
 if [[ ! -d ".tmp/downloads/2018.3.3" ]];
 then
   cd .tmp/downloads
-  unzip 2018.3.3.zip
+  unzip 2018.3.3.zip -d ../unzipped
   cd -
 fi
 
@@ -19,7 +19,7 @@ source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
 
 conda activate ${APPNAME}
 
-cd .tmp/downloads
+cd .tmp/unzipped
 cd 2018.3.3/salt
 pip install msgpack==0.6.2
 pip install pyzmq==17.0 PyYAML pycrypto msgpack-python jinja2 psutil futures tornado
