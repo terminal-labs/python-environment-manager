@@ -1,9 +1,6 @@
 source .tmp/_env.sh
 
-LOGNAME=$USERNAME
-
 source .tmp/bash-environment-manager-master/lib/bash/lib.sh
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
 
 export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh

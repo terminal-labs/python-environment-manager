@@ -1,7 +1,10 @@
 source .tmp/_env.sh
 
 mkdir -p /opt/halcyon
-chmod 777 -R /opt/halcyon
+chmod -R 777 /opt/halcyon
+
+mkdir -p $PLATFORM
+mkdir -p $PLATFORM/platform
 
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
