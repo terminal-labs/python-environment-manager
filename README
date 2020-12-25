@@ -16,8 +16,10 @@ dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest linux/
 rambo project ------------------- onhost(onguest)/onguest linux/mac 4
 rambo project + lxc ------------- onhost(onguest)/onguest linux/!nomac 2
 
+spinglass project --------------- onhost(onguest) !nocicd linux/mac 2
 fuzzball project ---------------- onhost(onguest) !nocicd linux/mac 2
 inflation project --------------- onhost(onguest) !nocicd linux/mac 2
+spinglass project + lxc --------- onhost(onguest) !nocicd linux/mac 1
 fuzzball project + lxc ---------- onhost(onguest) !nocicd linux/!nomac 1
 inflation project + lxc --------- onhost(onguest) !nocicd linux/!nomac 1
 
