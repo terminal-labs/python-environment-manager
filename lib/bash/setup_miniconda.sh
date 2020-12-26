@@ -1,6 +1,6 @@
 source .tmp/_env.sh
 
-cd .tmp/downloads
+cd .tmp/download
 if [[ $MACHINE == "Mac" ]]; then
   if [[ ! -f "Miniconda3-latest-MacOSX-x86_64.sh" ]];
   then
@@ -14,7 +14,7 @@ else
 fi
 cd -
 
-cd .tmp/downloads
+cd .tmp/download
 if [[ $MACHINE == "Mac" ]]; then
   bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 else
