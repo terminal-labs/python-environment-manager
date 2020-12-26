@@ -1,6 +1,6 @@
 source .tmp/_env.sh
 
-cd .tmp/downloads
+cd .tmp/download
 if [[ $MACHINE == "Mac" ]]; then
   :
 else
@@ -12,7 +12,7 @@ cd -
 if [[ $MACHINE == "Mac" ]]; then
   :
 else
-  cd .tmp/downloads
+  cd .tmp/download
   unzip terraform_0.12.24_linux_amd64.zip
   cp terraform ../bin/terraform
 fi

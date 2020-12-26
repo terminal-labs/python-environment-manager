@@ -1,6 +1,6 @@
 source .tmp/_env.sh
 
-cd downloads
+cd download
 if [[ $MACHINE == "Mac" ]]; then
   :
 else
@@ -11,6 +11,6 @@ cd ..
 if [[ $MACHINE == "Mac" ]]; then
   :
 else
-  cd downloads
+  cd download
   sudo dpkg -i vagrant_2.2.5_x86_64.deb
 fi
