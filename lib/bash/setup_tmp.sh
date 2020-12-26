@@ -1,13 +1,14 @@
 mkdir -p .tmp
 cd .tmp
-mkdir -p downloads
-mkdir -p artifacts
+mkdir -p download
+mkdir -p artifact
+mkdir -p symlink
 mkdir -p unzipped
 mkdir -p scratch
-mkdir -p scripts
-mkdir -p clones
-mkdir -p repos
+mkdir -p script
+mkdir -p clone
+mkdir -p repo
 mkdir -p auth
 mkdir -p data
-mkdir -p vars
+mkdir -p var
 mkdir -p bin
