@@ -1,15 +1,15 @@
 source .tmp/_env.sh
 
-if [[ ! -f ".tmp/downloads/2018.3.3.zip" ]];
+if [[ ! -f ".tmp/download/2018.3.3.zip" ]];
 then
-  cd .tmp/downloads
+  cd .tmp/download
   wget https://tl-build-resources.s3-accelerate.amazonaws.com/2018.3.3.zip
   cd -
 fi
 
-if [[ ! -d ".tmp/downloads/2018.3.3" ]];
+if [[ ! -d ".tmp/download/2018.3.3" ]];
 then
-  cd .tmp/downloads
+  cd .tmp/download
   unzip 2018.3.3.zip -d ../unzipped
   cd -
 fi
