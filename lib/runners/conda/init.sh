@@ -1,9 +1,5 @@
 source .tmp/_env.sh
 
-LOGNAME=$USERNAME
-
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
-
 source .tmp/bash-environment-manager-master/lib/bash/setup_miniconda.sh
 
 export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
@@ -22,6 +18,6 @@ conda create -y -n $APPNAME python=$PYTHONVERSION
 conda activate $APPNAME
 
 pip install --upgrade pip
-pip install --upgrade setuptools
+pip install setuptools==45
 
 pip install pyyaml
