@@ -1,9 +1,9 @@
 mkdir -p .tmp
 cd .tmp
 mkdir -p download
+mkdir -p unzipped
 mkdir -p artifact
 mkdir -p symlink
-mkdir -p unzipped
 mkdir -p scratch
 mkdir -p script
 mkdir -p clone
