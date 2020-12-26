@@ -9,6 +9,7 @@ export DPENAME=-dpename-
 export USER=-user-
 export USERHOME=-userhome-
 export MACHINE=-machine-
+export WD=-wd-
 EOF
 }
 
