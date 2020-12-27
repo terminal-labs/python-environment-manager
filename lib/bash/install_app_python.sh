@@ -5,7 +5,7 @@ source .tmp/bash-environment-manager-master/lib/bash/lib.sh
 export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
 source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
 
-conda activate ${APPNAME}
+conda activate $APPNAME
 
 if [[ -f "dependencies/repos-pip.txt" ]];
 then
@@ -16,6 +16,11 @@ then
   done
 else
   :
+fi
+
+if [[ -d "src" ]];
+then
+  ln -s $WD/src $WD/.tmp/symlink/$APPNAME
 fi
 
 if [[ -f "setup.py" ]];
