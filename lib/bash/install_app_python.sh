@@ -20,7 +20,10 @@ fi
 
 if [[ -d "src" ]];
 then
-  ln -s $WD/src $WD/.tmp/symlink/$APPNAME
+  if [[ ! -e $WD/.tmp/symlink/$APPNAME ]];
+  then
+    ln -s $WD/src $WD/.tmp/symlink/$APPNAME
+  fi
 fi
 
 if [[ -f "setup.py" ]];
