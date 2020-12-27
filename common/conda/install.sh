@@ -5,6 +5,7 @@ chmod -R 777 /opt/halcyon
 
 mkdir -p $PLATFORM
 mkdir -p $PLATFORM/platform
+chmod -R 777 $PLATFORM
 
 if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
