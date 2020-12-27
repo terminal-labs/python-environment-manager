@@ -1,10 +1,10 @@
 source .tmp/_env.sh
 
 mkdir -p /opt/halcyon
-chmod -R 777 /opt/halcyon
-
 mkdir -p $PLATFORM
 mkdir -p $PLATFORM/platform
+
+chmod -R 777 /opt/halcyon
 chmod -R 777 $PLATFORM
 
 if [[ $MACHINE != "Mac" ]]; then
