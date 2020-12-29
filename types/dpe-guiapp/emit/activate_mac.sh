@@ -1,7 +1,6 @@
-export APPNAME=-appname-
-export USERNAME=-username-
+source .tmp/_env.sh
 
-export PATH="/Users/$USERNAME/miniconda3/bin:$PATH"
-source /Users/$USERNAME/miniconda3/etc/profile.d/conda.sh;
+export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
 
-conda activate ${APPNAME}
+conda activate $APPNAME
