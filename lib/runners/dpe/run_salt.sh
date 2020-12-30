@@ -2,12 +2,13 @@ source .tmp/_env.sh
 
 sudo su -m root <<'EOF'
 if [[ -d "saltstack" ]]; then
-  export PATH=/application/platform/miniconda3/bin:$PATH
-  export PATH=/home/vagrant/.local/bin:$PATH
+  source .tmp/_env.sh
+  export PATH=$PLATFORM/platform/miniconda3/bin:$PATH
+  source $PLATFORM/platform/miniconda3/etc/profile.d/conda.sh
   source activate $APPNAME
-  export DEESCALATED_SALT_CONFIG_DIR=/Users/mike/Desktop/bash-environment-templates/samples/fuzzball/saltstack/etc
-  export DEESCALATED_SALT_ROOT_DIR=/Users/mike/Desktop/bash-environment-templates/samples/fuzzball/saltstack/srv/salt
-  export DEESCALATED_SALT_LOG_FILE=/Users/mike/Desktop/bash-environment-templates/samples/fuzzball/saltstack/logs/logs
+  export DEESCALATED_SALT_CONFIG_DIR=/home/user/Desktop/bash-environment-templates/samples/fuzzball/saltstack/etc
+  export DEESCALATED_SALT_ROOT_DIR=/home/user/Desktop/bash-environment-templates/samples/fuzzball/saltstack/srv/salt
+  export DEESCALATED_SALT_LOG_FILE=/home/user/Desktop/bash-environment-templates/samples/fuzzball/fuzzball/saltstack/logs/logs
   salt-call \
      --config-dir=$DEESCALATED_SALT_CONFIG_DIR \
      --log-file=$DEESCALATED_SALT_LOG_FILE \
