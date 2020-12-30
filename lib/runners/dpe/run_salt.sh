@@ -15,5 +15,6 @@ if [[ -d "saltstack" ]]; then
      --file-root=$DEESCALATED_SALT_ROOT_DIR \
      --log-level=info \
      --local state.highstate
+  chmod -R 777 .tmp 
 fi
 EOF
