@@ -3,6 +3,7 @@ current:
 python project ------------------ vagrant.conda/conda linux/mac 4
 python-webapp project ----------- vagrant.conda/conda linux/mac 4
 reposet project ----------------- vagrant.conda/conda linux/mac 4
+nursery project ----------------- vagrant.conda/conda linux/mac 4
 interface project --------------- vagrant.conda/conda linux/mac 4
 simple-api project -------------- vagrant.conda/conda linux/mac 4
 simple-cli project -------------- vagrant.conda/conda linux/mac 4
