@@ -24,14 +24,10 @@ su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
 EOF
 
-if [[ $CMD == "onhost" ]]; then
-  bash .tmp/bash-environment-manager-master/common/onhost/deploy.sh
+if [[ $CMD == "saltstack" ]]; then
+  bash .tmp/bash-environment-manager-master/common/saltstack/deploy.sh
 fi
 
-if [[ $CMD == "onguest" ]]; then
-  bash .tmp/bash-environment-manager-master/common/onguest/deploy.sh
-fi
-
-if [[ $CMD == "vagrant-onguest" ]]; then
-  bash .tmp/bash-environment-manager-master/common/vagrant-onguest/deploy.sh
+if [[ $CMD == "vagrant-saltstack" ]]; then
+  bash .tmp/bash-environment-manager-master/common/vagrant-saltstack/deploy.sh
 fi

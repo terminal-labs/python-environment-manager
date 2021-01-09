@@ -24,14 +24,16 @@ su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
 EOF
 
-if [[ $CMD == "onhost" ]]; then
-  bash .tmp/bash-environment-manager-master/common/onhost/deploy.sh
+if [[ $CMD == "conda" ]]; then
+  edit_env_file "-user-" $USERNAME
+  edit_env_file "-username-" $USERNAME
+  edit_env_file "-machine-" $MACHINE
+  bash .tmp/bash-environment-manager-master/common/conda/deploy.sh
 fi
 
-if [[ $CMD == "onguest" ]]; then
-  bash .tmp/bash-environment-manager-master/common/onguest/deploy.sh
-fi
-
-if [[ $CMD == "vagrant-onguest" ]]; then
-  bash .tmp/bash-environment-manager-master/common/vagrant-onguest/deploy.sh
+if [[ $CMD == "vagrant-conda" ]]; then
+  edit_env_file "-user-" "vagrant"
+  edit_env_file "-username-" $USERNAME
+  edit_env_file "-machine-" "Linux"
+  bash .tmp/bash-environment-manager-master/common/vagrant-conda/deploy.sh
 fi
