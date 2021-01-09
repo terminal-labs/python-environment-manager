@@ -27,3 +27,11 @@ EOF
 if [[ $CMD == "onhost" ]]; then
   bash .tmp/bash-environment-manager-master/common/onhost/deploy.sh
 fi
+
+if [[ $CMD == "onguest" ]]; then
+  bash .tmp/bash-environment-manager-master/common/onguest/deploy.sh
+fi
+
+if [[ $CMD == "vagrant-onguest" ]]; then
+  bash .tmp/bash-environment-manager-master/common/vagrant-onguest/deploy.sh
+fi
