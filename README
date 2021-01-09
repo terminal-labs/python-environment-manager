@@ -8,6 +8,8 @@ interface project --------------- vagrant.conda/conda linux/mac 4
 simple-api project -------------- vagrant.conda/conda linux/mac 4
 simple-cli project -------------- vagrant.conda/conda linux/mac 4
 
+qhub project -------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
+
 dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
 dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac 3
