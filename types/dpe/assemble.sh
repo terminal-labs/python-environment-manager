@@ -13,7 +13,6 @@ edit_env_file "-appname-" $APPNAME
 edit_env_file "-platform-" $PLATFORM
 edit_env_file "-cmd-" $CMD
 edit_env_file "-machine-" $MACHINE
-edit_env_file "-userhome-" $USERHOME
 edit_env_file "-pythonversion-" "3.6.9"
 edit_env_file "-dpename-" "dpe"
 
@@ -22,6 +21,7 @@ su -m $USERNAME <<'EOF'
 EOF
 
 if [[ $CMD == "onhost" ]]; then
+  edit_env_file "-userhome-" $USERHOME
   edit_env_file "-user-" $USERNAME
   edit_env_file "-username-" $USERNAME
   edit_env_file "-wd-" $(pwd)
@@ -30,6 +30,7 @@ if [[ $CMD == "onhost" ]]; then
 fi
 
 if [[ $CMD == "onguest" ]]; then
+  edit_env_file "-userhome-" $USERHOME
   edit_env_file "-user-" $USERNAME
   edit_env_file "-username-" $USERNAME
   edit_env_file "-wd-" $(pwd)
@@ -38,6 +39,7 @@ if [[ $CMD == "onguest" ]]; then
 fi
 
 if [[ $CMD == "vagrant-onguest" ]]; then
+  edit_env_file "-userhome-" "/home/vagrant"
   edit_env_file "-user-" vagrant
   edit_env_file "-username-" $USERNAME
   edit_env_file "-wd-" "/vagrant"
