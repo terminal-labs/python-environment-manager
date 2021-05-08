@@ -1,13 +1,16 @@
 emit_env_file () {
 cat > .tmp/_env.sh <<EOF
-export APPNAME=-appname-
+export USER=-user-
 export USERNAME=-username-
+export USERHOME=-userhome-
+export INTERNALUSER=-internaluser-
+export INTERNALUSERNAME=-internalusername-
+export INTERNALUSERHOME=-internaluserhome-
+export APPNAME=-appname-
+export PYTHONVERSION=-pythonversion-
 export PLATFORM=-platform-
 export CMD=-cmd-
-export PYTHONVERSION=-pythonversion-
 export DPENAME=-dpename-
-export USER=-user-
-export USERHOME=-userhome-
 export MACHINE=-machine-
 export WD=-wd-
 EOF
