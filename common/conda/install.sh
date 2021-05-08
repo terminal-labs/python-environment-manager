@@ -1,24 +1,40 @@
-source .tmp/_env.sh
+export APPNAME=$1
+export USERNAME=$2
+export CMD=$3
 
-mkdir -p /opt/halcyon
-mkdir -p $PLATFORM
-mkdir -p $PLATFORM/platform
+source .tmp/bash-environment-manager-master/lib/bash/vars.sh
+source .tmp/bash-environment-manager-master/lib/bash/lib.sh
 
-chmod -R 777 /opt/halcyon
-chmod -R 777 $PLATFORM
+getmachine
+getuserhome
+emit_env_file
 
-if [[ $MACHINE != "Mac" ]]; then
-  bash .tmp/bash-environment-manager-master/lib/deps/apt.sh
+edit_env_file "-appname-" $APPNAME
+edit_env_file "-platform-" $PLATFORM
+edit_env_file "-cmd-" $CMD
+edit_env_file "-pythonversion-" "3.6.9"
+edit_env_file "-dpename-" "dpe"
+edit_env_file "-wd-" $(pwd)
+
+su -m $USERNAME <<'EOF'
+  bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
+EOF
+
+if [[ $CMD == "conda" ]]; then
+  edit_env_file "-user-" $USERNAME
+  edit_env_file "-username-" $USERNAME
+  edit_env_file "-userhome-" $USERHOME
+  edit_env_file "-machine-" $MACHINE
+  bash .tmp/bash-environment-manager-master/common/conda/deploy.sh
 fi
 
-su -m $USER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/init.sh
-EOF
-
-su -m $USER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/install_app.sh
-EOF
-
-su -m $USER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/run_tests.sh
-EOF
+if [[ $CMD == "vagrant-conda" ]]; then
+  edit_env_file "-user-" $USERNAME
+  edit_env_file "-username-" $USERNAME
+  edit_env_file "-userhome-" $USERHOME
+  edit_env_file "-internaluser-" "vagrant"
+  edit_env_file "-internalusername-" "vagrant"
+  edit_env_file "-internaluserhome-" "/home/vagrant"
+  edit_env_file "-machine-" "Linux"
+  bash .tmp/bash-environment-manager-master/common/vagrant-conda/deploy.sh
+fi
