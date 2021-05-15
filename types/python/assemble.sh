@@ -28,6 +28,7 @@ if [[ $CMD == "conda" ]]; then
   edit_env_file "-internalusername-" $USERNAME
   edit_env_file "-internaluserhome-" $USERHOME  
   edit_env_file "-machine-" $MACHINE
+  cat .tmp/_env.sh
   bash .tmp/bash-environment-manager-master/common/conda/deploy.sh
 fi
 
@@ -39,5 +40,6 @@ if [[ $CMD == "vagrant-conda" ]]; then
   edit_env_file "-internalusername-" "vagrant"
   edit_env_file "-internaluserhome-" "/home/vagrant"
   edit_env_file "-machine-" "Linux"
+  cat .tmp/_env.sh
   bash .tmp/bash-environment-manager-master/common/vagrant-conda/deploy.sh
 fi
