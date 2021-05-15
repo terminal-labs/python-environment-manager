@@ -41,5 +41,3 @@ if [[ $CMD == "vagrant-conda" ]]; then
   edit_env_file "-machine-" "Linux"
   bash .tmp/bash-environment-manager-master/common/vagrant-conda/deploy.sh
 fi
-
-cat .tmp/_env.sh
