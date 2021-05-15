@@ -12,13 +12,13 @@ if [[ $MACHINE != "Mac" ]]; then
 fi
 
 su -m $INTERNALUSER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/init.sh
+  bash .tmp/bash-environment-manager-master/runners/conda/init.sh
 EOF
 
 su -m $INTERNALUSER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/install_app.sh
+  bash .tmp/bash-environment-manager-master/runners/conda/install_app.sh
 EOF
 
 su -m $INTERNALUSER <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/runners/conda/run_tests.sh
+  bash .tmp/bash-environment-manager-master/runners/conda/run_tests.sh
 EOF
