@@ -18,6 +18,7 @@ cd .tmp/download
 if [[ $MACHINE == "Mac" ]]; then
   bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 else
+  export HOME=/home/vagrant
   bash Miniconda3-latest-Linux-x86_64.sh -b -p $PLATFORM/platform/miniconda3
 fi
 cd -
