@@ -24,6 +24,9 @@ if [[ $CMD == "conda" ]]; then
   edit_env_file "-user-" $USERNAME
   edit_env_file "-username-" $USERNAME
   edit_env_file "-userhome-" $USERHOME
+  edit_env_file "-internaluser-" $USERNAME
+  edit_env_file "-internalusername-" $USERNAME
+  edit_env_file "-internaluserhome-" $USERHOME  
   edit_env_file "-machine-" $MACHINE
   bash .tmp/bash-environment-manager-master/common/conda/deploy.sh
 fi
