@@ -1,1 +1,1 @@
-bash .tmp/bash-environment-manager-master/lib/bash/install_app_python.sh
+bash .tmp/bash-environment-manager-master/library/common/install_app_python.sh

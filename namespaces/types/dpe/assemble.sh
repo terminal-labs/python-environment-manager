@@ -2,12 +2,12 @@ export APPNAME=$1
 export USERNAME=$2
 export CMD=$3
 
-source .tmp/bash-environment-manager-master/lib/bash/vars.sh
-source .tmp/bash-environment-manager-master/lib/bash/lib.sh
+source .tmp/bash-environment-manager-master/library/common/vars.sh
+source .tmp/bash-environment-manager-master/library/common/lib.sh
 
 su -m $USERNAME <<'EOF'
-  bash .tmp/bash-environment-manager-master/lib/bash/setup_tmp.sh
-  bash .tmp/bash-environment-manager-master/lib/bash/emit_vars.sh $APPNAME $USERNAME $CMD
+  bash .tmp/bash-environment-manager-master/library/common/setup_tmp.sh
+  bash .tmp/bash-environment-manager-master/library/common/emit_vars.sh $APPNAME $USERNAME $CMD
 EOF
 
 if [[ $CMD == "onhost" ]]; then
@@ -19,5 +19,5 @@ if [[ $CMD == "onguest" ]]; then
 fi
 
 if [[ $CMD == "vagrant-onguest" ]]; then
-  bash .tmp/bash-environment-manager-master/common/vagrant-onguest/deploy.sh
+  bash .tmp/bash-environment-manager-master/hosts/vagrant/vagrant-onguest/deploy.sh
 fi
