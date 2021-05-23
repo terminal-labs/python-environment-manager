@@ -1,7 +1,9 @@
 cp /etc/salt/minion{,-dist}
-cp /vagrant/saltstack/etc/minion /etc/salt/minion
+
+mkdir -p /etc/salt
+cp /vagrant/saltstack/etc/* /etc/salt
 
 mkdir -p /srv/salt
+cp -r /vagrant/saltstack/srv/* /srv
 
-cp -r /vagrant/saltstack/srv/salt/* /srv/salt
 salt-call --local state.highstate  --log-level=info
