@@ -46,4 +46,14 @@ if [[ $CMD == "vagrant-onguest" ]]; then
   edit_env_file "-machine-" "Linux"
 fi
 
+if [[ $CMD == "vagrant-salt" ]]; then
+  edit_env_file "-user-" $USERNAME
+  edit_env_file "-username-" $USERNAME
+  edit_env_file "-userhome-" $USERHOME
+  edit_env_file "-internaluser-" "vagrant"
+  edit_env_file "-internalusername-" "vagrant"
+  edit_env_file "-internaluserhome-" "/home/vagrant"
+  edit_env_file "-machine-" "Linux"
+fi
+
 cat .tmp/_env.sh
