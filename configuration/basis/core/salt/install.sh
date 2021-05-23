@@ -11,5 +11,5 @@ if [[ $MACHINE != "Mac" ]]; then
   bash .tmp/bash-environment-manager-master/library/dependencies/apt.sh
 fi
 
-bash .tmp/bash-environment-manager-master/namespaces/runners/salt/install_salt.sh
-bash .tmp/bash-environment-manager-master/namespaces/runners/salt/run_salt.sh
+bash .tmp/bash-environment-manager-master/configuration/basis/installers/salt/init.sh
+bash .tmp/bash-environment-manager-master/configuration/basis/installers/salt/install_app.sh
