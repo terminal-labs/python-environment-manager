@@ -8,14 +8,13 @@ source .tmp/bash-environment-manager-master/library/common/lib.sh
 
 su -m $USERNAME <<'EOF'
   bash .tmp/bash-environment-manager-master/library/common/setup_tmp.sh
+  bash .tmp/bash-environment-manager-master/library/common/emit_vars.sh $APPNAME $USERNAME $CMD $TYPE
 EOF
 
 if [[ $CMD == "salt" ]]; then
-  bash .tmp/bash-environment-manager-master/library/common/emit_vars.sh $APPNAME $USERNAME $CMD $TYPE
   bash .tmp/bash-environment-manager-master/configuration/basis/core/salt/deploy.sh
 fi
 
 if [[ $CMD == "vagrant-salt" ]]; then
-  bash .tmp/bash-environment-manager-master/library/common/emit_vars.sh $APPNAME $USERNAME $CMD $TYPE
   bash .tmp/bash-environment-manager-master/configuration/hosts/vagrant/vagrant-salt/deploy.sh
 fi
