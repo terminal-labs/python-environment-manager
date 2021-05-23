@@ -1,6 +1,7 @@
 export APPNAME=$1
 export USERNAME=$2
 export CMD=$3
+export TYPE=$4
 
 source .tmp/bash-environment-manager-master/library/common/vars.sh
 source .tmp/bash-environment-manager-master/library/common/lib.sh
@@ -11,6 +12,7 @@ emit_env_file
 
 edit_env_file "-appname-" $APPNAME
 edit_env_file "-platform-" $PLATFORM
+edit_env_file "-type-" $TYPE
 edit_env_file "-cmd-" $CMD
 edit_env_file "-pythonversion-" "3.6.9"
 edit_env_file "-dpename-" "dpe"

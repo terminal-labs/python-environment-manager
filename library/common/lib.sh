@@ -9,6 +9,7 @@ export INTERNALUSERHOME=-internaluserhome-
 export APPNAME=-appname-
 export PYTHONVERSION=-pythonversion-
 export PLATFORM=-platform-
+export TYPE=-type-
 export CMD=-cmd-
 export DPENAME=-dpename-
 export MACHINE=-machine-
