@@ -4,13 +4,13 @@ rambo project ------------------- vagrant.bimodal/bimodal linux/mac 4
 
 saltstate project --------------- vagrant.salt/salt linux/mac 4
 
-spinglass project --------------- onhost !nocicd linux/mac 2
-fuzzball project ---------------- onhost !nocicd linux/mac 2
-inflation project --------------- onhost !nocicd linux/mac 2
+spinglass project --------------- vagrant.onhost/onhost linux/mac 4 !nocicd
+fuzzball project ---------------- vagrant.onhost/onhost linux/mac 4 !nocicd
+inflation project --------------- vagrant.onhost/onhost linux/mac 4 !nocicd
 
-qhub project -------------------- ondesktop linux/mac !nocicd 2
-python-guiapp project ----------- ondesktop linux/mac !nocicd 2
-dpe-guiapp project -------------- ondesktop linux/mac !nocicd 2
+qhub project -------------------- vagrant.ondesktop/ondesktop linux/mac 4 !nocicd
+python-guiapp project ----------- vagrant.ondesktop/ondesktop linux/mac 4 !nocicd
+dpe-guiapp project -------------- vagrant.ondesktop/ondesktop linux/mac 4 !nocicd
 
 dpe project --------------------- vagrant.onguest/onguest linux/mac 4
 dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4
