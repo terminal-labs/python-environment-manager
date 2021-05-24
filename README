@@ -8,37 +8,17 @@ interface project --------------- vagrant.conda/conda linux/mac 4
 simple-api project -------------- vagrant.conda/conda linux/mac 4
 simple-cli project -------------- vagrant.conda/conda linux/mac 4
 
-qhub project -------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
+dpe project --------------------- vagrant.onguest/onguest linux/mac 4
+dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4
 
-dpe project --------------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
-dpe-webapp project -------------- vagrant.onguest/onhost(onguest)/onguest linux/mac 6
-dpe project + lxc --------------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac 3
-dpe-webapp project + lxc -------- vagrant.onguest/onhost(onguest)/onguest linux/!nomac 3
+rambo project ------------------- onhost/onguest linux/mac 4
 
-rambo project ------------------- onhost(onguest)/onguest linux/mac 4
-rambo project + lxc ------------- onhost(onguest)/onguest linux/!nomac 2
+spinglass project --------------- onhost !nocicd linux/mac 2
+fuzzball project ---------------- onhost !nocicd linux/mac 2
+inflation project --------------- onhost !nocicd linux/mac 2
 
-spinglass project --------------- onhost(onguest) !nocicd linux/mac 2
-fuzzball project ---------------- onhost(onguest) !nocicd linux/mac 2
-inflation project --------------- onhost(onguest) !nocicd linux/mac 2
-spinglass project + lxc --------- onhost(onguest) !nocicd linux/mac 1
-fuzzball project + lxc ---------- onhost(onguest) !nocicd linux/!nomac 1
-inflation project + lxc --------- onhost(onguest) !nocicd linux/!nomac 1
+qhub project -------------------- ondesktop linux/mac !nocicd 2
+python-guiapp project ----------- ondesktop linux/mac !nocicd 2
+dpe-guiapp project -------------- ondesktop linux/mac !nocicd 2
 
-python-guiapp project ----------- ondesktop(onhost(onguest)) linux/mac !nocicd 2
-dpe-guiapp project -------------- ondesktop(onhost(onguest)) linux/mac !nocicd 2
-
-saltstate project --------------- vagrant.saltstate/saltstate linux/!nomac 2
-saltstate project + lxc --------- vagrant.saltstate/saltstate linux/!nomac 2
-
-pending:
-
-testsuite-py34 ------------------ onhost(onguest)/onguest
-testsuite-py36 ------------------ onhost(onguest)/onguest
-pure-vagrant -------------------- onhost(onguest)/onguest !nocicd
-multi-vagrant ------------------- onhost(onguest) !nocicd
-
-extras:
-
-lektor-site --------------------- vagrant.conda/conda
-saltstack-saltcloud-provider ---- vagrant.onguest/onhost(onguest)/onguest
+saltstate project --------------- vagrant.salt/salt linux/mac 4
