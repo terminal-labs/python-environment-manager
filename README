@@ -1,19 +1,19 @@
 current:
 
-rambo project ------------------- vagrant.bimodal/bimodal linux/mac 4 !nocloudcicd
+rambo project ------------------- vagrant.bimodal/bimodal linux/mac 4 -!nocloudcicd
 
-saltstate project --------------- vagrant.salt/salt linux/mac 4 !nocloudcicd
+saltstate project --------------- vagrant.salt/salt linux/mac 4 -!nocloudcicd
 
-spinglass project --------------- vagrant.onhost/onhost linux/mac 4 !nocloudcicd
-fuzzball project ---------------- vagrant.onhost/onhost linux/mac 4 !nocloudcicd
-inflation project --------------- vagrant.onhost/onhost linux/mac 4 !nocloudcicd
+spinglass project --------------- vagrant.onhost/onhost linux/mac 4 -!nocloudcicd
+fuzzball project ---------------- vagrant.onhost/onhost linux/mac 4 -!nocloudcicd
+inflation project --------------- vagrant.onhost/onhost linux/mac 4 -!nocloudcicd
 
-qhub project -------------------- vagrant.ondesktop/ondesktop linux/mac 4 !nocloudcicd
-python-guiapp project ----------- vagrant.ondesktop/ondesktop linux/mac 4 !nocloudcicd
-dpe-guiapp project -------------- vagrant.ondesktop/ondesktop linux/mac 4 !nocloudcicd
+qhub project -------------------- vagrant.ondesktop/ondesktop linux/mac 4 -!nocloudcicd
+python-guiapp project ----------- vagrant.ondesktop/ondesktop linux/mac 4 -!nocloudcicd
+dpe-guiapp project -------------- vagrant.ondesktop/ondesktop linux/mac 4 -!nocloudcicd
 
-dpe project --------------------- vagrant.onguest/onguest linux/mac 4 !nocloudcicd
-dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4 !nocloudcicd
+dpe project --------------------- vagrant.onguest/onguest linux/mac 4 -cloudcicd?
+dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4 -cloudcicd?
 
 python project ------------------ vagrant.conda/conda linux/mac 4
 python-webapp project ----------- vagrant.conda/conda linux/mac 4
