@@ -1,17 +1,8 @@
 current:
 
-python project ------------------ vagrant.conda/conda linux/mac 4
-python-webapp project ----------- vagrant.conda/conda linux/mac 4
-reposet project ----------------- vagrant.conda/conda linux/mac 4
-nursery project ----------------- vagrant.conda/conda linux/mac 4
-interface project --------------- vagrant.conda/conda linux/mac 4
-simple-api project -------------- vagrant.conda/conda linux/mac 4
-simple-cli project -------------- vagrant.conda/conda linux/mac 4
+rambo project ------------------- vagrant.bimodal/bimodal linux/mac 4
 
-dpe project --------------------- vagrant.onguest/onguest linux/mac 4
-dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4
-
-rambo project ------------------- onhost/onguest linux/mac 4
+saltstate project --------------- vagrant.salt/salt linux/mac 4
 
 spinglass project --------------- onhost !nocicd linux/mac 2
 fuzzball project ---------------- onhost !nocicd linux/mac 2
@@ -21,4 +12,13 @@ qhub project -------------------- ondesktop linux/mac !nocicd 2
 python-guiapp project ----------- ondesktop linux/mac !nocicd 2
 dpe-guiapp project -------------- ondesktop linux/mac !nocicd 2
 
-saltstate project --------------- vagrant.salt/salt linux/mac 4
+dpe project --------------------- vagrant.onguest/onguest linux/mac 4
+dpe-webapp project -------------- vagrant.onguest/onguest linux/mac 4
+
+python project ------------------ vagrant.conda/conda linux/mac 4
+python-webapp project ----------- vagrant.conda/conda linux/mac 4
+reposet project ----------------- vagrant.conda/conda linux/mac 4
+nursery project ----------------- vagrant.conda/conda linux/mac 4
+interface project --------------- vagrant.conda/conda linux/mac 4
+simple-api project -------------- vagrant.conda/conda linux/mac 4
+simple-cli project -------------- vagrant.conda/conda linux/mac 4
